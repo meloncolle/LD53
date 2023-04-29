@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2c8cmskdclhu"]
+
+[ext_resource type="Script" path="res://Levels/Test3D/test_guy.gd" id="1_0k6kv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_alv6g"]
+radial_segments = 16
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_7du5y"]
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h847y"]
+
+[node name="Guy" type="CharacterBody3D"]
+script = ExtResource("1_0k6kv")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_alv6g")
+skeleton = NodePath("../..")
+
+[node name="Eye_R" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.186293, 0.557588, -0.387996)
+mesh = SubResource("SphereMesh_7du5y")
+
+[node name="Eye_R2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186, 0.558, -0.388)
+mesh = SubResource("SphereMesh_7du5y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_h847y")
