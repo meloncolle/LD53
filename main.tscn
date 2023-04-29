@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqdro5qne4ntt"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_uufvl"]
+[ext_resource type="PackedScene" uid="uid://cccvsiorwsaq2" path="res://UI/start_menu.tscn" id="2_s22xw"]
+[ext_resource type="PackedScene" uid="uid://bmlhgvnxyd87" path="res://UI/pause_menu.tscn" id="3_3cpd8"]
+
+[node name="Main" type="Node"]
+process_mode = 3
+script = ExtResource("1_uufvl")
+
+[node name="Main2D" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StartMenu" parent="CanvasLayer" instance=ExtResource("2_s22xw")]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_3cpd8")]
+visible = false

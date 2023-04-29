@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://biksopsiahq0c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biisa"]
+bg_color = Color(0.301961, 0.67451, 0.6, 1)
+
+[resource]
+default_font_size = 24
+Panel/styles/panel = SubResource("StyleBoxFlat_biisa")

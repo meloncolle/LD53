@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbye8amisjmvd"]
+
+[ext_resource type="Script" path="res://Levels/test_body.gd" id="1_ujo3t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1mjk"]
+size = Vector2(100, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q78s3"]
+size = Vector2(100, 100)
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+
+[node name="TestBody" type="CharacterBody2D" parent="."]
+position = Vector2(594, 326)
+script = ExtResource("1_ujo3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBody"]
+shape = SubResource("RectangleShape2D_o1mjk")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestBody"]
+texture = SubResource("PlaceholderTexture2D_q78s3")
