@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ktu4cxqnlhg"
-path.s3tc="res://.godot/imported/Boxboi_palette-01.png-ea54184969f1253adfb11c3b992f6eb1.s3tc.ctex"
+uid="uid://bwflyy67skwto"
+path.s3tc="res://.godot/imported/palette-01.png-70770ffcc7855f531eb662ea98187073.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://ArtAssets/Textures/Boxboi_palette-01.png"
-dest_files=["res://.godot/imported/Boxboi_palette-01.png-ea54184969f1253adfb11c3b992f6eb1.s3tc.ctex"]
+source_file="res://ArtAssets/Textures/palette-01.png"
+dest_files=["res://.godot/imported/palette-01.png-70770ffcc7855f531eb662ea98187073.s3tc.ctex"]
 
 [params]
 
