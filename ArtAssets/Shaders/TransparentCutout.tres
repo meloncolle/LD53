@@ -27,6 +27,7 @@ input_name = "uv"
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_53i24"]
 default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
 op_type = 0
+operator = 2
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_k251y"]
 default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
@@ -54,7 +55,7 @@ void fragment() {
 
 
 // VectorOp:8
-	vec2 n_out8p0 = n_out7p0 + vec2(n_out6p0);
+	vec2 n_out8p0 = n_out7p0 * vec2(n_out6p0);
 
 
 // Vector2Parameter:5
@@ -80,7 +81,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1387.33, -4.28284)
+graph_offset = Vector2(-1430.33, -41.2828)
 nodes/fragment/2/node = SubResource("VisualShaderNodeFloatConstant_di02c")
 nodes/fragment/2/position = Vector2(160, 120)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_e06q0")

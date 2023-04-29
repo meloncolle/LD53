@@ -89,8 +89,8 @@ mesh = SubResource("BoxMesh_lrw3y")
 skeleton = NodePath("../..")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_ravg1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12421, 0.5, 0)
+transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -6.15854, 0, -1.29774)
 targetOverride = NodePath("../Guy")
 
 [node name="NPC2" parent="." instance=ExtResource("3_ravg1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12421, 0.5, 3.43413)
+transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -4.2942, -4.76837e-07, 6.31546)
