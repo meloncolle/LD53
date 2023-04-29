@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var mouse_sensitivity: float = 0.002
-@export var accel: float = 0.4
+@export var accel: float = 0.8
 @export var friction: float = 0.5
 @export var max_speed: float = 8.0
 
@@ -18,6 +18,8 @@ func get_input():
 	# if we are pressing input accelerate, if not, decelerate
 	if abs(input.x) > 0.0 || abs(input.y) > 0.0:
 		cur_accel = accel
+		playerArt.rotation.y = atan2(-input.x, -input.y)
+		
 	else:
 		cur_accel = friction
 	
@@ -37,6 +39,7 @@ func _input(event: InputEvent):
 func _unhandled_input(event):
 	if event is InputEventMouseMotion && is_dragging:
 		rotate_y(-event.relative.x * mouse_sensitivity)
+		playerArt.rotate_y(event.relative.x * mouse_sensitivity)
 
 func _physics_process(delta):
 	get_input()
