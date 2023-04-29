@@ -15,6 +15,7 @@ extends Node3D
 
 var points : Array
 var rayCastHits : Array
+var rendererPoints : Array
 
 var totalLength = 0.0
 
@@ -33,21 +34,33 @@ func _process(_delta):
 		
 func UpdatePoints():
 	#raycast from target to last entry, if hit register new entry and repeat
+		var prevLastPoint = points[-1] if points.size() > 0 else startPoint
+	
 		if target : 
 			CheckTargetToLast()
 		#if the dot product of last to target and the hit normal is greater than 0, dereigster last
 			if points.size() > 0:
 				CheckTargetToSecondLast()
-		#update line renderer
-		var rendererPoints = points.duplicate(false)
-		for n in rayCastHits.size():
-			rendererPoints[n] = points[n] + (rayCastHits[n].normal * normalPush)
+				
+		var curLastPoint = points[-1] if points.size() > 0 else startPoint
+		
+		if curLastPoint != prevLastPoint || rendererPoints.size() == 0:
+			rendererPoints.clear()
+			for hit in rayCastHits:
+				rendererPoints.push_front(hit.position + (hit.normal * normalPush))
+			rendererPoints.push_front(startPoint)
 			
-		rendererPoints.push_front(startPoint)
-		if target: 
-			rendererPoints.push_back(target.global_position)
+			if target: 
+				rendererPoints.push_back(target.global_position)
+			
+		else:
+			# The rayCastHits array didnt change from last update, so reuse it but update last element
+			if target: 
+				rendererPoints.pop_back()
+				rendererPoints.push_back(target.global_position)
 	
-		lineRenderer.points = rendererPoints.duplicate(false)
+		#update line renderer
+		lineRenderer.points = rendererPoints
 		
 		totalLength = 0.0
 		for n in rendererPoints.size() - 1:
