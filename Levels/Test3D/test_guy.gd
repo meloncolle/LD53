@@ -1,18 +1,25 @@
 extends CharacterBody3D
 
+@export var mouse_sensitivity: float = 0.002
+@export var accel: float = 0.4
+@export var friction: float = 0.5
+@export var max_speed: float = 8.0
+
 var is_dragging: bool = false
-var speed: float = 4.0
-var mouse_sensitivity: float = 0.002
-
-
-func _ready():
-	print(transform.basis)
 
 func get_input():
+	var cur_accel = 0.0
+	
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
-	velocity.x = movement_dir.x * speed
-	velocity.z = movement_dir.z * speed
+
+	# if we are pressing input accelerate, if not, decelerate
+	if abs(input.x) > 0.0 || abs(input.y) > 0.0:
+		cur_accel = accel
+	else:
+		cur_accel = friction
+	
+	velocity = velocity.move_toward(movement_dir * max_speed, cur_accel)
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton:
@@ -20,9 +27,8 @@ func _input(event: InputEvent):
 			is_dragging = true
 		else:
 			is_dragging = false
-			print(transform.basis)
 
-# move the camera
+# Rotate camera around y axis by mouse click + drag
 func _unhandled_input(event):
 	if event is InputEventMouseMotion && is_dragging:
 		rotate_y(-event.relative.x * mouse_sensitivity)

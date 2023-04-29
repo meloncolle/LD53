@@ -16,6 +16,8 @@ rings = 4
 
 [node name="Guy" type="CharacterBody3D"]
 script = ExtResource("1_0k6kv")
+accel = 0.15
+max_speed = 6.0
 
 [node name="Body" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_alv6g")
