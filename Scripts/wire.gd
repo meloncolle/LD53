@@ -29,18 +29,23 @@ func _process(delta):
 
 	var dist = (target.global_position - lastPos).length() if target else 0.0
 	if dist > distanceThreshhold:
-		#raycast from target to last entry, if hit register new entry and repeat
-		CheckTargetToLast()
+		UpdatePoints()
+		
+func UpdatePoints():
+	#raycast from target to last entry, if hit register new entry and repeat
+		if target : 
+			CheckTargetToLast()
 		#if the dot product of last to target and the hit normal is greater than 0, dereigster last
-		if points.size() > 0:
-			CheckTargetToSecondLast()
+			if points.size() > 0:
+				CheckTargetToSecondLast()
 		#update line renderer
 		var rendererPoints = points.duplicate(false)
-		for n in rendererPoints.size():
+		for n in rayCastHits.size():
 			rendererPoints[n] = points[n] + (rayCastHits[n].normal * normalPush)
 			
 		rendererPoints.push_front(startPoint)
-		rendererPoints.push_back(target.global_position)
+		if target: 
+			rendererPoints.push_back(target.global_position)
 	
 		lineRenderer.points = rendererPoints.duplicate(false)
 		
@@ -52,8 +57,14 @@ func _process(delta):
 			p2.y = 0.0
 			totalLength += (p2 - p1).length()
 		
-		lastPos = target.global_position
-		
+		if target:
+			lastPos = target.global_position
+			
+
+func ResetPoints():
+	points.clear()
+	rayCastHits.clear()
+
 func CheckTargetToLast() -> bool:
 	
 	var rayDestination = points[points.size() - 1] if points.size() > 0 else startPoint

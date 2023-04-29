@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_558mi"]
-[ext_resource type="PackedScene" uid="uid://b2c8cmskdclhu" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
-[ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="3_6m4ng"]
+[ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
+[ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -88,6 +88,12 @@ shape = SubResource("BoxShape3D_vouhu")
 mesh = SubResource("BoxMesh_lrw3y")
 skeleton = NodePath("../..")
 
-[node name="Wire" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_6m4ng")]
-target = NodePath("../Guy")
-distanceThreshhold = 0.15
+[node name="NPC" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_ravg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -7.0348)
+targetOverride = NodePath("../Guy")
+
+[node name="NPC2" parent="." instance=ExtResource("3_ravg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87731, 0.5, -7.0348)
+
+[node name="NPC3" parent="." instance=ExtResource("3_ravg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15652, 0.5, -7.0348)
