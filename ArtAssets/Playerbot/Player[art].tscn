@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2f2yx6e6v1mr"]
+
+[ext_resource type="PackedScene" uid="uid://rj8mqn68bjn2" path="res://ArtAssets/Playerbot/Models/Boxboi.glb" id="1_o7w7v"]
+
+[node name="Boxboi" instance=ExtResource("1_o7w7v")]
+
+[node name="Skeleton3D" parent="botRig" index="0"]
+bones/0/position = Vector3(1.79127e-16, -0.00349016, 0.566788)
+bones/0/rotation = Quaternion(0, 0.705861, 0.70835, 0)
+bones/1/rotation = Quaternion(-0.959478, 0.100508, 0.16325, 0.206516)
+bones/2/rotation = Quaternion(-0.793092, 1.18402e-08, 3.08314e-07, 0.609102)
+bones/3/rotation = Quaternion(0.729841, 0.0455393, -0.046225, 0.68053)
+bones/4/position = Vector3(6.16456e-17, 0.183899, 0.00349014)
+bones/4/rotation = Quaternion(-0.000121702, -1.35067e-20, 1.11022e-16, 1)
+bones/5/rotation = Quaternion(-0.891913, -0.059018, -0.0575521, 0.444626)
+bones/6/rotation = Quaternion(-0.827231, -7.10914e-11, -3.24433e-07, 0.561863)
+bones/7/rotation = Quaternion(0.594633, -0.0156527, 0.0231436, 0.80351)
