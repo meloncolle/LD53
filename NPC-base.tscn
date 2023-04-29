@@ -2,42 +2,44 @@
 
 [ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="1_0h01s"]
 [ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_joxfr"]
+[ext_resource type="PackedScene" uid="uid://dgtkxl2c7i27t" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_76iod"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4glv3"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ct6i6"]
+size = Vector3(1.5, 1.5, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kc4lw"]
-size = Vector3(1.5, 0.5, 1.5)
+size = Vector3(2, 0.5, 2)
 
 [node name="NPC" type="Node3D" groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_joxfr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23229, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.464743, 0)
 shape = SubResource("BoxShape3D_4glv3")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_ct6i6")
-
 [node name="InPlugPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32675, 0, 0.513702)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.642004, 0.531819, 0.198586)
 
 [node name="OutPlugPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352889, 0, 0.509729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162567, 0.83399, 0.71984)
 
 [node name="Wire" parent="." node_paths=PackedStringArray("startTransform") instance=ExtResource("1_0h01s")]
 startTransform = NodePath("../OutPlugPoint")
 distanceThreshhold = 0.1
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418308, 0)
 collision_layer = 0
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_kc4lw")
+
+[node name="NPC" parent="." instance=ExtResource("3_76iod")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
