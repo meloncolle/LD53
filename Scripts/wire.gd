@@ -3,7 +3,10 @@ extends Node3D
 @onready var lineRenderer = $LineRenderer
 
 @export var startPoint : Vector3
+@export var startTransform : Node3D
 @export var target : Node3D
+
+@export var maxWireLength = 5.0
 
 @export var distanceThreshhold = 0.25
 @export var minPointDistance = 0.1
@@ -18,7 +21,8 @@ var totalLength = 0.0
 var lastPos = Vector3.ZERO
 
 func _ready():
-	#points.push_front(self.global_position)
+	if(startTransform):
+		startPoint = startTransform.global_position
 	pass
 
 func _process(delta):

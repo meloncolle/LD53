@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5ew6ownuw2nm"]
+
+[ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="1_0h01s"]
+[ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_joxfr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4glv3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ct6i6"]
+
+[node name="NPC" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_joxfr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_4glv3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ct6i6")
+
+[node name="InPlugPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32675, 0, 0.513702)
+
+[node name="OutPlugPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352889, 0, 0.509729)
+
+[node name="Wire" parent="." node_paths=PackedStringArray("startTransform") instance=ExtResource("1_0h01s")]
+startTransform = NodePath("../OutPlugPoint")
