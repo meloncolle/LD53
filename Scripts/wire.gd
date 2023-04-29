@@ -19,7 +19,7 @@ func _ready():
 
 	pass
 
-func _process(delta):
+func _process(_delta):
 
 	var dist = (target.global_position - lastPos).length() if target else 0.0
 	if dist > distanceThreshhold:
@@ -85,7 +85,7 @@ func CheckTargetToSecondLast():
 func CheckRay(origin, destination) -> Dictionary:
 	var space_state = get_world_3d().direct_space_state
 	
-	var newDestination = destination + ((origin - destination).normalized() * 0.1)
+	var _newDestination = destination + ((origin - destination).normalized() * 0.1)
 	
 	var query = PhysicsRayQueryParameters3D.create(origin, destination)		
 	var result = space_state.intersect_ray(query)

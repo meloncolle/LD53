@@ -40,6 +40,6 @@ func _unhandled_input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		playerArt.rotate_y(event.relative.x * mouse_sensitivity)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
