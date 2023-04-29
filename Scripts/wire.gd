@@ -13,6 +13,8 @@ extends Node3D
 var points : Array
 var rayCastHits : Array
 
+var totalLength = 0.0
+
 var lastPos = Vector3.ZERO
 
 func _ready():
@@ -37,6 +39,14 @@ func _process(delta):
 		rendererPoints.push_back(target.global_position)
 	
 		lineRenderer.points = rendererPoints.duplicate(false)
+		
+		totalLength = 0.0
+		for n in rendererPoints.size() - 1:
+			var p1 = rendererPoints[n]
+			var p2 = rendererPoints[n + 1]
+			p1.y = 0.0
+			p2.y = 0.0
+			totalLength += (p2 - p1).length()
 		
 		lastPos = target.global_position
 		
