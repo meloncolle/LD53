@@ -1,17 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2f2yx6e6v1mr"]
+[gd_scene load_steps=14 format=3 uid="uid://cvp6pudrfcjpn"]
 
 [ext_resource type="PackedScene" uid="uid://rj8mqn68bjn2" path="res://ArtAssets/Playerbot/Models/Boxboi.glb" id="1_o7w7v"]
+[ext_resource type="Script" path="res://ArtAssets/Scripts/PlayerAnimationController.gd" id="2_l6wia"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nvnav"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8dwyg"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vuian"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_g3b0e"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_nvnav")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_8dwyg")
+blend_point_1/pos = 0.5
+blend_point_2/node = SubResource("AnimationNodeAnimation_vuian")
+blend_point_2/pos = 1.0
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_2kdl4"]
+graph_offset = Vector2(-384, -2)
+nodes/mvmtBlend/node = SubResource("AnimationNodeBlendSpace1D_g3b0e")
+nodes/mvmtBlend/position = Vector2(61, 128)
+node_connections = [&"output", 0, &"mvmtBlend"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_61jw5"]
+animation = &"stopping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ibrj"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ejhr"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7c1yx"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_af560"]
+states/Locomotion/node = SubResource("AnimationNodeBlendTree_2kdl4")
+states/Locomotion/position = Vector2(357, 107)
+states/Start/position = Vector2(201, 107)
+states/Stopping/node = SubResource("AnimationNodeAnimation_61jw5")
+states/Stopping/position = Vector2(357, 205)
+transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_6ibrj"), "Locomotion", "Stopping", SubResource("AnimationNodeStateMachineTransition_8ejhr"), "Stopping", "Locomotion", SubResource("AnimationNodeStateMachineTransition_7c1yx")]
+graph_offset = Vector2(-81, 24)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_k8tvx"]
 
 [node name="Boxboi" instance=ExtResource("1_o7w7v")]
+script = ExtResource("2_l6wia")
 
 [node name="Skeleton3D" parent="botRig" index="0"]
-bones/0/position = Vector3(1.79127e-16, -0.00349016, 0.566788)
-bones/0/rotation = Quaternion(0, 0.705861, 0.70835, 0)
-bones/1/rotation = Quaternion(-0.959478, 0.100508, 0.16325, 0.206516)
-bones/2/rotation = Quaternion(-0.793092, 1.18402e-08, 3.08314e-07, 0.609102)
-bones/3/rotation = Quaternion(0.729841, 0.0455393, -0.046225, 0.68053)
+bones/0/position = Vector3(1.79127e-16, -0.00349016, 0.555127)
+bones/0/rotation = Quaternion(0, 0.700249, 0.713899, -3.94431e-31)
+bones/1/rotation = Quaternion(0.956941, -0.102822, -0.163668, -0.216576)
+bones/2/rotation = Quaternion(-0.808913, 4.30861e-10, 3.08079e-07, 0.587929)
+bones/3/rotation = Quaternion(0.745293, 0.0488524, -0.0473318, 0.663258)
 bones/4/position = Vector3(6.16456e-17, 0.183899, 0.00349014)
-bones/4/rotation = Quaternion(-0.000121702, -1.35067e-20, 1.11022e-16, 1)
-bones/5/rotation = Quaternion(-0.891913, -0.059018, -0.0575521, 0.444626)
-bones/6/rotation = Quaternion(-0.827231, -7.10914e-11, -3.24433e-07, 0.561863)
-bones/7/rotation = Quaternion(0.594633, -0.0156527, 0.0231436, 0.80351)
+bones/4/rotation = Quaternion(-0.000327147, -3.63156e-20, 1.11022e-16, 1)
+bones/5/rotation = Quaternion(0.883097, 0.0604112, 0.0570245, -0.461778)
+bones/6/rotation = Quaternion(-0.842522, 2.51919e-09, -3.27824e-07, 0.538662)
+bones/7/rotation = Quaternion(0.607583, -0.0167311, 0.0238908, 0.79372)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_af560")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_k8tvx")
+parameters/Locomotion/mvmtBlend/blend_position = 0.0
