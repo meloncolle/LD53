@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1sl5khrij4q8"]
+[gd_scene load_steps=7 format=3 uid="uid://b1sl5khrij4q8"]
 
 [ext_resource type="Script" path="res://Levels/Test3D/test_guy.gd" id="1_0k6kv"]
 [ext_resource type="PackedScene" uid="uid://cvp6pudrfcjpn" path="res://ArtAssets/Playerbot/Player[art].tscn" id="2_qojye"]
@@ -15,10 +15,6 @@ radial_segments = 8
 rings = 4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h847y"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_1sheq"]
-height = 0.5
-radius = 0.85
 
 [node name="Guy" type="CharacterBody3D"]
 script = ExtResource("1_0k6kv")
@@ -48,10 +44,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="WireManager" type="Node3D" parent="."]
 script = ExtResource("3_y7bew")
-
-[node name="InteractorArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractorArea"]
-shape = SubResource("CylinderShape3D_1sheq")
-
-[connection signal="body_entered" from="InteractorArea" to="WireManager" method="_on_interactor_area_body_entered"]

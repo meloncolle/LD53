@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5ew6ownuw2nm"]
+[gd_scene load_steps=6 format=3 uid="uid://b5ew6ownuw2nm"]
 
 [ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="1_0h01s"]
 [ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_joxfr"]
@@ -7,7 +7,10 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_ct6i6"]
 
-[node name="NPC" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kc4lw"]
+size = Vector3(1.5, 0.5, 1.5)
+
+[node name="NPC" type="Node3D" groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_joxfr")
 
@@ -27,3 +30,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352889, 0, 0.509729)
 
 [node name="Wire" parent="." node_paths=PackedStringArray("startTransform") instance=ExtResource("1_0h01s")]
 startTransform = NodePath("../OutPlugPoint")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_kc4lw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

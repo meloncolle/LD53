@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-@export var points = [Vector3(0,0,0),Vector3(0,5,0)]
+@export var points : Array
 @export var startThickness = 0.1
 @export var endThickness = 0.1
 @export var cornerSmooth = 5
@@ -14,6 +14,7 @@ var camera : Camera3D
 var cameraOrigin : Vector3
 
 func _ready():
+	mesh = ImmediateMesh.new()
 	pass
 
 func _process(_delta):
