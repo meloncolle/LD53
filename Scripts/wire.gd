@@ -8,6 +8,8 @@ extends Node3D
 @export var distanceThreshhold = 0.25
 @export var minPointDistance = 0.1
 
+@export var normalPush = 0.1
+
 var points : Array
 var rayCastHits : Array
 
@@ -28,8 +30,12 @@ func _process(delta):
 			CheckTargetToSecondLast()
 		#update line renderer
 		var rendererPoints = points.duplicate(false)
+		for n in rendererPoints.size():
+			rendererPoints[n] = points[n] + (rayCastHits[n].normal * normalPush)
+			
 		rendererPoints.push_front(startPoint)
 		rendererPoints.push_back(target.global_position)
+	
 		lineRenderer.points = rendererPoints.duplicate(false)
 		
 		lastPos = target.global_position

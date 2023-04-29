@@ -13,4 +13,3 @@ script = ExtResource("1_5a68m")
 material_override = ExtResource("1_05bm4")
 mesh = SubResource("ImmediateMesh_yoree")
 script = ExtResource("1_ejd00")
-points = []
