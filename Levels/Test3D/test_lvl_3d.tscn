@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_558mi"]
-[ext_resource type="PackedScene" uid="uid://b2c8cmskdclhu" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
+[ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="3_6m4ng"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]

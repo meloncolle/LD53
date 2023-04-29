@@ -18,15 +18,14 @@ func get_input():
 	# if we are pressing input accelerate, if not, decelerate
 	if abs(input.x) > 0.0 || abs(input.y) > 0.0:
 		cur_accel = accel
-		playerArt.rotation.y = atan2(-input.x, -input.y)
+		playerArt.rotation.y = atan2(input.x, input.y)
 		
 	else:
 		cur_accel = friction
 	
 	velocity = velocity.move_toward(movement_dir * max_speed, cur_accel)
 	
-	var inputVec = Vector3(input.x, 0.0, input.y)
-	playerArt.DoLocomotionAnimation(velocity / max_speed, inputVec)
+	playerArt.DoLocomotionAnimation(velocity / max_speed, movement_dir)
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton:
