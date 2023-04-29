@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvp6pudrfcjpn"]
+[gd_scene load_steps=16 format=3 uid="uid://cfv1l2uaa4d0h"]
 
 [ext_resource type="PackedScene" uid="uid://rj8mqn68bjn2" path="res://ArtAssets/Playerbot/Models/Boxboi.glb" id="1_o7w7v"]
 [ext_resource type="Script" path="res://ArtAssets/Scripts/PlayerAnimationController.gd" id="2_l6wia"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="3_164ln"]
+[ext_resource type="Material" uid="uid://cckl6vpgdsclb" path="res://ArtAssets/Materials/PlayerFace.tres" id="4_gvyuu"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nvnav"]
 animation = &"idle"
@@ -46,35 +47,38 @@ states/Stopping/position = Vector2(357, 205)
 transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_6ibrj"), "Locomotion", "Stopping", SubResource("AnimationNodeStateMachineTransition_8ejhr"), "Stopping", "Locomotion", SubResource("AnimationNodeStateMachineTransition_7c1yx")]
 graph_offset = Vector2(-81, 24)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_g314r"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_8ptj4"]
 
 [node name="Boxboi" instance=ExtResource("1_o7w7v")]
 script = ExtResource("2_l6wia")
 
 [node name="Skeleton3D" parent="botRig" index="0"]
-bones/0/position = Vector3(7.17888e-17, 0.565244, 0.00349014)
-bones/0/rotation = Quaternion(-2.11809e-10, 0.999996, 0.00280552, 7.54976e-08)
-bones/1/rotation = Quaternion(0.95914, -0.100809, -0.1633, -0.207899)
-bones/2/rotation = Quaternion(-0.795241, 6.59627e-10, 3.13035e-07, 0.606294)
-bones/3/rotation = Quaternion(0.727098, 0.186504, 0.0452324, 0.659165)
+bones/0/position = Vector3(7.17888e-17, 0.568475, 0.00349014)
+bones/0/rotation = Quaternion(-4.67059e-11, 1, 0.000618669, 7.54979e-08)
+bones/1/rotation = Quaternion(0.95985, -0.100182, -0.163198, -0.204984)
+bones/2/rotation = Quaternion(-0.790725, 8.6006e-09, 3.09755e-07, 0.612171)
+bones/3/rotation = Quaternion(0.72283, 0.186221, 0.0446272, 0.663963)
 bones/4/position = Vector3(5.26996e-10, 0.183899, 0.00349013)
-bones/4/rotation = Quaternion(-0.000160623, -6.80083e-15, 8.42963e-18, 1)
-bones/5/rotation = Quaternion(0.890758, 0.0591991, 0.057483, -0.446926)
-bones/6/rotation = Quaternion(-0.829307, -6.81547e-10, -3.11739e-07, 0.558794)
-bones/7/rotation = Quaternion(0.596152, -0.0824154, -0.00407048, 0.79862)
+bones/4/rotation = Quaternion(-6.6469e-05, -6.97938e-15, 3.48811e-18, 1)
+bones/5/rotation = Quaternion(0.893175, 0.0588218, 0.0576273, -0.442105)
+bones/6/rotation = Quaternion(-0.824944, -1.06134e-09, -3.13336e-07, 0.565214)
+bones/7/rotation = Quaternion(0.592531, -0.0822506, -0.00396906, 0.801328)
 
 [node name="box" parent="botRig/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_164ln")
 
-[node name="Cube" parent="botRig/Skeleton3D" index="1"]
+[node name="body" parent="botRig/Skeleton3D" index="1"]
 surface_material_override/0 = ExtResource("3_164ln")
 
-[node name="Circle" parent="botRig/Skeleton3D" index="2"]
+[node name="legs" parent="botRig/Skeleton3D" index="2"]
 surface_material_override/0 = ExtResource("3_164ln")
+
+[node name="face" parent="botRig/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("4_gvyuu")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_af560")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_g314r")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_8ptj4")
 parameters/Locomotion/mvmtBlend/blend_position = 0.0
