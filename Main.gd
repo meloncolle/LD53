@@ -3,7 +3,7 @@ extends Node
 enum GameState {ON_START, IN_GAME, PAUSED}
 
 var gameState: GameState
-var gameScenePath: String = "res://Levels/test_lvl.tscn"
+var gameScenePath: String = "res://Levels/Test3D/test_lvl_3d.tscn"
 var sceneInstance: Node = null
 
 @onready var startMenu: Control = $CanvasLayer/StartMenu
@@ -45,7 +45,7 @@ func set_state(newState: GameState):
 
 func _on_press_start():
 	sceneInstance = load(gameScenePath).instantiate()
-	$Main2D.add_child(sceneInstance)
+	$Main3D.add_child(sceneInstance)
 	set_state(GameState.IN_GAME)
 	
 func _on_press_exit():

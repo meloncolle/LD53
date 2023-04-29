@@ -8,7 +8,7 @@
 process_mode = 3
 script = ExtResource("1_uufvl")
 
-[node name="Main2D" type="Node2D" parent="."]
+[node name="Main3D" type="Node3D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
