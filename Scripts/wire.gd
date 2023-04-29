@@ -6,6 +6,7 @@ extends Node3D
 @export var target : Node3D
 
 @export var distanceThreshhold = 0.25
+@export var minPointDistance = 0.1
 
 var points : Array
 var rayCastHits : Array
@@ -53,7 +54,7 @@ func CheckTargetToSecondLast():
 	secondLastSeg.y = 0.0
 	
 	var dot = lastSeg.normalized().dot(secondLastSeg.normalized())
-	print_debug(dot)
+	#print_debug(dot)
 	if dot > 0.6:
 		var result = CheckRay(target.global_position, secondLastPoint)
 		if(result.is_empty()):
@@ -61,7 +62,7 @@ func CheckTargetToSecondLast():
 			rayCastHits.pop_back()
 		else :
 			var rayVec = target.global_position - result.position
-			if  rayVec.length() > lastSeg.length() + 0.1:
+			if  rayVec.length() > lastSeg.length() + minPointDistance:
 				points.pop_back()
 				rayCastHits.pop_back()
 			

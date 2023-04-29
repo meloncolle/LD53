@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjexsjaqp5ffy"]
+[gd_scene load_steps=10 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_558mi"]
 [ext_resource type="PackedScene" uid="uid://b2c8cmskdclhu" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
-[ext_resource type="PackedScene" uid="uid://6awdtn2x6utv" path="res://wire_renderer.tscn" id="3_6m4ng"]
+[ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="3_6m4ng"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -29,6 +29,8 @@ material = ExtResource("1_558mi")
 
 [node name="Guy" parent="." instance=ExtResource("1_feurm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+accel = 0.45
+friction = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="Guy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232132, 2.86908)
@@ -86,5 +88,6 @@ shape = SubResource("BoxShape3D_vouhu")
 mesh = SubResource("BoxMesh_lrw3y")
 skeleton = NodePath("../..")
 
-[node name="WireRenderer" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_6m4ng")]
+[node name="Wire" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_6m4ng")]
 target = NodePath("../Guy")
+distanceThreshhold = 0.15

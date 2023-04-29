@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://6awdtn2x6utv"]
+[gd_scene load_steps=5 format=3 uid="uid://d0xnfkftsjwkl"]
 
+[ext_resource type="Script" path="res://Scripts/wire.gd" id="1_5a68m"]
 [ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_05bm4"]
 [ext_resource type="Script" path="res://Scripts/lines.gd" id="1_ejd00"]
-[ext_resource type="Script" path="res://wire.gd" id="1_x1wrl"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_yoree"]
 
 [node name="Wire" type="Node3D"]
-script = ExtResource("1_x1wrl")
+script = ExtResource("1_5a68m")
 
 [node name="LineRenderer" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_05bm4")

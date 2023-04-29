@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var friction: float = 0.5
 @export var max_speed: float = 8.0
 
+@onready var playerArt = $Boxboi
+
 var is_dragging: bool = false
 
 func get_input():
@@ -20,6 +22,9 @@ func get_input():
 		cur_accel = friction
 	
 	velocity = velocity.move_toward(movement_dir * max_speed, cur_accel)
+	
+	var inputVec = Vector3(input.x, 0.0, input.y)
+	playerArt.DoLocomotionAnimation(velocity / max_speed, inputVec)
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton:
