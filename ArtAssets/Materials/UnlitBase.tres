@@ -6,5 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_joppy")
+shader_parameter/UVScale = 1.0
 shader_parameter/UVOffset = Vector2(0, 0)
+shader_parameter/Tint = Color(1, 1, 1, 1)
 shader_parameter/MainTex = ExtResource("2_tkp60")

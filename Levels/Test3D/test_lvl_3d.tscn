@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c23tp7605y8xi"]
+[gd_scene load_steps=16 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_558mi"]
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
+[ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -137,3 +138,4 @@ shape = SubResource("BoxShape3D_x1ngd")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("BoxMesh_fcy7i")
+surface_material_override/0 = ExtResource("7_h2ikg")
