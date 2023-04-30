@@ -44,6 +44,6 @@ func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	
-func _Music(delta):
+func _process(delta):
 	if $Music.playing == false:
 		$Music.play()
