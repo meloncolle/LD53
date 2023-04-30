@@ -19,8 +19,11 @@ func _ready():
 
 func _process(_delta):
 	if points.size() < 2:
+		self.visible = false
 		return
 	
+	self.visible = true
+		
 	camera = get_viewport().get_camera_3d()
 	if camera == null:
 		return

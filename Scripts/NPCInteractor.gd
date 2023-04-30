@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var wire = $Wire
 @onready var plugPoint = $InPlugPoint
+@export var wireLength = 1.0
 
 @export var targetOverride : Node3D
 @export var npc_name: String
@@ -10,6 +11,7 @@ extends Node3D
 var connected: bool = false
 
 func _ready():
+	wire.maxWireLength = wireLength
 	if targetOverride:
 		wire.target = targetOverride
 		targetOverride.get_node("WireManager").currentlyConnected = self

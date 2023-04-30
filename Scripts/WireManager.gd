@@ -3,20 +3,40 @@ extends Node3D
 var currentlyConnected
 var currentlyTouching
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var vectorToLast : Vector3
+var wireForce = 0.0
 
+var curBattery = 1.0
+@export var batteryDrainTime = 5.0
+var unpluggedTimer = 0.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func _process(delta):
+	if currentlyConnected:
+		var lastPoint = currentlyConnected.wire.points[-1] if currentlyConnected.wire.points.size() > 0 else currentlyConnected.wire.startPoint
+		vectorToLast = (lastPoint - self.global_position)
+		vectorToLast.y = 0.0
+		vectorToLast = vectorToLast.normalized()
+		wireForce = currentlyConnected.wire.totalLength / currentlyConnected.wire.maxWireLength
+	else:
+		wireForce = 0.0
+		unpluggedTimer += delta
+		
+	curBattery = 1.0 - (unpluggedTimer / batteryDrainTime)
+
+func Disconnect():
+	if currentlyConnected:
+		currentlyConnected.wire.target = null
+		currentlyConnected.wire.ResetPoints()
+		#currentlyConnected.wire.UpdatePoints()
+		currentlyConnected = null
+		unpluggedTimer = 0.0
 
 func SwapCurrentlyConnected(newConnected):
 	if newConnected != currentlyConnected:
-		currentlyConnected.wire.target = null
-		currentlyConnected.wire.points.push_back(newConnected.plugPoint.global_position)
-		currentlyConnected.wire.UpdatePoints()
+		if currentlyConnected:
+			currentlyConnected.wire.target = null
+			currentlyConnected.wire.points.push_back(newConnected.plugPoint.global_position)
+			currentlyConnected.wire.UpdatePoints()
 		
 		currentlyConnected = newConnected
 		currentlyConnected.wire.ResetPoints()
@@ -29,13 +49,9 @@ func _on_interactor_area_body_entered(_body):
 	pass # Replace with function body.
 
 func StartedTouchingArea(body):
-	print_debug("touching a collider")
 	if body.is_in_group("interactable"):
 		currentlyTouching = body
 		SwapCurrentlyConnected(body)#make this based on buttonpress while currently touching isnt null
-	else:
-		print_debug("not in the right group")
-
 
 func StoppedTouchingArea(body):
 	if body.is_in_group("interactable") and body == currentlyTouching:

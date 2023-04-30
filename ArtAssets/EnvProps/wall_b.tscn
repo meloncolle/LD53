@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://datjgc522h3p6"]
+[gd_scene load_steps=4 format=3 uid="uid://c5uppeshdukj5"]
 
 [ext_resource type="PackedScene" uid="uid://dhs6k1vp6jfu1" path="res://ArtAssets/EnvProps/Models/wall-b.glb" id="1_vjugp"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_kj5uu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8s6wm"]
-size = Vector3(1, 7.5, 0.9)
+size = Vector3(5, 7.5, 0.9)
 
 [node name="wall-b" instance=ExtResource("1_vjugp")]
 

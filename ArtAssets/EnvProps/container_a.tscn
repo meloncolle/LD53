@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://duommr06y2buk"]
+[gd_scene load_steps=5 format=3 uid="uid://d5rk05vt7ipg"]
 
 [ext_resource type="PackedScene" uid="uid://bh1ki722jbsv7" path="res://ArtAssets/EnvProps/Models/container-a.glb" id="1_0jhx1"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_822bo"]
+[ext_resource type="Script" path="res://Scripts/movingObject.gd" id="3_3llcs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q4u8"]
 size = Vector3(2.5, 2.5, 5)
@@ -11,8 +12,13 @@ size = Vector3(2.5, 2.5, 5)
 [node name="shippingContainer-grape" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_822bo")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1"]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1" node_paths=PackedStringArray("model")]
+collision_layer = 3
+collision_mask = 3
+floor_snap_length = 0.5
+script = ExtResource("3_3llcs")
+model = NodePath("../shippingContainer-grape")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24482, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("BoxShape3D_5q4u8")

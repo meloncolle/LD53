@@ -6,10 +6,13 @@ extends CharacterBody3D
 @export var max_speed: float = 8.0
 
 @onready var playerArt = $Boxboi
+@onready var wireManager = $WireManager
 
 var wireForce : Vector3
 
 var is_dragging: bool = false
+
+var desiredVelocity = Vector3.ZERO
 
 func get_input():
 	var cur_accel = 0.0
@@ -25,9 +28,15 @@ func get_input():
 	else:
 		cur_accel = friction
 	
-	velocity = velocity.move_toward(movement_dir * max_speed, cur_accel) + wireForce
+	if wireManager.wireForce >= 1:
+		wireManager.Disconnect()
 	
-	playerArt.DoLocomotionAnimation(velocity / max_speed, movement_dir)
+	var wireTension = clampf(inverse_lerp(0.6, 1.05, wireManager.wireForce), 0.0, 1.0)
+	wireForce = wireManager.vectorToLast * (wireTension * max_speed)
+	desiredVelocity = desiredVelocity.move_toward(movement_dir * max_speed, cur_accel)
+	velocity = desiredVelocity + wireForce
+	
+	playerArt.DoLocomotionAnimation(desiredVelocity / max_speed, movement_dir)
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton:
