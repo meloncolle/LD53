@@ -1,12 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://c23tp7605y8xi"]
 
-[ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_558mi"]
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_kke3t"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
 [ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,14 +23,6 @@ background_mode = 2
 sky = SubResource("Sky_pgdah")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_4hrof"]
-material = ExtResource("1_558mi")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vouhu"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_lrw3y"]
-material = ExtResource("1_558mi")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
 size = Vector3(20, 1, 20)
@@ -57,52 +52,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bb87a")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-visible = false
-mesh = SubResource("PlaneMesh_4hrof")
-skeleton = NodePath("")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.108209, 0.07517, 0.160786)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D2"]
-shape = SubResource("BoxShape3D_vouhu")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D2"]
-mesh = SubResource("BoxMesh_lrw3y")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.36873, 0.07517, -0.35325)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D5"]
-shape = SubResource("BoxShape3D_vouhu")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D5"]
-mesh = SubResource("BoxMesh_lrw3y")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.392164, 0.07517, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D3"]
-shape = SubResource("BoxShape3D_vouhu")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D3"]
-mesh = SubResource("BoxMesh_lrw3y")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.392164, 0.07517, -0.504651)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D4"]
-shape = SubResource("BoxShape3D_vouhu")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D4"]
-mesh = SubResource("BoxMesh_lrw3y")
-skeleton = NodePath("../..")
-
 [node name="NPC" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_ravg1")]
 transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -6.15854, 0, -1.29774)
 targetOverride = NodePath("../Guy")
@@ -118,7 +67,9 @@ npc_name = "outlet_2"
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2"]
 stream = ExtResource("4_hsj0l")
 
-[node name="ground" type="CharacterBody3D" parent="."]
+[node name="environment" type="Node3D" parent="."]
+
+[node name="ground" type="CharacterBody3D" parent="environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 axis_lock_linear_y = true
 axis_lock_angular_x = true
@@ -128,10 +79,22 @@ motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("6_8p81u")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/ground"]
 shape = SubResource("BoxShape3D_x1ngd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environment/ground"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("BoxMesh_fcy7i")
 surface_material_override/0 = ExtResource("7_h2ikg")
+
+[node name="container-a" parent="environment" instance=ExtResource("7_34y2v")]
+transform = Transform3D(0.864933, 0, 0.501888, 0, 1, 0, -0.501888, 0, 0.864933, 5.2418, 0, 0)
+
+[node name="pillar-wires" parent="environment" instance=ExtResource("8_j3cfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78382, -4.76837e-07, -5.43349)
+
+[node name="pole-a" parent="environment" instance=ExtResource("9_n26t1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5302, 0, 2.54547)
+
+[node name="pole-b" parent="environment" instance=ExtResource("10_fxa01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9926, 0, 2.22428)

@@ -8,6 +8,8 @@
 
 [node name="Wire" type="Node3D"]
 script = ExtResource("1_5a68m")
+unwindStartDotProduct = 0.975
+normalPush = 0.2
 
 [node name="LineRenderer" type="MeshInstance3D" parent="."]
 material_override = ExtResource("2_iqtvo")

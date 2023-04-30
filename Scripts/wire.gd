@@ -10,6 +10,7 @@ extends Node3D
 
 @export var distanceThreshhold = 0.25
 @export var minPointDistance = 0.1
+@export var unwindStartDotProduct = 0.8
 
 @export var normalPush = 0.1
 
@@ -99,7 +100,7 @@ func CheckTargetToSecondLast():
 	
 	var dot = lastSeg.normalized().dot(secondLastSeg.normalized())
 	#print_debug(dot)
-	if dot > 0.6:
+	if dot > unwindStartDotProduct:
 		var result = CheckRay(target.global_position, secondLastPoint)
 		if(result.is_empty()):
 			points.pop_back()
