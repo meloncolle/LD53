@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://x5whynrdo46f"]
+
+[ext_resource type="PackedScene" uid="uid://dvexvjnd70rrh" path="res://ArtAssets/EnvProps/Models/box-a.glb" id="1_5o8sw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rirxv"]
+
+[node name="box-a" instance=ExtResource("1_5o8sw")]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rirxv")
