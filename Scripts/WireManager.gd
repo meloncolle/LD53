@@ -3,14 +3,16 @@ extends Node3D
 var currentlyConnected
 var currentlyTouching
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var vectorToLast : Vector3
+var wireForce = 0.0
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if currentlyConnected:
+		var lastPoint = currentlyConnected.wire.points[-1] if currentlyConnected.wire.points.size() > 0 else currentlyConnected.wire.startPoint
+		vectorToLast = (lastPoint - self.global_position).normalized()
+		wireForce = currentlyConnected.wire.totalLength / currentlyConnected.wire.maxWireLength
+	else:
+		wireForce = 0.0
 
 func SwapCurrentlyConnected(newConnected):
 	if newConnected != currentlyConnected:

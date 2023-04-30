@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var max_speed: float = 8.0
 
 @onready var playerArt = $Boxboi
+@onready var wireManager = $WireManager
 
 var wireForce : Vector3
 
@@ -24,6 +25,9 @@ func get_input():
 		
 	else:
 		cur_accel = friction
+	
+	var wireTension = clampf(wireManager.wireForce - 0.8, 0.0, 10000.0)
+	wireForce = wireManager.vectorToLast * (wireTension * max_speed)
 	
 	velocity = velocity.move_toward(movement_dir * max_speed, cur_accel) + wireForce
 	
