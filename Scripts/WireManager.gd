@@ -39,13 +39,9 @@ func _on_interactor_area_body_entered(_body):
 	pass # Replace with function body.
 
 func StartedTouchingArea(body):
-	print_debug("touching a collider")
 	if body.is_in_group("interactable"):
 		currentlyTouching = body
 		SwapCurrentlyConnected(body)#make this based on buttonpress while currently touching isnt null
-	else:
-		print_debug("not in the right group")
-
 
 func StoppedTouchingArea(body):
 	if body.is_in_group("interactable") and body == currentlyTouching:

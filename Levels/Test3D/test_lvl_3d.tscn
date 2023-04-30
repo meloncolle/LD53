@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c23tp7605y8xi"]
+[gd_scene load_steps=18 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_kke3t"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
 [ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
+[ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="11_857mt"]
+[ext_resource type="PackedScene" uid="uid://c5uppeshdukj5" path="res://ArtAssets/EnvProps/wall_b.tscn" id="12_c83no"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,7 +27,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
-size = Vector3(20, 1, 20)
+size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fcy7i"]
 
@@ -72,7 +74,7 @@ stream = ExtResource("4_hsj0l")
 [node name="environment" type="Node3D" parent="."]
 
 [node name="ground" type="CharacterBody3D" parent="environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 collision_layer = 2
 collision_mask = 2
 axis_lock_linear_y = true
@@ -86,7 +88,7 @@ targetSpeed = 2.5
 shape = SubResource("BoxShape3D_x1ngd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environment/ground"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 2.5, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("BoxMesh_fcy7i")
 surface_material_override/0 = ExtResource("7_h2ikg")
 
@@ -101,6 +103,80 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5302, 0, 2.54547)
 
 [node name="pole-b" parent="environment" instance=ExtResource("10_fxa01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9926, 0, 2.22428)
+
+[node name="walls" type="Node3D" parent="environment"]
+
+[node name="wall-a" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 5)
+
+[node name="wall-a2" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, -15)
+
+[node name="wall-a3" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 10)
+
+[node name="wall-b" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 0)
+
+[node name="wall-b2" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, -5)
+
+[node name="wall-b3" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, -10)
+
+[node name="wall-a4" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -10)
+
+[node name="wall-a5" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 10)
+
+[node name="wall-a6" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -15)
+
+[node name="wall-b4" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -5)
+
+[node name="wall-b5" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 0)
+
+[node name="wall-b6" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 5)
+
+[node name="wall-a7" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.5, 0, -17.5)
+
+[node name="wall-a8" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.5, 0, -17.5)
+
+[node name="wall-a9" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5, 0, -17.5)
+
+[node name="wall-b7" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, -17.5)
+
+[node name="wall-b8" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, 0, -17.5)
+
+[node name="wall-b9" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, 0, -17.5)
+
+[node name="wall-a10" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 7.5, 0, 12.5)
+
+[node name="wall-a11" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -12.5, 0, 12.5)
+
+[node name="wall-a12" parent="environment/walls" instance=ExtResource("11_857mt")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 12.5, 0, 12.5)
+
+[node name="wall-b10" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 2.5, 0, 12.5)
+
+[node name="wall-b11" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -2.5, 0, 12.5)
+
+[node name="wall-b12" parent="environment/walls" instance=ExtResource("12_c83no")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -7.5, 0, 12.5)
 
 [node name="TiltTimer" type="Timer" parent="."]
 wait_time = 10.0
