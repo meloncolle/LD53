@@ -58,22 +58,22 @@ states/Stopping/position = Vector2(357, 205)
 transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_6ibrj"), "Locomotion", "Stopping", SubResource("AnimationNodeStateMachineTransition_8ejhr"), "Stopping", "Locomotion", SubResource("AnimationNodeStateMachineTransition_7c1yx"), "Interact", "Locomotion", SubResource("AnimationNodeStateMachineTransition_ttymt"), "Locomotion", "Interact", SubResource("AnimationNodeStateMachineTransition_68ffg")]
 graph_offset = Vector2(-161, -61)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_2uisc"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_8ptj4"]
 
 [node name="Boxboi" instance=ExtResource("1_o7w7v")]
 script = ExtResource("2_l6wia")
 
 [node name="Skeleton3D" parent="botRig" index="0"]
-bones/0/position = Vector3(1.09046e-16, 0.575059, 0.00349013)
-bones/0/rotation = Quaternion(6.34867e-12, 1, -8.40609e-05, 7.54979e-08)
-bones/1/rotation = Quaternion(0.960557, -0.0983908, -0.163407, -0.202354)
-bones/2/rotation = Quaternion(-0.781183, -6.40889e-09, 3.02343e-07, 0.624302)
-bones/3/rotation = Quaternion(0.714101, 0.185729, 0.0433419, 0.673562)
-bones/4/position = Vector3(5.26996e-10, 0.183899, 0.00349013)
-bones/4/rotation = Quaternion(-3.55271e-15, -7.10543e-15, -4.23516e-22, 1)
-bones/5/rotation = Quaternion(0.896473, 0.0578603, 0.058146, -0.435439)
-bones/6/rotation = Quaternion(-0.815794, -3.03752e-09, -3.18271e-07, 0.578342)
-bones/7/rotation = Quaternion(0.585182, -0.0819442, -0.0037356, 0.806743)
+bones/0/position = Vector3(-2.36891e-16, 0.701708, 0.00349014)
+bones/0/rotation = Quaternion(2.10046e-09, 0.999613, -0.0278215, 7.54687e-08)
+bones/1/rotation = Quaternion(0.980554, -0.0651381, -0.169495, -0.0744407)
+bones/2/rotation = Quaternion(-0.504932, -6.91016e-09, 1.93136e-07, 0.863159)
+bones/3/rotation = Quaternion(0.515095, 0.181216, 0.0117413, 0.837675)
+bones/4/position = Vector3(5.26996e-10, 0.378395, -0.0082463)
+bones/4/rotation = Quaternion(-0.00371488, -5.99212e-15, 1.51527e-16, 0.999993)
+bones/5/rotation = Quaternion(0.963041, 0.0413286, 0.066346, -0.257762)
+bones/6/rotation = Quaternion(-0.556586, -2.25258e-09, -2.14662e-07, 0.83079)
+bones/7/rotation = Quaternion(0.412446, -0.0780065, 0.00504146, 0.907622)
 
 [node name="box" parent="botRig/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_164ln")
@@ -91,7 +91,7 @@ surface_material_override/0 = ExtResource("4_gvyuu")
 tree_root = SubResource("AnimationNodeStateMachine_af560")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_2uisc")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_8ptj4")
 parameters/Locomotion/mvmtBlend/blend_position = 0.0
 
 [node name="Skid" type="AudioStreamPlayer" parent="." index="3"]

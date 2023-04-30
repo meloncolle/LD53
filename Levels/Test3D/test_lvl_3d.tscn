@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c23tp7605y8xi"]
+[gd_scene load_steps=15 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_558mi"]
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_kke3t"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
+[ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,6 +27,11 @@ material = ExtResource("1_558mi")
 
 [sub_resource type="BoxMesh" id="BoxMesh_lrw3y"]
 material = ExtResource("1_558mi")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcy7i"]
 
 [node name="Node3D2" type="Node3D"]
 
@@ -52,6 +58,7 @@ environment = SubResource("Environment_bb87a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_4hrof")
 skeleton = NodePath("")
 
@@ -109,3 +116,20 @@ npc_name = "outlet_2"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2"]
 stream = ExtResource("4_hsj0l")
+
+[node name="ground" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+motion_mode = 1
+platform_floor_layers = 4294901760
+script = ExtResource("6_8p81u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+shape = SubResource("BoxShape3D_x1ngd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_fcy7i")

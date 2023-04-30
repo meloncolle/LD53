@@ -7,6 +7,8 @@ extends CharacterBody3D
 
 @onready var playerArt = $Boxboi
 
+var wireForce : Vector3
+
 var is_dragging: bool = false
 
 func get_input():
@@ -23,7 +25,7 @@ func get_input():
 	else:
 		cur_accel = friction
 	
-	velocity = velocity.move_toward(movement_dir * max_speed, cur_accel)
+	velocity = velocity.move_toward(movement_dir * max_speed, cur_accel) + wireForce
 	
 	playerArt.DoLocomotionAnimation(velocity / max_speed, movement_dir)
 
