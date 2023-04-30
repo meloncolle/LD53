@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo7cq8t2i0trn"]
+
+[ext_resource type="PackedScene" uid="uid://bfr6o6nbcu6vk" path="res://ArtAssets/EnvProps/Models/rail.glb" id="1_gyyb5"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_ihluw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0o5ja"]
+size = Vector3(0.25, 1.1, 1.8)
+
+[node name="rail" instance=ExtResource("1_gyyb5")]
+
+[node name="rail-a" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ihluw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_0o5ja")

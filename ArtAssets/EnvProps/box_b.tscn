@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d03ld5i1078of"]
+
+[ext_resource type="PackedScene" uid="uid://csrmb1wttxou" path="res://ArtAssets/EnvProps/Models/box-b.glb" id="1_psy5d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cgrwl"]
+
+[node name="box-b" instance=ExtResource("1_psy5d")]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508884, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0"]
+shape = SubResource("BoxShape3D_cgrwl")

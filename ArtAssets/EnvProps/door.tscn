@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkhuay0s32hmx"]
+
+[ext_resource type="PackedScene" uid="uid://c6glxcpr13l1t" path="res://ArtAssets/EnvProps/Models/door.glb" id="1_bk5yg"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_o5gb6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_68ykr"]
+size = Vector3(2, 2.75, 0.8)
+
+[node name="door" instance=ExtResource("1_bk5yg")]
+
+[node name="door2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_o5gb6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39798, 0)
+shape = SubResource("BoxShape3D_68ykr")

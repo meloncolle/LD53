@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgtokw3f5xny8"]
+
+[ext_resource type="PackedScene" uid="uid://by2ijkpulf7" path="res://ArtAssets/EnvProps/Models/pipeSeg-b2.glb" id="1_dq6mo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e8wpp"]
+size = Vector3(0.5, 0.5, 5)
+
+[node name="pipeSeg-b2" instance=ExtResource("1_dq6mo")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274916, -0.0975114, 2.48935)
+shape = SubResource("BoxShape3D_e8wpp")
