@@ -13,7 +13,9 @@ var unpluggedTimer = 0.0
 func _process(delta):
 	if currentlyConnected:
 		var lastPoint = currentlyConnected.wire.points[-1] if currentlyConnected.wire.points.size() > 0 else currentlyConnected.wire.startPoint
-		vectorToLast = (lastPoint - self.global_position).normalized()
+		vectorToLast = (lastPoint - self.global_position)
+		vectorToLast.y = 0.0
+		vectorToLast = vectorToLast.normalized()
 		wireForce = currentlyConnected.wire.totalLength / currentlyConnected.wire.maxWireLength
 	else:
 		wireForce = 0.0

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
+[ext_resource type="PackedScene" uid="uid://d5rk05vt7ipg" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
 [ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
@@ -27,14 +27,15 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
-size = Vector3(50, 1, 50)
+size = Vector3(50, 0.5, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fcy7i"]
 
 [node name="Node3D2" type="Node3D"]
 
 [node name="Guy" parent="." instance=ExtResource("1_feurm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+floor_snap_length = 0.02
 accel = 0.45
 friction = 0.2
 
@@ -74,7 +75,7 @@ stream = ExtResource("4_hsj0l")
 [node name="environment" type="Node3D" parent="."]
 
 [node name="ground" type="CharacterBody3D" parent="environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 collision_layer = 2
 collision_mask = 2
 axis_lock_linear_y = true
@@ -82,29 +83,33 @@ motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("6_8p81u")
 direction = Vector3(1, 0, 0)
-targetSpeed = 2.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="environment/ground"]
 shape = SubResource("BoxShape3D_x1ngd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environment/ground"]
-transform = Transform3D(50, 0, 0, 0, 2.5, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 0.5, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("BoxMesh_fcy7i")
 surface_material_override/0 = ExtResource("7_h2ikg")
 
+[node name="TiltTimer" type="Timer" parent="environment/ground"]
+wait_time = 5.0
+autostart = true
+
 [node name="container-a" parent="environment" instance=ExtResource("7_34y2v")]
-transform = Transform3D(0.864933, 0, 0.501888, 0, 1, 0, -0.501888, 0, 0.864933, 5.2418, 0, 0)
+transform = Transform3D(0.864933, 0, 0.501888, 0, 1, 0, -0.501888, 0, 0.864933, 5.2418, -0.233915, 0)
 
 [node name="pillar-wires" parent="environment" instance=ExtResource("8_j3cfy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78382, -4.76837e-07, -5.43349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78382, -0.233916, -5.43349)
 
 [node name="pole-a" parent="environment" instance=ExtResource("9_n26t1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5302, 0, 2.54547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5302, -0.233915, 2.54547)
 
 [node name="pole-b" parent="environment" instance=ExtResource("10_fxa01")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9926, 0, 2.22428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9926, -0.233915, 2.22428)
 
 [node name="walls" type="Node3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.233915, 0)
 
 [node name="wall-a" parent="environment/walls" instance=ExtResource("11_857mt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 5)
@@ -178,7 +183,4 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -2.5, 0,
 [node name="wall-b12" parent="environment/walls" instance=ExtResource("12_c83no")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -7.5, 0, 12.5)
 
-[node name="TiltTimer" type="Timer" parent="."]
-wait_time = 10.0
-
-[connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]
+[connection signal="timeout" from="environment/ground/TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]
