@@ -89,12 +89,12 @@ func CheckTargetToSecondLast():
 	
 	#testing shit
 	var cross = lastSeg.cross(secondLastSeg)
-	var cross2 = lastSeg.cross(rayCastHits[-1].normal)
+	var cross2 = secondLastSeg.cross(rayCastHits[-1].normal)
 	print_debug(cross)
 	print_debug(cross2)
 	
 	#print_debug(dot)
-	if dot > unwindStartDotProduct and sign(cross.y) != sign(cross2.y):
+	if sign(cross.y) != sign(cross2.y):
 		var result = CheckRay(target.global_position, secondLastPoint)
 		if(result.is_empty()):
 			points.pop_back()
