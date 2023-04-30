@@ -6,13 +6,20 @@ var currentlyTouching
 var vectorToLast : Vector3
 var wireForce = 0.0
 
-func _process(_delta):
+var curBattery = 1.0
+@export var batteryDrainTime = 5.0
+var unpluggedTimer = 0.0
+
+func _process(delta):
 	if currentlyConnected:
 		var lastPoint = currentlyConnected.wire.points[-1] if currentlyConnected.wire.points.size() > 0 else currentlyConnected.wire.startPoint
 		vectorToLast = (lastPoint - self.global_position).normalized()
 		wireForce = currentlyConnected.wire.totalLength / currentlyConnected.wire.maxWireLength
 	else:
 		wireForce = 0.0
+		unpluggedTimer += delta
+		
+	curBattery = 1.0 - (unpluggedTimer / batteryDrainTime)
 
 func Disconnect():
 	if currentlyConnected:
@@ -20,6 +27,7 @@ func Disconnect():
 		currentlyConnected.wire.ResetPoints()
 		#currentlyConnected.wire.UpdatePoints()
 		currentlyConnected = null
+		unpluggedTimer = 0.0
 
 func SwapCurrentlyConnected(newConnected):
 	if newConnected != currentlyConnected:
