@@ -36,7 +36,7 @@ func get_input():
 	desiredVelocity = desiredVelocity.move_toward(movement_dir * max_speed, cur_accel)
 	velocity = desiredVelocity + wireForce
 	
-	playerArt.DoLocomotionAnimation(velocity / max_speed, movement_dir)
+	playerArt.DoLocomotionAnimation(desiredVelocity / max_speed, movement_dir)
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton:

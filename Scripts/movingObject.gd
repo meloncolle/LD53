@@ -1,11 +1,12 @@
-extends Node
+extends CharacterBody3D
 
+var initialOffset
+@export var model : Node3D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	initialOffset = position
+	
+func _physics_process(_delta):
+	move_and_slide()
+	model.global_position = self.global_position - initialOffset
+	model.global_rotation = self.global_rotation
