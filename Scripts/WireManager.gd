@@ -14,11 +14,19 @@ func _process(_delta):
 	else:
 		wireForce = 0.0
 
+func Disconnect():
+	if currentlyConnected:
+		currentlyConnected.wire.target = null
+		currentlyConnected.wire.ResetPoints()
+		#currentlyConnected.wire.UpdatePoints()
+		currentlyConnected = null
+
 func SwapCurrentlyConnected(newConnected):
 	if newConnected != currentlyConnected:
-		currentlyConnected.wire.target = null
-		currentlyConnected.wire.points.push_back(newConnected.plugPoint.global_position)
-		currentlyConnected.wire.UpdatePoints()
+		if currentlyConnected:
+			currentlyConnected.wire.target = null
+			currentlyConnected.wire.points.push_back(newConnected.plugPoint.global_position)
+			currentlyConnected.wire.UpdatePoints()
 		
 		currentlyConnected = newConnected
 		currentlyConnected.wire.ResetPoints()

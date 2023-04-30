@@ -65,6 +65,7 @@ func UpdatePoints():
 func ResetPoints():
 	points.clear()
 	rayCastHits.clear()
+	lineRenderer.points.clear()
 
 func CheckTargetToLast() -> bool:
 	
@@ -90,8 +91,8 @@ func CheckTargetToSecondLast():
 	#testing shit
 	var cross = lastSeg.cross(secondLastSeg)
 	var cross2 = secondLastSeg.cross(rayCastHits[-1].normal)
-	print_debug(cross)
-	print_debug(cross2)
+#	print_debug(cross)
+#	print_debug(cross2)
 	
 	#print_debug(dot)
 	if sign(cross.y) != sign(cross2.y):
