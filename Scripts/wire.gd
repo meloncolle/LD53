@@ -85,7 +85,7 @@ func CheckTargetToSecondLast():
 	var secondLastSeg = points[points.size() - 1] - secondLastPoint
 	secondLastSeg.y = 0.0
 	
-	var dot = lastSeg.normalized().dot(secondLastSeg.normalized())
+	#var dot = lastSeg.normalized().dot(secondLastSeg.normalized())
 	
 	#testing shit
 	var cross = lastSeg.cross(secondLastSeg)
