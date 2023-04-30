@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
 [ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
+[ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
+[ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -98,3 +98,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5302, 0, 2.54547)
 
 [node name="pole-b" parent="environment" instance=ExtResource("10_fxa01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9926, 0, 2.22428)
+
+[node name="TiltTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]
