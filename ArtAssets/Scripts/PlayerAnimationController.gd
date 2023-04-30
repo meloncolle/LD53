@@ -3,6 +3,9 @@ extends Node3D
 @onready var animationTree = $AnimationTree
 @onready var animationMode = animationTree.get("parameters/playback")
 	
+func CallInteractAnim():
+	animationMode.travel("Interact")
+	
 func DoLocomotionAnimation(mvmtVec, inputVec): #make sure movement vec is devided by maxspeed BEFORE its used as an argument
 	animationTree.set("parameters/Locomotion/mvmtBlend/blend_position", mvmtVec.length()) 
 	#print_debug(inputVec)
