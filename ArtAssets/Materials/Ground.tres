@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bk72owko03uk"]
+
+[ext_resource type="Shader" uid="uid://buryoxxkos8al" path="res://ArtAssets/Shaders/UnlitBase.tres" id="1_hr8a2"]
+[ext_resource type="Texture2D" uid="uid://bwflyy67skwto" path="res://ArtAssets/Textures/palette-01.png" id="2_fc4gf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hr8a2")
+shader_parameter/UVScale = 1.0
+shader_parameter/UVOffset = Vector2(0, 0)
+shader_parameter/MainTex = ExtResource("2_fc4gf")
