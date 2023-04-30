@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mggfm00lrrg8"]
+
+[ext_resource type="PackedScene" uid="uid://c6sdxts2w50m2" path="res://ArtAssets/EnvProps/Models/pillar.glb" id="1_rfpvo"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_uajst"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pl1wh"]
+radius = 0.8
+height = 9.0
+
+[node name="pillar" instance=ExtResource("1_rfpvo")]
+
+[node name="pillar2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_uajst")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.71179, 0)
+shape = SubResource("CapsuleShape3D_pl1wh")

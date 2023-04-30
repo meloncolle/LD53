@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://rw4ntvd4nccd"]
+
+[ext_resource type="PackedScene" uid="uid://dsafyr54xwy25" path="res://ArtAssets/EnvProps/Models/pipeBend-a.glb" id="1_rscor"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_derdx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o783y"]
+size = Vector3(1.25, 0.5, 1.2)
+
+[node name="pipeBend-a" instance=ExtResource("1_rscor")]
+
+[node name="pipeBend-a2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_derdx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429005, 0, 0.61215)
+shape = SubResource("BoxShape3D_o783y")

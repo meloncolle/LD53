@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvp3kvmaqn023"]
+
+[ext_resource type="PackedScene" uid="uid://is8hmj1i6bkc" path="res://ArtAssets/EnvProps/Models/doorWall-flipped.glb" id="1_n7di7"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_xna58"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pi4jl"]
+size = Vector3(5, 7.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lm0gs"]
+size = Vector3(0.4, 0.4, 0.3)
+
+[node name="doorWall-flipped" instance=ExtResource("1_n7di7")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(-1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.88762e-08, 3.75, 0.15)
+shape = SubResource("BoxShape3D_pi4jl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(2.41076, 0, 1.57105e-06, 0, 2.41076, 0, -1.57105e-06, 0, 2.41076, -1.18495, 1.25916, 0.137065)
+shape = SubResource("BoxShape3D_lm0gs")
+
+[node name="doorFrame001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_xna58")
+
+[node name="Cube002" parent="doorFrame001" index="0"]
+surface_material_override/0 = ExtResource("2_xna58")

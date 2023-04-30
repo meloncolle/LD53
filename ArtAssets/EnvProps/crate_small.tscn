@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1k6g1nctyhvj"]
+
+[ext_resource type="PackedScene" uid="uid://b64hady21oji8" path="res://ArtAssets/EnvProps/Models/crate-small.glb" id="1_veuoa"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_cmsc5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2tt77"]
+
+[node name="crate-small" instance=ExtResource("1_veuoa")]
+
+[node name="crate-a" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_cmsc5")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_2tt77")

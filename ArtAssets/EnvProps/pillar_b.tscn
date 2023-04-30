@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7j00bhedk73k"]
+
+[ext_resource type="PackedScene" uid="uid://bwkcag6n1t87n" path="res://ArtAssets/EnvProps/Models/pillar-b.glb" id="1_5y6s4"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_cebav"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51gla"]
+size = Vector3(1, 7, 1.5)
+
+[node name="pillar-b" instance=ExtResource("1_5y6s4")]
+
+[node name="pillar-b2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_cebav")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.58202, 0)
+shape = SubResource("BoxShape3D_51gla")
