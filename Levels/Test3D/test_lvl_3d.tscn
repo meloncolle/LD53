@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c23tp7605y8xi"]
+[gd_scene load_steps=12 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="Material" uid="uid://dqf7ew4frgavk" path="res://Materials/blue.tres" id="1_558mi"]
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
+[ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_kke3t"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
+[ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,6 +38,11 @@ friction = 0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232132, 2.86908)
 current = true
 
+[node name="Music" type="AudioStreamPlayer" parent="Guy"]
+stream = ExtResource("2_kke3t")
+volume_db = -35.0
+autoplay = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
@@ -52,6 +59,7 @@ skeleton = NodePath("")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.108209, 0.07517, 0.160786)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D2"]
+transform = Transform3D(1.075, 0, 0, 0, 1.075, 0, 0, 0, 1.075, 0, 0, 0)
 shape = SubResource("BoxShape3D_vouhu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D2"]
@@ -62,6 +70,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.36873, 0.07517, -0.35325)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D5"]
+transform = Transform3D(1.075, 0, 0, 0, 1.075, 0, 0, 0, 1.075, 0, 0, 0)
 shape = SubResource("BoxShape3D_vouhu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D5"]
@@ -72,6 +81,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.392164, 0.07517, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D3"]
+transform = Transform3D(1.075, 0, 0, 0, 1.075, 0, 0, 0, 1.075, 0, 0, 0)
 shape = SubResource("BoxShape3D_vouhu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D3"]
@@ -82,6 +92,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.392164, 0.07517, -0.504651)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D4"]
+transform = Transform3D(1.075, 0, 0, 0, 1.075, 0, 0, 0, 1.075, 0, 0, 0)
 shape = SubResource("BoxShape3D_vouhu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/StaticBody3D4"]
@@ -92,5 +103,11 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -6.15854, 0, -1.29774)
 targetOverride = NodePath("../Guy")
 
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC"]
+stream = ExtResource("4_hsj0l")
+
 [node name="NPC2" parent="." instance=ExtResource("3_ravg1")]
 transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -4.2942, -4.76837e-07, 6.31546)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC2"]
+stream = ExtResource("4_hsj0l")

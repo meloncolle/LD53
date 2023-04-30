@@ -13,6 +13,7 @@ func _ready():
 
 func _on_area_3d_body_entered(body):
 	body.get_node("WireManager").StartedTouchingArea(self)
+	$TestSound.play()
 
 
 func _on_area_3d_body_exited(body):

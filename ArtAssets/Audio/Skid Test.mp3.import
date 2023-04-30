@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://80duh52fdmo6"
+path="res://.godot/imported/Skid Test.mp3-9489f2a086af554f622b081e795b79bc.mp3str"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Skid Test.mp3"
+dest_files=["res://.godot/imported/Skid Test.mp3-9489f2a086af554f622b081e795b79bc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -8,6 +8,10 @@ func DoLocomotionAnimation(mvmtVec, inputVec): #make sure movement vec is devide
 	#print_debug(inputVec)
 	if inputVec.length() < 0.01  && mvmtVec.length() > 0.0 or inputVec.dot(mvmtVec) < 0.01 && mvmtVec.length() > 0.0:
 		animationMode.travel("Stopping")
+		$Skid.play()
 	else:
 		animationMode.travel("Locomotion")
+		
+	
 	pass
+	
