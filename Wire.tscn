@@ -8,7 +8,7 @@
 
 [node name="Wire" type="Node3D"]
 script = ExtResource("1_5a68m")
-unwindStartDotProduct = 0.975
+unwindStartDotProduct = 0.9
 normalPush = 0.2
 
 [node name="LineRenderer" type="MeshInstance3D" parent="."]
