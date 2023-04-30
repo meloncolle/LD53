@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
+[ext_resource type="PackedScene" uid="uid://duommr06y2buk" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
 [ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
+[ext_resource type="PackedScene" uid="uid://cyd65wj6pa62g" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
 [ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
 
