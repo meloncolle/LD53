@@ -27,7 +27,7 @@ material = ExtResource("1_558mi")
 [sub_resource type="BoxMesh" id="BoxMesh_lrw3y"]
 material = ExtResource("1_558mi")
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="Guy" parent="." instance=ExtResource("1_feurm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -102,12 +102,14 @@ skeleton = NodePath("../..")
 [node name="NPC" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_ravg1")]
 transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -6.15854, 0, -1.29774)
 targetOverride = NodePath("../Guy")
+npc_name = "outlet_1"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC"]
 stream = ExtResource("4_hsj0l")
 
 [node name="NPC2" parent="." instance=ExtResource("3_ravg1")]
 transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -4.2942, -4.76837e-07, 6.31546)
+npc_name = "outlet_2"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2"]
 stream = ExtResource("4_hsj0l")

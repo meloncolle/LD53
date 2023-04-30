@@ -7,5 +7,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var balloon: Node = Balloon.instantiate()
 		get_tree().current_scene.add_child(balloon)
-		balloon.start(resource, "outlet_1")
+		balloon.start("outlet_1")
 		return

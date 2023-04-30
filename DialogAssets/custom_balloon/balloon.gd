@@ -6,20 +6,17 @@ const DIALOGUE_PITCHES = {
 	Coco = 1
 }
 
+var talk_sounds: Dictionary = {}
 
+@export var resource: DialogueResource
 @export var response_template: Node
-@export var file_suffix: String = ""
 
-@onready var talk_sound: AudioStreamPlayer = $TalkSound
 @onready var balloon: ColorRect = $Balloon
 @onready var margin: MarginContainer = $Balloon/Margin
 @onready var character_portrait: Sprite2D = $Balloon/Margin/HBox/Portrait/Sprite2D
 @onready var character_label: RichTextLabel = $Balloon/Margin/HBox/VBox/CharacterLabel
 @onready var dialogue_label := $Balloon/Margin/HBox/VBox/DialogueLabel
 @onready var responses_menu: VBoxContainer = $Balloon/Margin/HBox/VBox/Responses
-
-## The dialogue resource
-var resource: DialogueResource
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -95,16 +92,15 @@ func _ready() -> void:
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
 
-func _unhandled_input(_event: InputEvent) -> void:
+#func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
-	get_viewport().set_input_as_handled()
+	#get_viewport().set_input_as_handled()
 
 
 ## Start some dialogue
-func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
+func start(title: String, extra_game_states: Array = []) -> void:
 	temporary_game_states = extra_game_states
 	is_waiting_for_input = false
-	resource = dialogue_resource
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
 
 
@@ -210,10 +206,19 @@ func _on_margin_resized() -> void:
 	handle_resize()
 
 
-func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float, character: String) -> void:
 	if not letter in [" ", "."]:
-		var actual_speed: int = 4 if speed >= 1 else 2
+		var actual_speed: int = 8 if speed >= 1 else 4
 		if letter_index % actual_speed == 0:
-			talk_sound.play()
-			var pitch = DIALOGUE_PITCHES.get(dialogue_line.character, 1)
-			talk_sound.pitch_scale = randf_range(pitch - 0.1, pitch + 0.1)
+			play_sound(character.to_lower())
+
+func play_sound(character: String) -> void:
+	if not character in talk_sounds:
+		var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
+		var stream: Resource = load("res://DialogAssets/Sound/%s.wav" % [dialogue_line.character.to_lower()])
+		audio_player.set_stream(stream)
+		get_tree().current_scene.add_child(audio_player)
+		talk_sounds[character] = audio_player
+
+	talk_sounds[character].pitch_scale = randf_range(0.8, 1.2)
+	talk_sounds[character].play()

@@ -1,7 +1,7 @@
 extends RichTextLabel
 
 
-signal spoke(letter: String, letter_index: int, speed: float)
+signal spoke(letter: String, letter_index: int, speed: float, character: String)
 signal paused_typing(duration: float)
 signal finished_typing()
 
@@ -107,6 +107,6 @@ func type_next(delta: float, seconds_needed: float) -> void:
 		if seconds_needed > delta:
 			waiting_seconds += seconds_needed
 			if visible_characters < get_total_character_count():
-				spoke.emit(text[visible_characters - 1], visible_characters - 1, dialogue_line.get_speed(visible_characters))
+				spoke.emit(text[visible_characters - 1], visible_characters - 1, dialogue_line.get_speed(visible_characters), dialogue_line.character)
 		else:
 			type_next(delta, seconds_needed)
