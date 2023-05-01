@@ -58,3 +58,7 @@ func _physics_process(_delta):
 func _process(delta):
 	if $Music.playing == false:
 		$Music.play()
+
+
+func _on_tilt_timer_timeout():
+	wireManager.Disconnect()
