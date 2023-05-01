@@ -23,6 +23,4 @@ func DoLocomotionAnimation(mvmtVec, inputVec): #make sure movement vec is devide
 		$Skid.play()
 	else:
 		animationMode.travel("Locomotion")
-		
-		
 	
