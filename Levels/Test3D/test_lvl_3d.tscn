@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://c23tp7605y8xi"]
+[gd_scene load_steps=19 format=3 uid="uid://bm3u0qbno0eyn"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="AudioStream" uid="uid://b2dd6s6eksy71" path="res://ArtAssets/Audio/Music/loop5Raw.wav" id="2_nrm70"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_dtnp4"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/Dynamic/container_a.tscn" id="7_34y2v"]
 [ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]

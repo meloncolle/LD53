@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bk72owko03uk"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bppycky8hhi8e"]
 
 [ext_resource type="Shader" uid="uid://buryoxxkos8al" path="res://ArtAssets/Shaders/UnlitBase.tres" id="1_hr8a2"]
 [ext_resource type="Texture2D" uid="uid://c53cqmap7874p" path="res://ArtAssets/Textures/ground.png" id="2_g6rhd"]
@@ -7,5 +7,4 @@
 render_priority = 0
 shader = ExtResource("1_hr8a2")
 shader_parameter/UVOffset = Vector2(0, 0)
-shader_parameter/Tint = Color(1, 1, 1, 1)
 shader_parameter/MainTex = ExtResource("2_g6rhd")
