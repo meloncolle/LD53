@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://b2clrdoyrxgl1"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
-[ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Placeholder/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_y45wn"]
+[ext_resource type="AudioStream" uid="uid://sq8lrhr82dj8" path="res://ArtAssets/Audio/Music/loop4Raw.wav" id="2_vnmte"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_dtnp4"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
@@ -32,8 +32,8 @@ current = true
 fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
-stream = ExtResource("2_y45wn")
-volume_db = -35.0
+stream = ExtResource("2_vnmte")
+volume_db = -20.0
 autoplay = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

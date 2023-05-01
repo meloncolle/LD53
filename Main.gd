@@ -14,7 +14,7 @@ func _ready():
 	startMenu.get_node("Panel/StartButton").pressed.connect(self._on_press_start)
 	pauseMenu.get_node("Panel/VBoxContainer/ResumeButton").pressed.connect(self._on_press_resume)
 	pauseMenu.get_node("Panel/VBoxContainer/QuitButton").pressed.connect(self._on_press_quit)
-	$titleAudioLoop.play()
+	#$titleAudioLoop.play()
 
 
 func _input (event: InputEvent):
