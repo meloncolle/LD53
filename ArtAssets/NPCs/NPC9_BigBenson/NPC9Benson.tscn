@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5ew6ownuw2nm"]
+[gd_scene load_steps=8 format=3 uid="uid://8jak644j5bw"]
 
 [ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_apa13"]
 [ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="2_5d72k"]
-[ext_resource type="PackedScene" uid="uid://dgtkxl2c7i27t" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_wlrgp"]
+[ext_resource type="PackedScene" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_wlrgp"]
 [ext_resource type="PackedScene" uid="uid://bipj0qxefp6iy" path="res://ArtAssets/VFX/VFXSystems/InteractionIndicator.tscn" id="4_s7y2v"]
 [ext_resource type="PackedScene" uid="uid://d1kyqt8m26t86" path="res://endBot-game.tscn" id="5_ld6jm"]
 
@@ -15,6 +15,7 @@ height = 0.5
 [node name="NPC" type="Node3D" groups=["interactable"]]
 script = ExtResource("1_apa13")
 wireLength = 50.0
+npc_name = "BEN"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23229, 0)

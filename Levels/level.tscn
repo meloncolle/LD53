@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=36 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
 [ext_resource type="AudioStream" uid="uid://dg152d37hp06g" path="res://ArtAssets/Audio/Music/Main Music.wav" id="2_4xrfp"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dgt55ga24f8ca" path="res://ArtAssets/NPCs/NPC8_SmoothCool/NPC7_SmoothCool.tscn" id="24_diduf"]
 [ext_resource type="PackedScene" uid="uid://x5whynrdo46f" path="res://ArtAssets/EnvProps/Dynamic/box_a.tscn" id="31_6tdaw"]
 [ext_resource type="PackedScene" uid="uid://bd68aar82qch4" path="res://ArtAssets/EnvProps/Dynamic/container_b.tscn" id="33_0o1n3"]
+[ext_resource type="PackedScene" uid="uid://8jak644j5bw" path="res://ArtAssets/NPCs/NPC9_BigBenson/NPC9Benson.tscn" id="33_t5prw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
 size = Vector3(50, 0.5, 50)
@@ -424,6 +425,12 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 npc_name = "Smooth"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC8_SmoothCool"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC9_Benson" parent="." instance=ExtResource("33_t5prw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1875, 0, -20.8383)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC9_Benson"]
 stream = ExtResource("4_plwjo")
 
 [node name="box-a" parent="." instance=ExtResource("31_6tdaw")]
