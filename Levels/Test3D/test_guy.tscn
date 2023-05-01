@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1sl5khrij4q8"]
 
 [ext_resource type="Script" path="res://Levels/Test3D/test_guy.gd" id="1_0k6kv"]
-[ext_resource type="PackedScene" uid="uid://cfv1l2uaa4d0h" path="res://ArtAssets/Playerbot/Player[art].tscn" id="2_qojye"]
+[ext_resource type="PackedScene" uid="uid://cowfh0t4gtonm" path="res://ArtAssets/Playerbot/Player[art].tscn" id="2_qojye"]
 [ext_resource type="Script" path="res://Scripts/WireManager.gd" id="3_y7bew"]
 [ext_resource type="AudioStream" uid="uid://cu4akvsao3rr7" path="res://ArtAssets/Audio/Robot SFX/TempFootsteps1.wav" id="4_kw2gu"]
 
@@ -48,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="WireManager" type="Node3D" parent="."]
 script = ExtResource("3_y7bew")
-batteryDrainTime = 7.0
+batteryDrainTime = 20.0
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kw2gu")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3rqhybpsvhx"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://b4tnhuakhsbl5" path="res://ArtAssets/EnvProps/Models/doorWall-flipped.glb" id="1_w52sl"]
+[ext_resource type="PackedScene" uid="uid://is8hmj1i6bkc" path="res://ArtAssets/EnvProps/Models/doorWall-flipped.glb" id="1_w52sl"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_n7220"]
 
 [node name="doorWall-flipped" instance=ExtResource("1_w52sl")]

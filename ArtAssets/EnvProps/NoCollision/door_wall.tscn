@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddm6laal5tnf3"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://d4d7iqdr8001i" path="res://ArtAssets/EnvProps/Models/doorWall.glb" id="1_0tmi6"]
+[ext_resource type="PackedScene" uid="uid://dovxjaofcra76" path="res://ArtAssets/EnvProps/Models/doorWall.glb" id="1_0tmi6"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_uex7c"]
 
 [node name="doorWall" instance=ExtResource("1_0tmi6")]

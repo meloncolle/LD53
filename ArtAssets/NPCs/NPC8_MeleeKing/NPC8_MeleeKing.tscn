@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwb7poo1pc634"]
+
+[ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_dg7c1"]
+[ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="2_kvniv"]
+[ext_resource type="PackedScene" uid="uid://bipj0qxefp6iy" path="res://ArtAssets/VFX/VFXSystems/InteractionIndicator.tscn" id="4_p3glo"]
+[ext_resource type="PackedScene" uid="uid://dq3hk0w4yrqjj" path="res://ArtAssets/NPCs/NPC8_MeleeKing/NPC8_MeleeKing[art].tscn" id="4_ylmsl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4glv3"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mveif"]
+height = 0.5
+
+[node name="NPC" type="Node3D" groups=["interactable"]]
+script = ExtResource("1_dg7c1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23229, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.464743, 0)
+shape = SubResource("BoxShape3D_4glv3")
+
+[node name="InPlugPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.642004, 0.531819, 0.198586)
+
+[node name="OutPlugPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162567, 0.83399, 0.71984)
+
+[node name="Wire" parent="." node_paths=PackedStringArray("startTransform") instance=ExtResource("2_kvniv")]
+startTransform = NodePath("../OutPlugPoint")
+distanceThreshhold = 0.1
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418308, 1.44046)
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0350406, -0.0381508)
+shape = SubResource("CylinderShape3D_mveif")
+
+[node name="InteractionIndicator" parent="." instance=ExtResource("4_p3glo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 1.45254)
+
+[node name="NPC" parent="." instance=ExtResource("4_ylmsl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
