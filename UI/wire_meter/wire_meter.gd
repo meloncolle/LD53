@@ -1,7 +1,5 @@
 extends Control
 
-@export var player: CharacterBody3D
-
 @export var wire_remaining: float = 1.0
 
 var cord_color: Color = Color8(90, 88, 147)
@@ -14,20 +12,14 @@ var thickness: float = 24.0
 
 @onready var cord_head: Sprite2D = $Control/CordHead
 
-func _ready() -> void:
-	player.wireManager.connection_set.connect(self._on_connection_set)
-
-func _on_connection_set():
-	print("SET CONNECTION!!!")
-
 func _draw():
-	update_display(wire_remaining)
-	queue_redraw()
-	
-func update_display(percent: float) -> void:
-	var lerpval = lerp(min_angle, max_angle, percent)
+	var lerpval = lerp(min_angle, max_angle, wire_remaining)
 	# why these numbers i hate math!!!!!!!!!!!
 	cord_head.position = Vector2(0, 25) + Vector2(cos(lerpval), sin(lerpval)) * 170
 	cord_head.rotation = lerpval
 	draw_arc(Vector2.ZERO, radius, min_angle, lerpval, 32, outline_color, thickness, true)
 	draw_arc(Vector2.ZERO, radius, min_angle, lerpval, 32, cord_color, thickness - 8, true)
+	
+func update_display(remaining: float) -> void:
+	wire_remaining = remaining
+	queue_redraw()

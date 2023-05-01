@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cuikjqm4bl3ai"]
+[gd_scene load_steps=18 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Placeholder/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_y45wn"]
@@ -7,14 +7,14 @@
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
 [ext_resource type="PackedScene" uid="uid://d5rk05vt7ipg" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
 [ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
+[ext_resource type="PackedScene" uid="uid://cyd65wj6pa62g" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
 [ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
 [ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="11_857mt"]
 [ext_resource type="PackedScene" uid="uid://c5uppeshdukj5" path="res://ArtAssets/EnvProps/wall_b.tscn" id="12_c83no"]
-[ext_resource type="PackedScene" uid="uid://d1kyqt8m26t86" path="res://endBot-game.tscn" id="13_8ya2v"]
+[ext_resource type="Script" path="res://UI/meters.gd" id="13_b2ybu"]
 [ext_resource type="PackedScene" uid="uid://df6pklbcil0vh" path="res://UI/wire_meter/wire_meter.tscn" id="13_bjtgw"]
-[ext_resource type="PackedScene" uid="uid://bijeic1s1hsmk" path="res://ArtAssets/EnvProps/Door-Gameplay.tscn" id="13_edx0e"]
+[ext_resource type="PackedScene" uid="uid://ckp473suxggpy" path="res://UI/battery_meter/battery_meter.tscn" id="15_3lena"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
 size = Vector3(50, 0.5, 50)
@@ -169,18 +169,30 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -7.5, 0,
 [node name="container-a" parent="environment" instance=ExtResource("7_34y2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85548, 0, 0)
 
-[node name="endBot-game" parent="environment" instance=ExtResource("13_8ya2v")]
-transform = Transform3D(0.819832, 0, 0.572604, 0, 1, 0, -0.572604, 0, 0.819832, -9.4852, 0, -10.4259)
-
 [node name="TiltTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
-[node name="WireMeter" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_bjtgw")]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("player")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 110.0
+offset_top = 116.0
+offset_right = 110.0
+offset_bottom = 116.0
+script = ExtResource("13_b2ybu")
 player = NodePath("../Guy")
 
-[node name="Door-Gameplay" parent="." instance=ExtResource("13_edx0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01154, 0, -9.46231)
+[node name="WireMeter" parent="UI" instance=ExtResource("13_bjtgw")]
+visible = false
+
+[node name="BatteryMeter" parent="UI" instance=ExtResource("15_3lena")]
+visible = false
+offset_left = -3.0
+offset_top = -17.0
+offset_right = 37.0
+offset_bottom = 23.0
+rotation = -0.785398
 
 [connection signal="timeout" from="TiltTimer" to="Guy" method="_on_tilt_timer_timeout"]
 [connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]
