@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdqagvxjtr7t7"
+path="res://.godot/imported/Power On Temp.mp3-eec06f420aacb57e6da5674be1bdb21b.mp3str"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3"
+dest_files=["res://.godot/imported/Power On Temp.mp3-eec06f420aacb57e6da5674be1bdb21b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2pltfwjavqlj"
+path="res://.godot/imported/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3-b2a476a2a27ae553af9486797899d204.mp3str"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Placeholder/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3"
+dest_files=["res://.godot/imported/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3-b2a476a2a27ae553af9486797899d204.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
