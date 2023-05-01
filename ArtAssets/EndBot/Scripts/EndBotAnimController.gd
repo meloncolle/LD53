@@ -6,5 +6,6 @@ extends Node3D
 func CallGrab():
 	animationMode.travel("grab")
 	
-func CallIdle():
-	animationMode.travel("idle")
+func CallToss():
+	animationMode.travel("toss")
+	

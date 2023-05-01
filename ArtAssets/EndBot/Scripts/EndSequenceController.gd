@@ -38,7 +38,6 @@ func DoEndBotVisuals():
 	boxArt.visible = true
 	
 	var timer = 0.0
-	
 	while timer < boxLerpTime:
 		await(get_tree().create_timer(0.042).timeout)
 		var desiredPos = startPos.lerp(boxTargetPos, timer / boxLerpTime)
@@ -52,6 +51,16 @@ func DoEndBotVisuals():
 	
 	botArt.CallGrab()
 	boxArt.CallOpen()
+	
+	await(botArt.animationTree.animation_finished)
+	
+	var timer2 = 0.0
+	while timer2 < 2.0:
+		await(get_tree().create_timer(.1).timeout)
+		
+		timer2 += .1
+		
+	botArt.CallToss()
 
 func _on_area_3d_body_entered(body):
 	if(activated):
