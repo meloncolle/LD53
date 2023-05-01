@@ -1,0 +1,57 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://dr5ek7htrrcyo"]
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_10toc"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_okgvv"]
+parameter_name = "Color"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_tyqvg"]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_x81qj"]
+parameter_name = "AlphaMap"
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_add, cull_disabled;
+
+uniform sampler2D AlphaMap;
+uniform vec4 Color : source_color;
+
+
+
+void fragment() {
+// FloatConstant:2
+	float n_out2p0 = 0.000000;
+
+
+	vec4 n_out4p0;
+// Texture2D:4
+	n_out4p0 = texture(AlphaMap, UV);
+
+
+// ColorParameter:3
+	vec4 n_out3p0 = Color;
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0);
+	ALPHA = n_out4p0.x;
+	SPECULAR = n_out2p0;
+	EMISSION = vec3(n_out3p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-386.147, -21.0106)
+modes/blend = 1
+modes/cull = 2
+nodes/fragment/2/node = SubResource("VisualShaderNodeFloatConstant_10toc")
+nodes/fragment/2/position = Vector2(180, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorParameter_okgvv")
+nodes/fragment/3/position = Vector2(-280, 220)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_tyqvg")
+nodes/fragment/4/position = Vector2(-60, 420)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture2DParameter_x81qj")
+nodes/fragment/5/position = Vector2(-400, 420)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 2, 0, 0, 4, 3, 0, 0, 5, 5, 0, 4, 2, 4, 0, 0, 1)

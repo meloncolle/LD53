@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5ew6ownuw2nm"]
+[gd_scene load_steps=7 format=3 uid="uid://b5ew6ownuw2nm"]
 
 [ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="1_0h01s"]
 [ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_joxfr"]
 [ext_resource type="PackedScene" uid="uid://dgtkxl2c7i27t" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_76iod"]
+[ext_resource type="PackedScene" uid="uid://bipj0qxefp6iy" path="res://ArtAssets/VFX/VFXSystems/InteractionIndicator.tscn" id="4_bwfqs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4glv3"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -41,6 +42,9 @@ shape = SubResource("CylinderShape3D_mveif")
 
 [node name="NPC" parent="." instance=ExtResource("3_76iod")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="InteractionIndicator" parent="." instance=ExtResource("4_bwfqs")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 1.45254)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://13l2iqhi2d73"]
+
+[ext_resource type="PackedScene" uid="uid://b7n72rw3ttfru" path="res://ArtAssets/VFX/Models/VFX-cross.glb" id="1_30g8l"]
+[ext_resource type="Material" uid="uid://dmb0jv28mccoy" path="res://ArtAssets/VFX/Materials/VFXglow-2.tres" id="2_e2jeg"]
+
+[node name="VFX-cross" instance=ExtResource("1_30g8l")]
+
+[node name="cross" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_e2jeg")
