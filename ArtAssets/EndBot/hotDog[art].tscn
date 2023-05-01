@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://btli1bbxuby4c"]
+
+[ext_resource type="PackedScene" uid="uid://djj60albdrak4" path="res://ArtAssets/EndBot/Models/hotDog.glb" id="1_6vbh1"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_7e552"]
+
+[node name="hotDog" instance=ExtResource("1_6vbh1")]
+
+[node name="hotDog2" parent="." index="0"]
+transform = Transform3D(1.4178e-07, 1.08119, 0, -1.08119, 1.4178e-07, 0, 0, 0, 1.08119, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_7e552")

@@ -2,6 +2,7 @@ extends Node
 
 @onready var botArt = $endBot
 @onready var boxArt = $boxAnim
+@onready var hotDogArt = $hotDog
 
 @export var boxHeightCurve : Curve
 @export var boxLerpTime = 1.0
@@ -52,15 +53,21 @@ func DoEndBotVisuals():
 	botArt.CallGrab()
 	boxArt.CallOpen()
 	
+	#await(botArt.animationTree.animation_finished)
+	await(get_tree().create_timer(4.1666).timeout)
+	
+	hotDogArt.parented = true
+	hotDogArt.visible = true
+	#toggle hotDog
+	
 	await(botArt.animationTree.animation_finished)
 	
-	var timer2 = 0.0
-	while timer2 < 2.0:
-		await(get_tree().create_timer(.1).timeout)
-		
-		timer2 += .1
+	await(get_tree().create_timer(2.0).timeout)
 		
 	botArt.CallToss()
+	
+	await(get_tree().create_timer(0.33).timeout)
+	hotDogArt.Toss()
 
 func _on_area_3d_body_entered(body):
 	if(activated):
