@@ -17,7 +17,7 @@ rings = 4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h847y"]
 
-[node name="Guy" type="CharacterBody3D"]
+[node name="Guy" type="CharacterBody3D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
 floor_snap_length = 0.5

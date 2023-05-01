@@ -42,7 +42,8 @@ func _on_area_3d_body_entered(body):
 
 
 func _on_area_3d_body_exited(body):
-	body.get_node("WireManager").StoppedTouchingArea(self)
+	if body.is_in_group("player"):
+		body.get_node("WireManager").StoppedTouchingArea(self)
 
 func _on_timer_timeout():
 	notConnectableTimer = 0.0
