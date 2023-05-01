@@ -1,8 +1,4 @@
-<<<<<<< .merge_file_a28632
 [gd_scene load_steps=16 format=3 uid="uid://c23tp7605y8xi"]
-=======
-[gd_scene load_steps=15 format=3 uid="uid://b2clrdoyrxgl1"]
->>>>>>> .merge_file_a28464
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Placeholder/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_y45wn"]
@@ -10,11 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_dtnp4"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
 [ext_resource type="PackedScene" uid="uid://d5rk05vt7ipg" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
-<<<<<<< .merge_file_a28632
 [ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
-=======
-[ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
->>>>>>> .merge_file_a28464
 [ext_resource type="PackedScene" uid="uid://cyd65wj6pa62g" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
 [ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
@@ -180,10 +172,6 @@ wait_time = 10.0
 autostart = true
 
 [node name="WireMeter" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_bjtgw")]
-offset_left = 105.0
-offset_top = 112.0
-offset_right = 105.0
-offset_bottom = 112.0
 player = NodePath("../Guy")
 
 [connection signal="timeout" from="TiltTimer" to="Guy" method="_on_tilt_timer_timeout"]
