@@ -4,6 +4,7 @@ extends Node3D
 @onready var animationMode = animationTree.get("parameters/playback")
 
 @export var boxModel : Node3D
+@export var faceModel : Node3D
 	
 func CallInteractAnim():
 	animationMode.travel("Interact")
