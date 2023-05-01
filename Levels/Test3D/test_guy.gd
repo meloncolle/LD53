@@ -98,3 +98,13 @@ func _on_tilt_timer_timeout():
 	
 func Disconnect():
 	wireManager.Disconnect()
+	
+	
+#func _Footsteps():
+#	if velocity.length() > 0:
+#		pass
+#	else:
+#		if $Timer.time_left <= 0:
+#			$Footsteps.pitch_scale = randf_range(0.8, 1.2)
+#			$Footsteps.play()
+#			$Timer.start(0.2)

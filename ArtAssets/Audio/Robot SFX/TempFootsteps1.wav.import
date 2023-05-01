@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu4akvsao3rr7"
+path="res://.godot/imported/TempFootsteps1.wav-6e68ed0fb2a63526e5fa4a1a92aa44cb.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Robot SFX/TempFootsteps1.wav"
+dest_files=["res://.godot/imported/TempFootsteps1.wav-6e68ed0fb2a63526e5fa4a1a92aa44cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

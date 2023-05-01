@@ -21,4 +21,5 @@ func DoLocomotionAnimation(mvmtVec, inputVec): #make sure movement vec is devide
 	else:
 		animationMode.travel("Locomotion")
 		
+		
 	
