@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqxsy6xu8ee74"]
+
+[ext_resource type="PackedScene" uid="uid://cubbh4ltvympr" path="res://ArtAssets/EndBot/Models/boxAnim.glb" id="1_e88o7"]
+[ext_resource type="Script" path="res://ArtAssets/EndBot/Scripts/BoxAnimController.gd" id="2_es2kq"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jcika"]
+animation = &"closed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nfod4"]
+animation = &"open-synced"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_juim5"]
+animation = &"opened"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j7vto"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gcys4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cmmb5"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cg0oh"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kodej"]
+states/closed/node = SubResource("AnimationNodeAnimation_jcika")
+states/closed/position = Vector2(352, 100)
+states/open/node = SubResource("AnimationNodeAnimation_nfod4")
+states/open/position = Vector2(499, 53)
+states/opened/node = SubResource("AnimationNodeAnimation_juim5")
+states/opened/position = Vector2(657, 100)
+transitions = ["Start", "closed", SubResource("AnimationNodeStateMachineTransition_j7vto"), "open", "opened", SubResource("AnimationNodeStateMachineTransition_gcys4"), "closed", "open", SubResource("AnimationNodeStateMachineTransition_cmmb5"), "opened", "closed", SubResource("AnimationNodeStateMachineTransition_cg0oh")]
+graph_offset = Vector2(-136, -48)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_mnvp1"]
+
+[node name="boxAnim" instance=ExtResource("1_e88o7")]
+script = ExtResource("2_es2kq")
+
+[node name="Skeleton3D" parent="boxRig" index="0"]
+bones/2/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_kodej")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_mnvp1")

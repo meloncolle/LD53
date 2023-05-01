@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn7wbx1mnqive"]
+
+[ext_resource type="PackedScene" uid="uid://bfewxcjldcvsh" path="res://ArtAssets/NPCs/Models/NPC.glb" id="1_a0r05"]
+[ext_resource type="Material" uid="uid://b54e7inhcl3cm" path="res://ArtAssets/NPCs/NPC2_Cowboy/NPC2_Cowboy_UnlitBase.tres" id="2_vvhh6"]
+[ext_resource type="Material" uid="uid://b2g7nx85nxc53" path="res://ArtAssets/NPCs/NPC2_Cowboy/NPC2_Cowboy_Faces.tres" id="3_ua0eb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1gm8f"]
+
+[node name="NPC" instance=ExtResource("1_a0r05")]
+
+[node name="bot-a" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_vvhh6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-0.499695, 0, -0.0174497, 0, 0.5, 0, 0.0174497, 0, -0.499695, 0, 0.870282, -0.694938)
+layers = 262145
+mesh = SubResource("QuadMesh_1gm8f")
+surface_material_override/0 = ExtResource("3_ua0eb")

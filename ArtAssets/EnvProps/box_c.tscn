@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://df8eplsyh1amj"]
-
-[ext_resource type="PackedScene" uid="uid://d4lstirfmkqfb" path="res://ArtAssets/EnvProps/Models/box-c.glb" id="1_cocw6"]
-
-[node name="box-c" instance=ExtResource("1_cocw6")]

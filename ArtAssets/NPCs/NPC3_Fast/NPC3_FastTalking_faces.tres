@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dhwuy7kvieqfa"]
+
+[ext_resource type="Shader" uid="uid://bn6ryw3jtx3pe" path="res://ArtAssets/Shaders/TransparentCutout.tres" id="1_8lewy"]
+[ext_resource type="Texture2D" uid="uid://d0aerb8suistf" path="res://ArtAssets/Textures/faces-01.png" id="2_78fe7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8lewy")
+shader_parameter/UVScale = 1.0
+shader_parameter/UVoffset = Vector2(0, 0)
+shader_parameter/Maintex = ExtResource("2_78fe7")

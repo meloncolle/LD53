@@ -11,6 +11,7 @@ script = ExtResource("1_uufvl")
 
 [node name="titleAudioLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qi5cb")
+autoplay = true
 
 [node name="Main3D" type="Node3D" parent="."]
 process_mode = 1

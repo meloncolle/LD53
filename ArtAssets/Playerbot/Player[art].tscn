@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=24 format=3 uid="uid://cvm053ji1qp1v"]
 
 [ext_resource type="PackedScene" uid="uid://rj8mqn68bjn2" path="res://ArtAssets/Playerbot/Models/Boxboi.glb" id="1_o7w7v"]
 [ext_resource type="Script" path="res://ArtAssets/Playerbot/Scripts/PlayerAnimationController.gd" id="2_l6wia"]
@@ -75,20 +75,22 @@ graph_offset = Vector2(-73, -48)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_kqwok"]
 
-[node name="Boxboi" instance=ExtResource("1_o7w7v")]
+[node name="Boxboi" node_paths=PackedStringArray("boxModel", "faceModel") instance=ExtResource("1_o7w7v")]
 script = ExtResource("2_l6wia")
+boxModel = NodePath("botRig/Skeleton3D/box")
+faceModel = NodePath("botRig/Skeleton3D/face")
 
 [node name="Skeleton3D" parent="botRig" index="0"]
-bones/0/position = Vector3(-6.18768e-16, 0.580389, 0.00349013)
-bones/0/rotation = Quaternion(3.999e-10, 0.999986, -0.00529675, 7.54968e-08)
-bones/1/rotation = Quaternion(0.962167, -0.0976291, -0.163149, -0.195155)
-bones/2/rotation = Quaternion(-0.773134, -5.80301e-09, 2.99772e-07, 0.634243)
-bones/3/rotation = Quaternion(0.706968, 0.185402, 0.0423035, 0.6812)
-bones/4/position = Vector3(5.26995e-10, 0.284611, -0.00258713)
-bones/4/rotation = Quaternion(-0.147837, 0.00269041, 0.0663501, 0.98678)
-bones/5/rotation = Quaternion(0.901171, 0.0573792, 0.0582759, -0.425678)
-bones/6/rotation = Quaternion(-0.808058, -1.48417e-10, -3.11621e-07, 0.589103)
-bones/7/rotation = Quaternion(0.578979, -0.0817209, -0.00351692, 0.811229)
+bones/0/position = Vector3(5.34726e-17, 0.568706, 0.00349013)
+bones/0/rotation = Quaternion(-3.48719e-11, 1, 0.000461906, 7.54979e-08)
+bones/1/rotation = Quaternion(0.959901, -0.100138, -0.163191, -0.204771)
+bones/2/rotation = Quaternion(-0.790398, -7.91764e-10, 3.09912e-07, 0.612594)
+bones/3/rotation = Quaternion(0.722524, 0.186202, 0.0445835, 0.664304)
+bones/4/position = Vector3(5.26996e-10, 0.183899, 0.00349014)
+bones/4/rotation = Quaternion(-4.96486e-05, -7.01146e-15, 3.33511e-15, 1)
+bones/5/rotation = Quaternion(0.893349, 0.0587951, 0.0576377, -0.441757)
+bones/6/rotation = Quaternion(-0.824628, 2.04398e-09, -3.15703e-07, 0.565675)
+bones/7/rotation = Quaternion(0.59227, -0.0822391, -0.00396146, 0.801522)
 
 [node name="box" parent="botRig/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_164ln")
