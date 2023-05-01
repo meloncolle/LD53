@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw7nwopwhb8ob"]
+
+[ext_resource type="PackedScene" uid="uid://dxcburq0p4jak" path="res://ArtAssets/EnvProps/Models/door.glb" id="1_gg7kp"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_h0sos"]
+
+[node name="door" instance=ExtResource("1_gg7kp")]
+
+[node name="door2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_h0sos")
