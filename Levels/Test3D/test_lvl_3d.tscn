@@ -58,6 +58,7 @@ environment = SubResource("Environment_bb87a")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_ravg1")]
 transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -6.15854, 0, -1.29774)
+wireLength = 10.0
 targetOverride = NodePath("../Guy")
 npc_name = "outlet_1"
 
@@ -66,6 +67,7 @@ stream = ExtResource("4_hsj0l")
 
 [node name="NPC2" parent="." instance=ExtResource("3_ravg1")]
 transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -4.2942, -4.76837e-07, 6.31546)
+wireLength = 10.0
 npc_name = "outlet_2"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2"]
