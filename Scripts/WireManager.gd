@@ -39,6 +39,7 @@ func Disconnect():
 		currentlyConnected = null
 		unpluggedTimer = 0.0
 		emit_signal("connection_set", currentlyConnected)
+		
 
 func SwapCurrentlyConnected(newConnected):
 	
