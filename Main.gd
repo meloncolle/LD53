@@ -11,8 +11,7 @@ var sceneInstance: Node = null
 
 func _ready():
 	set_state(GameState.ON_START)
-	startMenu.get_node("Panel/VBoxContainer/StartButton").pressed.connect(self._on_press_start)
-	startMenu.get_node("Panel/VBoxContainer/ExitButton").pressed.connect(self._on_press_exit)
+	startMenu.get_node("Panel/StartButton").pressed.connect(self._on_press_start)
 	pauseMenu.get_node("Panel/VBoxContainer/ResumeButton").pressed.connect(self._on_press_resume)
 	pauseMenu.get_node("Panel/VBoxContainer/QuitButton").pressed.connect(self._on_press_quit)
 
@@ -47,9 +46,6 @@ func _on_press_start():
 	sceneInstance = load(gameScenePath).instantiate()
 	$Main3D.add_child(sceneInstance)
 	set_state(GameState.IN_GAME)
-	
-func _on_press_exit():
-	get_tree().quit()
 	
 func _on_press_resume():
 	get_tree().paused = false
