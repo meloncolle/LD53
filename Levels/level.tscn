@@ -1,11 +1,16 @@
-[gd_scene load_steps=27 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=34 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
-[ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Placeholder/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_67hsh"]
+[ext_resource type="AudioStream" uid="uid://b2dd6s6eksy71" path="res://ArtAssets/Audio/Music/loop5Raw.wav" id="2_3el8y"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_hn1mh"]
+[ext_resource type="AudioStream" uid="uid://bl7odm4iw5y5q" path="res://ArtAssets/Audio/Gameplay/CableStretch.wav" id="3_sp1ab"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_plwjo"]
+[ext_resource type="Script" path="res://Levels/CableStretchSound.gd" id="4_woo8t"]
+[ext_resource type="Script" path="res://Levels/CableSnap.gd" id="5_cjo3x"]
+[ext_resource type="AudioStream" uid="uid://dtqxcjswpi615" path="res://ArtAssets/Audio/Gameplay/CableSnap.wav" id="5_ook1e"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="5_sxioq"]
 [ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
+[ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
@@ -15,6 +20,8 @@
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/Door-Gameplay.tscn" id="13_2ujqr"]
 [ext_resource type="Script" path="res://UI/meters.gd" id="13_3aqda"]
 [ext_resource type="PackedScene" uid="uid://df6pklbcil0vh" path="res://UI/wire_meter/wire_meter.tscn" id="14_o7yin"]
+[ext_resource type="AudioStream" uid="uid://byy5vqmks5s6x" path="res://ArtAssets/Audio/Gameplay/BoatSway1.wav" id="14_yaili"]
+[ext_resource type="Script" path="res://Levels/ShipSway.gd" id="15_06p4f"]
 [ext_resource type="PackedScene" uid="uid://ckp473suxggpy" path="res://UI/battery_meter/battery_meter.tscn" id="15_ildwl"]
 [ext_resource type="PackedScene" uid="uid://b6331ufhv44l8" path="res://ArtAssets/NPCs/NPC1_Mombot/NPC1_Mombot.tscn" id="17_cche0"]
 [ext_resource type="PackedScene" uid="uid://bkb5vnwqsq6qx" path="res://ArtAssets/NPCs/NPC2_Cowboy/NPC2_Cowboy.tscn" id="18_ovnpg"]
@@ -44,8 +51,24 @@ current = true
 fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
-stream = ExtResource("2_67hsh")
-volume_db = -35.0
+stream = ExtResource("2_3el8y")
+volume_db = -15.0
+autoplay = true
+
+[node name="CableStretch" type="AudioStreamPlayer" parent="Guy" node_paths=PackedStringArray("player")]
+stream = ExtResource("3_sp1ab")
+autoplay = true
+script = ExtResource("4_woo8t")
+player = NodePath("..")
+
+[node name="CableSnap" type="AudioStreamPlayer" parent="Guy"]
+stream = ExtResource("5_ook1e")
+volume_db = -15.0
+script = ExtResource("5_cjo3x")
+
+[node name="ShipAmbience" type="AudioStreamPlayer" parent="Guy"]
+stream = ExtResource("7_diba5")
+volume_db = -20.0
 autoplay = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -82,7 +105,7 @@ motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("5_sxioq")
 direction = Vector3(1, 0, 0)
-acceleration = 2.5
+acceleration = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="environment/ground"]
 shape = SubResource("BoxShape3D_x1ngd")
@@ -184,6 +207,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39104, 0, -19)
 wait_time = 10.0
 autostart = true
 
+[node name="ShipSway" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_yaili")
+script = ExtResource("15_06p4f")
+
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("player")]
 layout_mode = 3
 anchors_preset = 0
@@ -209,6 +236,7 @@ rotation = -0.785398
 
 [node name="NPC1_Mombot" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("17_cche0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.7888, -0.0429401, -1.41948)
+wireLength = 10.0
 targetOverride = NodePath("../Guy")
 npc_name = "Mombot"
 
@@ -235,6 +263,7 @@ stream = ExtResource("4_plwjo")
 
 [node name="NPC5_Bard" parent="." instance=ExtResource("21_0nqwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5142, 0, -46.8704)
+wireLength = 10.0
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC5_Bard"]
 stream = ExtResource("4_plwjo")
@@ -252,10 +281,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8766, 0, -47.9687)
 stream = ExtResource("4_plwjo")
 
 [node name="NPC8_SmoothCool" parent="." instance=ExtResource("24_diduf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4886, 0, -46.6195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4532, 0.0296879, -46.6517)
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC8_SmoothCool"]
 stream = ExtResource("4_plwjo")
 
 [connection signal="timeout" from="TiltTimer" to="Guy" method="_on_tilt_timer_timeout"]
 [connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]
+[connection signal="timeout" from="TiltTimer" to="ShipSway" method="_on_tilt_timer_timeout"]
