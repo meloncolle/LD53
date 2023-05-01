@@ -27,18 +27,26 @@ func _input (event: InputEvent):
 				
 			GameState.PAUSED:
 				set_state(GameState.IN_GAME)
-	
+				
+
+
+
 func set_state(newState: GameState):
 	match newState:
 		GameState.ON_START:
+			if gameState == GameState.PAUSED:
+				pauseMenu.close()
 			startMenu.visible = true
 			pauseMenu.visible = false
 			
 		GameState.IN_GAME:
+			if gameState == GameState.PAUSED:
+				pauseMenu.close()
 			startMenu.visible = false
 			pauseMenu.visible = false
 			
 		GameState.PAUSED:
+			pauseMenu.open()
 			pauseMenu.visible = true
 			
 	gameState = newState
@@ -49,14 +57,16 @@ func _on_press_start():
 	$Main3D.add_child(sceneInstance)
 	set_state(GameState.IN_GAME)
 	$titleAudioLoop.stop()
-	
+
+
 func _on_press_resume():
-	get_tree().paused = false
 	set_state(GameState.IN_GAME)
-	
+	get_tree().paused = false
+
+
 func _on_press_quit():
+	set_state(GameState.ON_START)
 	if (is_instance_valid(sceneInstance)):
 		sceneInstance.queue_free()
 	sceneInstance = null
 	get_tree().paused = false
-	set_state(GameState.ON_START)

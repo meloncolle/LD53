@@ -245,18 +245,21 @@ stream = ExtResource("4_plwjo")
 
 [node name="NPC2_Cowboy" parent="." instance=ExtResource("18_ovnpg")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -6.1447, -1.90735e-06, -36.5443)
+npc_name = "cowboy"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2_Cowboy"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC3_Fast" parent="." instance=ExtResource("19_slw1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797435, 0.0565948, -44.6844)
+npc_name = "Fast"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC3_Fast"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC4_Futbol" parent="." instance=ExtResource("20_plos6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5143, 0, -42.7114)
+npc_name = "Futbol"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC4_Futbol"]
 stream = ExtResource("4_plwjo")
@@ -264,24 +267,28 @@ stream = ExtResource("4_plwjo")
 [node name="NPC5_Bard" parent="." instance=ExtResource("21_0nqwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5142, 0, -46.8704)
 wireLength = 10.0
+npc_name = "Bard"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC5_Bard"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC6_Scot" parent="." instance=ExtResource("22_0d5l3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.594, 0, -49.1188)
+npc_name = "Scot"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC6_Scot"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC7_MeleeKing" parent="." instance=ExtResource("23_ffxf0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8766, 0, -47.9687)
+npc_name = "MeleeKing"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC7_MeleeKing"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC8_SmoothCool" parent="." instance=ExtResource("24_diduf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4532, 0.0296879, -46.6517)
+npc_name = "SmoothCool"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC8_SmoothCool"]
 stream = ExtResource("4_plwjo")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boj8koe5rj1co"
-path="res://.godot/imported/mombot.png-cf9b1cac2a497e0b881339fbb6b73600.ctex"
+path="res://.godot/imported/Mombot.png-be419a25505d22ec4e7ea8f14a8745a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/mombot.png"
-dest_files=["res://.godot/imported/mombot.png-cf9b1cac2a497e0b881339fbb6b73600.ctex"]
+source_file="res://DialogAssets/Portraits/Mombot.png"
+dest_files=["res://.godot/imported/Mombot.png-be419a25505d22ec4e7ea8f14a8745a4.ctex"]
 
 [params]
 

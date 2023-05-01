@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bt1hf0krofy1g"
+path="res://.godot/imported/outlet_1.wav-9d78b3869fcd0e6b4fcba514c199a2bc.sample"
+
+[deps]
+
+source_file="res://DialogAssets/Sound/Benched Sounds/outlet_1.wav"
+dest_files=["res://.godot/imported/outlet_1.wav-9d78b3869fcd0e6b4fcba514c199a2bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
