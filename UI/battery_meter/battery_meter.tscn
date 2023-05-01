@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckp473suxggpy"]
+
+[ext_resource type="Texture2D" uid="uid://dhwbe1ha1wb0n" path="res://UI/battery_meter/battery_body.png" id="1_0snct"]
+[ext_resource type="Script" path="res://UI/battery_meter/battery_meter.gd" id="1_8a2gg"]
+[ext_resource type="Texture2D" uid="uid://ceghfajlgnr1i" path="res://UI/battery_meter/battery_body_empty.png" id="1_k675k"]
+[ext_resource type="Texture2D" uid="uid://bw4ssif5h54ve" path="res://UI/battery_meter/battery_green_bar.png" id="2_08fl6"]
+[ext_resource type="Texture2D" uid="uid://dgfmfkdncy24c" path="res://UI/battery_meter/battery_yellow_bar.png" id="3_j1ey1"]
+[ext_resource type="Texture2D" uid="uid://df78uc5xmwsrl" path="res://UI/battery_meter/battery_orange_bar.png" id="4_8g7q3"]
+[ext_resource type="Texture2D" uid="uid://dvmrrju1kty3j" path="res://UI/battery_meter/battery_red_bar.png" id="5_lswet"]
+
+[node name="BatteryMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8a2gg")
+
+[node name="empty" type="Sprite2D" parent="."]
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("1_k675k")
+
+[node name="full" type="Sprite2D" parent="."]
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("1_0snct")
+
+[node name="bar_g" type="Sprite2D" parent="full"]
+position = Vector2(-29.9998, -95.0554)
+texture = ExtResource("2_08fl6")
+
+[node name="bar_y" type="Sprite2D" parent="full"]
+position = Vector2(-29.9998, -14.4999)
+texture = ExtResource("3_j1ey1")
+
+[node name="bar_o" type="Sprite2D" parent="full"]
+position = Vector2(-29.9998, 66.0555)
+texture = ExtResource("4_8g7q3")
+
+[node name="bar_r" type="Sprite2D" parent="full"]
+position = Vector2(-29.9998, 146.611)
+texture = ExtResource("5_lswet")
