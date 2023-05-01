@@ -9,18 +9,16 @@ extends Node3D
 var interactable = false
 
 func _ready():
-	ToggleInterctable()
+	ToggleInteractable(true)
 
-func ToggleInterctable():
-	if interactable:
-		interactable = false
-		crossModel.visible = true;
+func ToggleInteractable(_interactable : bool):
+	if _interactable:
+		interactable = true
+		crossModel.visible = false;
 		crossModel.get_child(0).get_surface_override_material(0).set_shader_parameter("Color", onColor)
 		tubeModel.get_child(0).get_surface_override_material(0).set_shader_parameter("Color", onColor)
 	else:
-		interactable = true
-		crossModel.visible = false
-		MeshInstance3D
-		#print_debug(tubeModel.get_child(0).mesh.override_material.)
-		crossModel.get_child(0).get_surface_override_material(0).set_shader_parameter("Color", onColor)
-		tubeModel.get_child(0).get_surface_override_material(0).set_shader_parameter("Color", onColor)
+		interactable = false
+		crossModel.visible = true
+		crossModel.get_child(0).get_surface_override_material(0).set_shader_parameter("Color", offColor)
+		tubeModel.get_child(0).get_surface_override_material(0).set_shader_parameter("Color", offColor)

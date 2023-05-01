@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1sl5khrij4q8"]
 
 [ext_resource type="Script" path="res://Levels/Test3D/test_guy.gd" id="1_0k6kv"]
-[ext_resource type="PackedScene" uid="uid://cfv1l2uaa4d0h" path="res://ArtAssets/Playerbot/Player[art].tscn" id="2_qojye"]
+[ext_resource type="PackedScene" uid="uid://birll4ty4idy6" path="res://ArtAssets/Playerbot/Player[art].tscn" id="2_qojye"]
 [ext_resource type="Script" path="res://Scripts/WireManager.gd" id="3_y7bew"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_alv6g"]
@@ -47,3 +47,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="WireManager" type="Node3D" parent="."]
 script = ExtResource("3_y7bew")
+batteryDrainTime = 7.0
