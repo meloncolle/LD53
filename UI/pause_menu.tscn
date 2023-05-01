@@ -1,4 +1,114 @@
-[gd_scene format=3 uid="uid://bmlhgvnxyd87"]
+[gd_scene load_steps=22 format=3 uid="uid://bmlhgvnxyd87"]
+
+[ext_resource type="Texture2D" uid="uid://bvn8oe7vo6meo" path="res://UI/pause_menu_animation/pause_menu_frames01.png" id="1_a2a0q"]
+[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_cpgnt"]
+[ext_resource type="Texture2D" uid="uid://dhautpmva77uo" path="res://UI/pause_menu_animation/pause_menu_frames02.png" id="2_lkj2j"]
+[ext_resource type="Texture2D" uid="uid://ch53tuq5c0ot5" path="res://UI/pause_menu_animation/pause_menu_frames03.png" id="3_pi5od"]
+[ext_resource type="Texture2D" uid="uid://64vn1ink1iw" path="res://UI/pause_menu_animation/pause_menu_frames04.png" id="4_s1yq3"]
+[ext_resource type="Texture2D" uid="uid://w8w5ccw5vxde" path="res://UI/pause_menu_animation/pause_menu_frames05.png" id="5_lcwrm"]
+[ext_resource type="Texture2D" uid="uid://bvlwbi1b8l4t5" path="res://UI/pause_menu_animation/pause_menu_frames06.png" id="6_2g2b5"]
+[ext_resource type="Texture2D" uid="uid://2mh6vd10ee64" path="res://UI/pause_menu_animation/pause_menu_frames07.png" id="7_h5sxm"]
+[ext_resource type="Texture2D" uid="uid://c8wk3m26c07ad" path="res://UI/pause_menu_animation/pause_menu_frames08.png" id="8_rpn7k"]
+[ext_resource type="Texture2D" uid="uid://betxxbwf2cc54" path="res://UI/pause_menu_animation/pause_menu_frames09.png" id="9_7m3j7"]
+[ext_resource type="Texture2D" uid="uid://ckrpd00a5ty2p" path="res://UI/pause_menu_animation/pause_menu_frames10.png" id="10_4o3kk"]
+[ext_resource type="Texture2D" uid="uid://thpxfy2cfjey" path="res://UI/pause_menu_animation/pause_menu_frames11.png" id="11_rim1o"]
+[ext_resource type="Texture2D" uid="uid://bciv0pyj41xyp" path="res://UI/pause_menu_animation/pause_menu_frames12.png" id="12_s18sy"]
+[ext_resource type="StyleBox" uid="uid://cqpp3se3cj6nw" path="res://UI/button_style.tres" id="14_nefs3"]
+[ext_resource type="StyleBox" uid="uid://cgt0s7m75ocxx" path="res://UI/button_style_hover.tres" id="15_ge13n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xk78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a2a0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lkj2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pi5od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s1yq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lcwrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2g2b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h5sxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rpn7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7m3j7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4o3kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rim1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s18sy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_viemj"]
+resource_name = "pause_menu"
+length = 0.32
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+}
+
+[sub_resource type="Animation" id="Animation_wpij5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43y8q"]
+_data = {
+"RESET": SubResource("Animation_wpij5"),
+"pause_menu": SubResource("Animation_viemj")
+}
+
+[sub_resource type="Theme" id="Theme_2v365"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = ExtResource("14_nefs3")
+Button/styles/hover = ExtResource("15_ge13n")
+Button/styles/normal = ExtResource("14_nefs3")
+Button/styles/pressed = ExtResource("14_nefs3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46pwe"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -8,6 +118,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cpgnt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_4xk78")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_43y8q")
+}
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -16,28 +137,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -158.5
-offset_top = -76.0
-offset_right = 158.5
-offset_bottom = 76.0
+offset_left = -206.0
+offset_top = -61.0
+offset_right = 111.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.167361
+scale = Vector2(1.22998, 1.22998)
+theme = SubResource("Theme_2v365")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_46pwe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -44.0
-offset_bottom = 44.0
+offset_left = -49.5
+offset_top = -35.0
+offset_right = 49.5
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Paused"
-horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -46,4 +169,5 @@ text = "Resume
 
 [node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
 text = "Quit"

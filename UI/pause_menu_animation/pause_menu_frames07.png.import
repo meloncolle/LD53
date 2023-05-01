@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buouxgrjf2kfx"
-path="res://.godot/imported/Sonic.jpg-781738fed72fc0fe39ff1f2371fbb680.ctex"
+uid="uid://2mh6vd10ee64"
+path="res://.godot/imported/pause_menu_frames07.png-abee9b4edf1184cd54f6b6b504153990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sonic.jpg"
-dest_files=["res://.godot/imported/Sonic.jpg-781738fed72fc0fe39ff1f2371fbb680.ctex"]
+source_file="res://UI/pause_menu_animation/pause_menu_frames07.png"
+dest_files=["res://.godot/imported/pause_menu_frames07.png-abee9b4edf1184cd54f6b6b504153990.ctex"]
 
 [params]
 

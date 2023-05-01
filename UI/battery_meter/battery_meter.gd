@@ -1,11 +1,13 @@
 extends Control
 
 var current_lvl: int = 4 # 0-4
+var charge_remaining: float = 1.0
 @onready var bars: Array = [$full/bar_r, $full/bar_o, $full/bar_y, $full/bar_g]
 
 
 
 func update_display(remaining: float) -> void:
+	charge_remaining = remaining
 	var new_lvl: int = clamp(int(round(remaining * 4.0)), 0, 4)
 	if new_lvl != current_lvl:
 		current_lvl = new_lvl
