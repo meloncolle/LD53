@@ -3,7 +3,7 @@ extends Node
 enum GameState {ON_START, IN_GAME, PAUSED}
 
 var gameState: GameState
-var gameScenePath: String = "res://Levels/Test3D/test_lvl_3d.tscn"
+var gameScenePath: String = "res://Levels/level.tscn"
 var sceneInstance: Node = null
 
 @onready var startMenu: Control = $CanvasLayer/StartMenu
