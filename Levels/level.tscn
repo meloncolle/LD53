@@ -1,8 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=35 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
 [ext_resource type="AudioStream" uid="uid://b2dd6s6eksy71" path="res://ArtAssets/Audio/Music/loop5Raw.wav" id="2_3el8y"]
-[ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_hn1mh"]
 [ext_resource type="AudioStream" uid="uid://bl7odm4iw5y5q" path="res://ArtAssets/Audio/Gameplay/CableStretch.wav" id="3_sp1ab"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_plwjo"]
 [ext_resource type="Script" path="res://Levels/CableStretchSound.gd" id="4_woo8t"]
@@ -13,10 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
+[ext_resource type="PackedScene" uid="uid://dhw848k1laj01" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/Dynamic/container_a.tscn" id="12_wyaka"]
+[ext_resource type="PackedScene" uid="uid://urcbveqibgvt" path="res://ArtAssets/EnvProps/Dynamic/container_a.tscn" id="12_wyaka"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/Door-Gameplay.tscn" id="13_2ujqr"]
 [ext_resource type="Script" path="res://UI/meters.gd" id="13_3aqda"]
 [ext_resource type="PackedScene" uid="uid://df6pklbcil0vh" path="res://UI/wire_meter/wire_meter.tscn" id="14_o7yin"]
@@ -31,6 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://c45k27kkiy4k7" path="res://ArtAssets/NPCs/NPC6_Scot/NPC4_Scottish.tscn" id="22_0d5l3"]
 [ext_resource type="PackedScene" uid="uid://b556i5aj825qb" path="res://ArtAssets/NPCs/NPC7_MeleeKing/NPC8_MeleeKing.tscn" id="23_ffxf0"]
 [ext_resource type="PackedScene" uid="uid://dgt55ga24f8ca" path="res://ArtAssets/NPCs/NPC8_SmoothCool/NPC7_SmoothCool.tscn" id="24_diduf"]
+[ext_resource type="PackedScene" uid="uid://x5whynrdo46f" path="res://ArtAssets/EnvProps/Dynamic/box_a.tscn" id="31_6tdaw"]
+[ext_resource type="PackedScene" uid="uid://bd68aar82qch4" path="res://ArtAssets/EnvProps/Dynamic/container_b.tscn" id="33_0o1n3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
 size = Vector3(50, 0.5, 50)
@@ -40,7 +41,7 @@ size = Vector3(50, 0.5, 50)
 [node name="Node3D2" type="Node3D"]
 
 [node name="Guy" parent="." instance=ExtResource("1_ejbbu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -3.52161, 1, -3.60198)
 floor_snap_length = 0.02
 accel = 0.45
 friction = 0.2
@@ -77,23 +78,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
-[node name="testNPCa" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_hn1mh")]
-transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -11.3264, 0, 4.20315)
-wireLength = 10.0
-targetOverride = NodePath("../Guy")
-npc_name = "outlet_1"
-
-[node name="TestSound" type="AudioStreamPlayer" parent="testNPCa"]
-stream = ExtResource("4_plwjo")
-
-[node name="testNPCb" parent="." instance=ExtResource("3_hn1mh")]
-transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -10.2777, -4.76837e-07, 7.87609)
-wireLength = 10.0
-npc_name = "outlet_2"
-
-[node name="TestSound" type="AudioStreamPlayer" parent="testNPCb"]
-stream = ExtResource("4_plwjo")
-
 [node name="environment" type="Node3D" parent="."]
 
 [node name="ground" type="CharacterBody3D" parent="environment"]
@@ -116,92 +100,238 @@ mesh = SubResource("BoxMesh_fcy7i")
 surface_material_override/0 = ExtResource("6_8p3bp")
 
 [node name="pillar-wires" parent="environment" instance=ExtResource("7_t1aa6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.784, 0, -5.433)
+transform = Transform3D(0.496535, 0, -0.868017, 0, 1, 0, 0.868017, 0, 0.496535, -10.784, 0, -5.433)
 
-[node name="pole-a" parent="environment" instance=ExtResource("8_mlu5p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, 0, 2.545)
+[node name="pillar-wires4" parent="environment" instance=ExtResource("7_t1aa6")]
+transform = Transform3D(0.496535, 0, -0.868017, 0, 1, 0, 0.868017, 0, 0.496535, -3.81077, 0.00914383, 4.17454)
 
-[node name="pole-b" parent="environment" instance=ExtResource("9_uyawj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.993, 0, 2.224)
+[node name="pillar-wires2" parent="environment" instance=ExtResource("7_t1aa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.784, 0, -11.5355)
 
-[node name="walls" type="Node3D" parent="environment"]
+[node name="pillar-wires3" parent="environment" instance=ExtResource("7_t1aa6")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -14.784, 0, -20.433)
 
-[node name="wall-a" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 5)
+[node name="First Room" type="Node3D" parent="environment"]
 
-[node name="wall-a2" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, -15)
+[node name="First Room Walls" type="Node3D" parent="environment/First Room"]
 
-[node name="wall-a3" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 10)
+[node name="wall-a" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.209, 0, -3.4053)
 
-[node name="wall-b" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 0)
+[node name="wall-a2" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.2686, 0, -22.6475)
 
-[node name="wall-b2" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, -5)
+[node name="wall-a13" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13, 0, -26.5626)
 
-[node name="wall-b3" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, -10)
+[node name="wall-a3" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 6)
 
-[node name="wall-a4" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -10)
+[node name="wall-a14" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 1)
 
-[node name="wall-a5" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 10)
+[node name="wall-b" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.2684, 0, -8.24371)
 
-[node name="wall-a6" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -15)
+[node name="wall-b2" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.3, 0, -13.0472)
 
-[node name="wall-b4" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -5)
+[node name="wall-b3" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.2845, 0, -17.9884)
 
-[node name="wall-b5" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 0)
+[node name="wall-a4" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 0, -16)
 
-[node name="wall-b6" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 5)
+[node name="wall-a5" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.487417, 0, 4)
 
-[node name="wall-a7" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.5, 0, -17.5)
+[node name="wall-a15" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 7)
 
-[node name="wall-a8" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.5, 0, -17.5)
+[node name="wall-a6" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 0, -21)
 
-[node name="wall-a9" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5, 0, -17.5)
+[node name="wall-b4" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.13525, 0, -11)
 
-[node name="wall-b8" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, 0, -17.5)
+[node name="wall-b5" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.504515, 0, -6)
 
-[node name="wall-b9" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, 0, -17.5)
+[node name="wall-b6" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.492038, 0, -1)
 
-[node name="wall-a10" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 7.5, 0, 12.5)
+[node name="wall-a7" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5, 0, -22.5)
 
-[node name="wall-a11" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -12.5, 0, 12.5)
+[node name="wall-a8" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.5, 0, -8.5)
 
-[node name="wall-a12" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 12.5, 0, 12.5)
+[node name="wall-a9" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20.5, 0, -22.5)
 
-[node name="wall-b10" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 2.5, 0, 12.5)
+[node name="wall-b8" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 0, -22.5)
 
-[node name="wall-b11" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -2.5, 0, 12.5)
+[node name="wall-b9" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, -8.5)
 
-[node name="wall-b12" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -7.5, 0, 12.5)
+[node name="wall-b13" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, -8.38381)
 
-[node name="container-a" parent="environment" instance=ExtResource("12_wyaka")]
-transform = Transform3D(0.802453, 0, 0.596715, 0, 1, 0, -0.596715, 0, 0.802453, 3.85548, 0, 0)
+[node name="wall-a10" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.5, 0, 6.5)
+
+[node name="wall-a11" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -20.5, 0, 5.5)
+
+[node name="wall-a12" parent="environment/First Room/First Room Walls" instance=ExtResource("10_sc3ux")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4.5, 0, 7.5)
+
+[node name="wall-b10" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -5.5, 0, 6.5)
+
+[node name="wall-b11" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -10.639, 0, -1.65905)
+
+[node name="wall-b12" parent="environment/First Room/First Room Walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -15.5, 0, -1.5)
+
+[node name="First Room Containers" type="Node3D" parent="environment/First Room"]
+
+[node name="container-a2" parent="environment/First Room/First Room Containers" instance=ExtResource("12_wyaka")]
+transform = Transform3D(-0.999771, 0, -0.0213959, 0, 1, 0, 0.0213959, 0, -0.999771, -15.1705, 0, -5.90546)
+
+[node name="container-a3" parent="environment/First Room/First Room Containers" instance=ExtResource("12_wyaka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8255, 0, -16.2524)
+
+[node name="box-a" parent="environment/First Room/First Room Containers" instance=ExtResource("31_6tdaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01511, 0, -7.38324)
+
+[node name="container-b" parent="environment/First Room/First Room Containers" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.11497, 0, 1.02503)
+
+[node name="First Room Misc Obstacles" type="Node3D" parent="environment/First Room"]
+
+[node name="pole-a3" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53, 0, -3.455)
+
+[node name="pole-a10" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.53, 0, -3.455)
+
+[node name="pole-a12" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.53, 0, -9.455)
+
+[node name="pole-a14" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.53, 0, -15.455)
+
+[node name="pole-a16" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.53, 0, -20.455)
+
+[node name="pole-a8" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53, 0, -1.455)
+
+[node name="pole-a4" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, 0, -7.455)
+
+[node name="pole-a6" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, 0, -4.43589)
+
+[node name="pole-a7" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("8_mlu5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, 0, -1.455)
+
+[node name="pole-b" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12426, 0, 4.52014)
+
+[node name="pole-b5" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8757, 0, 4.52014)
+
+[node name="pole-b6" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8757, 0, 4.52014)
+
+[node name="pole-b7" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8757, 0, 4.52014)
+
+[node name="pole-b8" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, 4.52014)
+
+[node name="pole-b9" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, 1.52014)
+
+[node name="pole-b10" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, -1.47986)
+
+[node name="pole-b11" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, -5.47986)
+
+[node name="pole-b12" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, -9.47986)
+
+[node name="pole-b13" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, -13.4799)
+
+[node name="pole-b14" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, -17.4799)
+
+[node name="pole-b15" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8757, 0, -21.4799)
+
+[node name="pole-b16" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8757, 0, -21.4799)
+
+[node name="pole-b17" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59341, 0, -6.99928)
+
+[node name="pole-b25" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.122, 0.00578117, -6.55359)
+
+[node name="pole-b18" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7855, -4.76837e-07, -8.16573)
+
+[node name="pole-b19" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4855, -4.76837e-07, -10.1657)
+
+[node name="pole-b20" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4855, -4.76837e-07, -12.1657)
+
+[node name="pole-b21" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4855, -4.76837e-07, -14.1657)
+
+[node name="pole-b22" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4855, -4.76837e-07, -16.1657)
+
+[node name="pole-b23" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4855, -4.76837e-07, -18.1657)
+
+[node name="pole-b24" parent="environment/First Room/First Room Misc Obstacles" instance=ExtResource("9_uyawj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4855, -4.76837e-07, -20.1657)
 
 [node name="Doors" type="Node3D" parent="environment"]
 
 [node name="Door-Gameplay" parent="environment/Doors" instance=ExtResource("13_2ujqr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39104, 0, -19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.391, 0, -24)
+
+[node name="Second Room" type="Node3D" parent="environment"]
+
+[node name="container-b2" parent="environment/Second Room" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9728, 0, -33.1336)
+
+[node name="container-b3" parent="environment/Second Room" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9728, 0, -39.1336)
+
+[node name="container-b6" parent="environment/Second Room" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9728, 0, -39.1336)
+
+[node name="container-b8" parent="environment/Second Room" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9728, 0, -33.1336)
+
+[node name="container-b7" parent="environment/Second Room" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9728, 0, -45.1336)
+
+[node name="container-b4" parent="environment/Second Room" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9728, 0, -45.1336)
+
+[node name="container-b5" parent="environment/Second Room" instance=ExtResource("33_0o1n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9728, 0, -45.1336)
 
 [node name="TiltTimer" type="Timer" parent="."]
 wait_time = 10.0
@@ -235,37 +365,38 @@ rotation = -0.785398
 [node name="Flooring" type="Node3D" parent="."]
 
 [node name="NPC1_Mombot" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("17_cche0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.7888, -0.0429401, -1.41948)
-wireLength = 10.0
+transform = Transform3D(0.944903, 0, 0.32735, 0, 1, 0, -0.32735, 0, 0.944903, -5.05291, -0.0429401, -7.19464)
+wireLength = 19.0
 targetOverride = NodePath("../Guy")
-npc_name = "Mombot"
+npc_name = "mombot"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC1_Mombot"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC2_Cowboy" parent="." instance=ExtResource("18_ovnpg")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -6.1447, -1.90735e-06, -36.5443)
-npc_name = "cowboy"
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -12.4275, 5.72204e-06, -31.5127)
+wireLength = 15.0
+npc_name = "Cowboy"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2_Cowboy"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC3_Fast" parent="." instance=ExtResource("19_slw1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797435, 0.0565948, -44.6844)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.14, 0.056591, -51.9965)
 npc_name = "Fast"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC3_Fast"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC4_Futbol" parent="." instance=ExtResource("20_plos6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5143, 0, -42.7114)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -15.3847, -1.90735e-06, -61.2763)
 npc_name = "Futbol"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC4_Futbol"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC5_Bard" parent="." instance=ExtResource("21_0nqwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5142, 0, -46.8704)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.57256, 1.90735e-06, -74.0473)
 wireLength = 10.0
 npc_name = "Bard"
 
@@ -273,25 +404,34 @@ npc_name = "Bard"
 stream = ExtResource("4_plwjo")
 
 [node name="NPC6_Scot" parent="." instance=ExtResource("22_0d5l3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.594, 0, -49.1188)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -18.3365, 0, -94.1087)
 npc_name = "Scot"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC6_Scot"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC7_MeleeKing" parent="." instance=ExtResource("23_ffxf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8766, 0, -47.9687)
-npc_name = "MeleeKing"
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.99713, 7.62939e-06, -109.78)
+npc_name = "Melee"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC7_MeleeKing"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC8_SmoothCool" parent="." instance=ExtResource("24_diduf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4532, 0.0296879, -46.6517)
-npc_name = "SmoothCool"
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -22.9397, 0.0296841, -132.497)
+npc_name = "Smooth"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC8_SmoothCool"]
 stream = ExtResource("4_plwjo")
+
+[node name="box-a" parent="." instance=ExtResource("31_6tdaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1875, 0, -34.5752)
+
+[node name="box-a2" parent="." instance=ExtResource("31_6tdaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4047, 0, -37.3981)
+
+[node name="box-a3" parent="." instance=ExtResource("31_6tdaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.47194, 0, -39.9381)
 
 [connection signal="timeout" from="TiltTimer" to="Guy" method="_on_tilt_timer_timeout"]
 [connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]

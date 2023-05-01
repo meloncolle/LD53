@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxp72movlcyhk"
-path="res://.godot/imported/scottish.png-fa0043dbc2f361a894bfc95dfb8562c1.ctex"
+uid="uid://yuvk7id1vuhl"
+path="res://.godot/imported/Smooth.png-2d77170d50ad044b476fe5de8e1d8dc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/scottish.png"
-dest_files=["res://.godot/imported/scottish.png-fa0043dbc2f361a894bfc95dfb8562c1.ctex"]
+source_file="res://DialogAssets/Portraits/Smooth.png"
+dest_files=["res://.godot/imported/Smooth.png-2d77170d50ad044b476fe5de8e1d8dc4.ctex"]
 
 [params]
 

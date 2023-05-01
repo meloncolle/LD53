@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yuvk7id1vuhl"
-path="res://.godot/imported/smoothcool.png-ee9540390c728fd662c1ed43f443d24d.ctex"
+uid="uid://d2ceox2q2kc01"
+path="res://.godot/imported/Bard.png-d3f5e2a2e854d0992c0d9ba0612f997d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/smoothcool.png"
-dest_files=["res://.godot/imported/smoothcool.png-ee9540390c728fd662c1ed43f443d24d.ctex"]
+source_file="res://DialogAssets/Portraits/Bard.png"
+dest_files=["res://.godot/imported/Bard.png-d3f5e2a2e854d0992c0d9ba0612f997d.ctex"]
 
 [params]
 
