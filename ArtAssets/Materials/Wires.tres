@@ -7,4 +7,5 @@
 render_priority = 0
 shader = ExtResource("1_rs765")
 shader_parameter/UVOffset = Vector2(0, 0)
+shader_parameter/Tint2 = Color(0.466667, 0.466667, 0.466667, 1)
 shader_parameter/MainTex = ExtResource("2_btjoh")
