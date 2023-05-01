@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpkjasntattxv"]
+[gd_scene load_steps=4 format=3 uid="uid://cpkjasntattxv"]
 
 [ext_resource type="PackedScene" uid="uid://csrmb1wttxou" path="res://ArtAssets/EnvProps/Models/box-b.glb" id="1_psy5d"]
+[ext_resource type="Script" path="res://Scripts/movingObject.gd" id="2_g347l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cgrwl"]
 
 [node name="box-b" instance=ExtResource("1_psy5d")]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1"]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1" node_paths=PackedStringArray("model")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508884, 0)
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("2_g347l")
+model = NodePath("../cube-c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0"]
 shape = SubResource("BoxShape3D_cgrwl")

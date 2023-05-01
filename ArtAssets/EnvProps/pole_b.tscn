@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://dhw848k1laj01"]
 
 [ext_resource type="PackedScene" uid="uid://oyfgcbykt0b" path="res://ArtAssets/EnvProps/Models/pole-b.glb" id="1_kbwnr"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_bdxpc"]
