@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bipj0qxefp6iy"]
+[gd_scene load_steps=5 format=3 uid="uid://bipj0qxefp6iy"]
 
-[ext_resource type="PackedScene" uid="uid://13l2iqhi2d73" path="res://ArtAssets/VFX/vfx_cross.tscn" id="1_q0bvi"]
+[ext_resource type="Script" path="res://ArtAssets/VFX/VFXSystems/IteractionEffectManager.gd" id="1_3bx8d"]
+[ext_resource type="PackedScene" uid="uid://dmoo60f60utng" path="res://ArtAssets/VFX/vfx_cross.tscn" id="1_q0bvi"]
 [ext_resource type="Script" path="res://ArtAssets/VFX/SpinBob.gd" id="2_0oiwt"]
-[ext_resource type="PackedScene" uid="uid://dietgnbre2k8s" path="res://ArtAssets/VFX/vfx_tube.tscn" id="2_7a0q6"]
+[ext_resource type="PackedScene" uid="uid://d3poycdtotfjo" path="res://ArtAssets/VFX/vfx_tube.tscn" id="2_7a0q6"]
 
-[node name="InteractionIndicator" type="Node3D"]
+[node name="InteractionIndicator" type="Node3D" node_paths=PackedStringArray("crossModel", "tubeModel")]
+script = ExtResource("1_3bx8d")
+crossModel = NodePath("VFX-cross")
+tubeModel = NodePath("VFX-tube")
+onColor = Color(0.278431, 1, 0.929412, 1)
+offColor = Color(0.988235, 0.345098, 0.431373, 1)
 
 [node name="VFX-cross" parent="." instance=ExtResource("1_q0bvi")]
 script = ExtResource("2_0oiwt")

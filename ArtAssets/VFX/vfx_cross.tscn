@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://13l2iqhi2d73"]
+[gd_scene load_steps=3 format=3 uid="uid://dmoo60f60utng"]
 
 [ext_resource type="PackedScene" uid="uid://b7n72rw3ttfru" path="res://ArtAssets/VFX/Models/VFX-cross.glb" id="1_30g8l"]
-[ext_resource type="Material" uid="uid://dmb0jv28mccoy" path="res://ArtAssets/VFX/Materials/VFXglow-2.tres" id="2_e2jeg"]
+[ext_resource type="Material" uid="uid://dmb0jv28mccoy" path="res://ArtAssets/VFX/Materials/VFXglow-1.tres" id="2_65pic"]
 
 [node name="VFX-cross" instance=ExtResource("1_30g8l")]
 
 [node name="cross" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_e2jeg")
+surface_material_override/0 = ExtResource("2_65pic")

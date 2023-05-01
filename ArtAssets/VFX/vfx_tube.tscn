@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dietgnbre2k8s"]
+[gd_scene load_steps=3 format=3 uid="uid://d3poycdtotfjo"]
 
 [ext_resource type="PackedScene" uid="uid://dicwxdqwvbw6y" path="res://ArtAssets/VFX/Models/VFX-tube.glb" id="1_qhvgs"]
-[ext_resource type="Material" uid="uid://dmb0jv28mccoy" path="res://ArtAssets/VFX/Materials/VFXglow-2.tres" id="2_cj7d6"]
+[ext_resource type="Material" uid="uid://dmb0jv28mccoy" path="res://ArtAssets/VFX/Materials/VFXglow-1.tres" id="2_20b38"]
 
 [node name="VFX-tube" instance=ExtResource("1_qhvgs")]
 
 [node name="lightRing" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_cj7d6")
+surface_material_override/0 = ExtResource("2_20b38")
