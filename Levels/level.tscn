@@ -11,12 +11,12 @@
 [ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
 [ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
-[ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
-[ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
-[ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
-[ext_resource type="PackedScene" uid="uid://c5uppeshdukj5" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
+[ext_resource type="PackedScene" uid="uid://dhw848k1laj01" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
 [ext_resource type="PackedScene" uid="uid://urcbveqibgvt" path="res://ArtAssets/EnvProps/Dynamic/container_a.tscn" id="12_wyaka"]
-[ext_resource type="PackedScene" uid="uid://bijeic1s1hsmk" path="res://ArtAssets/EnvProps/Door-Gameplay.tscn" id="13_2ujqr"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/Door-Gameplay.tscn" id="13_2ujqr"]
 [ext_resource type="Script" path="res://UI/meters.gd" id="13_3aqda"]
 [ext_resource type="PackedScene" uid="uid://df6pklbcil0vh" path="res://UI/wire_meter/wire_meter.tscn" id="14_o7yin"]
 [ext_resource type="AudioStream" uid="uid://byy5vqmks5s6x" path="res://ArtAssets/Audio/Gameplay/BoatSway1.wav" id="14_yaili"]
@@ -67,7 +67,7 @@ fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
 stream = ExtResource("2_4xrfp")
-volume_db = -15.0
+volume_db = -25.0
 autoplay = true
 
 [node name="CableStretch" type="AudioStreamPlayer" parent="Guy" node_paths=PackedStringArray("player")]
@@ -85,8 +85,6 @@ script = ExtResource("5_cjo3x")
 stream = ExtResource("7_diba5")
 volume_db = -20.0
 autoplay = true
-
-[node name="Low Battery" type="AudioStreamPlayer" parent="Guy"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -1584,6 +1582,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.592
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC9_Benson"]
 stream = ExtResource("4_plwjo")
+
+[node name="BensonHum" type="AudioStreamPlayer" parent="NPC9_Benson"]
 
 [node name="box-a" parent="." instance=ExtResource("31_6tdaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1875, 0, -34.5752)

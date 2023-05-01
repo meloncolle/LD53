@@ -102,6 +102,7 @@ func Disconnect():
 	$CableSnap.play()
 	
 	
+	
 #func _Footsteps():
 #	if velocity.length() > 0:
 #		pass

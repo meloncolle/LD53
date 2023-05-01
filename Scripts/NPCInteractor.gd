@@ -37,6 +37,8 @@ func _on_area_3d_body_entered(body):
 		DialogueManager.show_dialogue_balloon(npc_name)
 		connected = true
 	$TestSound.play()
+	
+	
 
 
 func _on_area_3d_body_exited(body):
