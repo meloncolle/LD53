@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://df6pklbcil0vh"]
+
+[ext_resource type="Script" path="res://UI/wire_meter/wire_meter.gd" id="1_efmfq"]
+[ext_resource type="Texture2D" uid="uid://bygp3k745ccb4" path="res://UI/wire_meter/cordMeter_body.png" id="2_gyfxa"]
+[ext_resource type="Texture2D" uid="uid://2ch40baf64se" path="res://UI/wire_meter/cordMeter_starter.png" id="3_8bl10"]
+[ext_resource type="Texture2D" uid="uid://c2eqi7evspw0b" path="res://UI/wire_meter/cordMeter_head.png" id="3_m0nft"]
+
+[node name="WireMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_efmfq")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_top = -9.0
+offset_bottom = -9.0
+scale = Vector2(0.3, 0.3)
+
+[node name="CordBg" type="Sprite2D" parent="Control"]
+z_index = -1
+texture = ExtResource("2_gyfxa")
+
+[node name="CordSource" type="Sprite2D" parent="Control"]
+position = Vector2(56.6667, 193.333)
+texture = ExtResource("3_8bl10")
+
+[node name="CordHead" type="Sprite2D" parent="Control"]
+position = Vector2(0, 30)
+texture = ExtResource("3_m0nft")

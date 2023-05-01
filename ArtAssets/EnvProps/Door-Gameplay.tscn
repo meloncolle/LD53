@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bijeic1s1hsmk"]
+
+[ext_resource type="Script" path="res://Scripts/DoorController.gd" id="1_aw8bu"]
+[ext_resource type="PackedScene" uid="uid://ddm6laal5tnf3" path="res://ArtAssets/EnvProps/NoCollision/door_wall.tscn" id="2_wyrii"]
+[ext_resource type="PackedScene" uid="uid://c3rqhybpsvhx" path="res://ArtAssets/EnvProps/NoCollision/door_wall_flipped.tscn" id="3_duwm4"]
+[ext_resource type="PackedScene" uid="uid://bw7nwopwhb8ob" path="res://ArtAssets/EnvProps/NoCollision/door.tscn" id="4_sld5t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yk70f"]
+size = Vector3(2.04, 5, 1.764)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ehea"]
+size = Vector3(0.892, 5, 1.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gu2c6"]
+size = Vector3(3.089, 1, 5)
+
+[node name="Door-Gameplay" type="Node3D"]
+script = ExtResource("1_aw8bu")
+openSpeed = 10.0
+
+[node name="collision" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collision/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40907, 2.52355, 0.826751)
+shape = SubResource("BoxShape3D_yk70f")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="collision"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="collision/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09067, 2.52355, 0.826578)
+shape = SubResource("BoxShape3D_1ehea")
+
+[node name="Area3D" type="Area3D" parent="."]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.722073, 1.00603, 0.825454)
+shape = SubResource("BoxShape3D_gu2c6")
+
+[node name="doorWall" parent="." instance=ExtResource("2_wyrii")]
+
+[node name="doorWall-flipped" parent="." instance=ExtResource("3_duwm4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.44044e-07, 0, 1.64767)
+
+[node name="door" parent="." instance=ExtResource("4_sld5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.662194, 0, 0.446408)
+
+[node name="door2" parent="." instance=ExtResource("4_sld5t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.662194, 0, 1.17965)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

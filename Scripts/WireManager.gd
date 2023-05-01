@@ -11,6 +11,10 @@ var curBattery = 1.0
 @export var batteryDrainTime = 5.0
 var unpluggedTimer = 0.0
 
+signal connection_set(currentlyConnected)
+signal changed_length(newLength: float)
+signal changed_charge(newCharge: float)
+
 func _process(delta):
 	if currentlyConnected:
 		var lastPoint = currentlyConnected.wire.points[-1] if currentlyConnected.wire.points.size() > 0 else currentlyConnected.wire.startPoint
@@ -18,11 +22,14 @@ func _process(delta):
 		vectorToLast.y = 0.0
 		vectorToLast = vectorToLast.normalized()
 		wireForce = currentlyConnected.wire.totalLength / currentlyConnected.wire.maxWireLength
+		emit_signal("changed_length", 1.0 - wireForce)
 	else:
 		wireForce = 0.0
+		emit_signal("changed_length", 1.0 - wireForce)
 		unpluggedTimer += delta
 		
 	curBattery = 1.0 - (unpluggedTimer / batteryDrainTime)
+	emit_signal("changed_charge", curBattery)
 
 func Disconnect():
 	if currentlyConnected:
@@ -31,8 +38,10 @@ func Disconnect():
 		#currentlyConnected.wire.UpdatePoints()
 		currentlyConnected = null
 		unpluggedTimer = 0.0
+		emit_signal("connection_set", currentlyConnected)
 
 func SwapCurrentlyConnected(newConnected):
+	
 	if newConnected != currentlyConnected:
 		if currentlyConnected:
 			currentlyConnected.wire.target = null
@@ -44,6 +53,7 @@ func SwapCurrentlyConnected(newConnected):
 		currentlyConnected.wire.ResetPoints()
 		currentlyConnected.wire.target = self
 		currentlyConnected.wire.UpdatePoints()
+		emit_signal("connection_set", currentlyConnected)
 
 func _on_interactor_area_body_entered(_body):
 	#if body.tag == npc

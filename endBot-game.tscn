@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1kyqt8m26t86"]
+
+[ext_resource type="PackedScene" uid="uid://xbsesk7sowxg" path="res://ArtAssets/EndBot/endBot[art].tscn" id="1_dtcsq"]
+
+[node name="endBot-game" type="Node3D"]
+
+[node name="endBot" parent="." instance=ExtResource("1_dtcsq")]
