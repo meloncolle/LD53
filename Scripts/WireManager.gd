@@ -8,7 +8,7 @@ var vectorToLast : Vector3
 var wireForce = 0.0
 
 var curBattery = 1.0
-@export var batteryDrainTime = .0
+@export var batteryDrainTime = 5.0
 var unpluggedTimer = 0.0
 
 signal connection_set(currentlyConnected)

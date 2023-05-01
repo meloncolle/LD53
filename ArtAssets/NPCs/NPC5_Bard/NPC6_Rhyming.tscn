@@ -13,7 +13,6 @@ height = 0.5
 
 [node name="NPC" type="Node3D" groups=["interactable"]]
 script = ExtResource("1_a0772")
-wireLength = 10.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23229, 0)

@@ -6,14 +6,14 @@ op_type = 0
 operator = 2
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_sskxn"]
-parameter_name = "Tint2"
+parameter_name = "Tint"
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_fncs3"]
 operator = 2
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_saw2e"]
-parameter_name = "Tint"
+parameter_name = "Tint2"
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_2flwt"]
@@ -73,12 +73,12 @@ void fragment() {
 	n_out2p0 = texture(MainTex, n_out8p0);
 
 
-// ColorParameter:11
-	vec4 n_out11p0 = Tint2;
+// ColorParameter:13
+	vec4 n_out13p0 = Tint2;
 
 
 // VectorOp:12
-	vec3 n_out12p0 = vec3(n_out2p0.xyz) * vec3(n_out11p0.xyz);
+	vec3 n_out12p0 = vec3(n_out2p0.xyz) * vec3(n_out13p0.xyz);
 
 
 // Output:0
@@ -89,7 +89,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(41, 264)
+graph_offset = Vector2(399.287, 263.429)
 nodes/fragment/0/position = Vector2(840, 160)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_2flwt")
 nodes/fragment/2/position = Vector2(380, 360)
@@ -110,7 +110,7 @@ nodes/fragment/10/position = Vector2(-160, -20)
 nodes/fragment/11/node = SubResource("VisualShaderNodeColorParameter_sskxn")
 nodes/fragment/11/position = Vector2(320, 540)
 nodes/fragment/12/node = SubResource("VisualShaderNodeVectorOp_fncs3")
-nodes/fragment/12/position = Vector2(620, 380)
+nodes/fragment/12/position = Vector2(640, 420)
 nodes/fragment/13/node = SubResource("VisualShaderNodeColorParameter_saw2e")
 nodes/fragment/13/position = Vector2(320, 540)
-nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 5, 0, 0, 4, 5, 0, 0, 0, 7, 0, 8, 1, 8, 0, 2, 0, 6, 0, 10, 0, 9, 0, 10, 1, 10, 0, 8, 0, 2, 0, 12, 0, 6, 0, 8, 0, 13, 0, 12, 1, 11, 0, 12, 1, 12, 0, 0, 5)
+nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 5, 0, 0, 4, 5, 0, 0, 0, 7, 0, 8, 1, 8, 0, 2, 0, 6, 0, 10, 0, 9, 0, 10, 1, 10, 0, 8, 0, 2, 0, 12, 0, 11, 0, 12, 1, 6, 0, 8, 0, 13, 0, 12, 1, 12, 0, 0, 5)
