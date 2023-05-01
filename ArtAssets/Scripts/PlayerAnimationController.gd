@@ -6,6 +6,12 @@ extends Node3D
 func CallInteractAnim():
 	animationMode.travel("Interact")
 	
+func CallPowerDownAnim():
+	animationMode.travel("PowerDown")
+	
+func Reset():
+	animationMode.travel("Locomotion")
+	
 func DoLocomotionAnimation(mvmtVec, inputVec): #make sure movement vec is devided by maxspeed BEFORE its used as an argument
 	animationTree.set("parameters/Locomotion/mvmtBlend/blend_position", mvmtVec.length()) 
 	#print_debug(inputVec)
@@ -15,6 +21,4 @@ func DoLocomotionAnimation(mvmtVec, inputVec): #make sure movement vec is devide
 	else:
 		animationMode.travel("Locomotion")
 		
-	
-	pass
 	
