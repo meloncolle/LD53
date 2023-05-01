@@ -1,20 +1,29 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnckyrg4ek3q7"]
+[gd_scene load_steps=27 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
 [ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Placeholder/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_67hsh"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_hn1mh"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_plwjo"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="5_sxioq"]
-[ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
-[ext_resource type="PackedScene" uid="uid://cyd65wj6pa62g" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
-[ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
-[ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
-[ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
-[ext_resource type="PackedScene" uid="uid://c5uppeshdukj5" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
-[ext_resource type="PackedScene" uid="uid://d5rk05vt7ipg" path="res://ArtAssets/EnvProps/container_a.tscn" id="12_wyaka"]
+[ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/Dynamic/container_a.tscn" id="12_wyaka"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/Door-Gameplay.tscn" id="13_2ujqr"]
 [ext_resource type="Script" path="res://UI/meters.gd" id="13_3aqda"]
 [ext_resource type="PackedScene" uid="uid://df6pklbcil0vh" path="res://UI/wire_meter/wire_meter.tscn" id="14_o7yin"]
 [ext_resource type="PackedScene" uid="uid://ckp473suxggpy" path="res://UI/battery_meter/battery_meter.tscn" id="15_ildwl"]
+[ext_resource type="PackedScene" uid="uid://b6331ufhv44l8" path="res://ArtAssets/NPCs/NPC1_Mombot/NPC1_Mombot.tscn" id="17_cche0"]
+[ext_resource type="PackedScene" uid="uid://bkb5vnwqsq6qx" path="res://ArtAssets/NPCs/NPC2_Cowboy/NPC2_Cowboy.tscn" id="18_ovnpg"]
+[ext_resource type="PackedScene" uid="uid://cuwykr3g7har7" path="res://ArtAssets/NPCs/NPC3_Fast/NPC3_Fast.tscn" id="19_slw1d"]
+[ext_resource type="PackedScene" uid="uid://ckxmmsbwqi5k5" path="res://ArtAssets/NPCs/NPC4_Futbol/NPC5_SoccerBoy.tscn" id="20_plos6"]
+[ext_resource type="PackedScene" uid="uid://brt8g6rnil2mb" path="res://ArtAssets/NPCs/NPC5_Bard/NPC6_Rhyming.tscn" id="21_0nqwp"]
+[ext_resource type="PackedScene" uid="uid://c45k27kkiy4k7" path="res://ArtAssets/NPCs/NPC6_Scot/NPC4_Scottish.tscn" id="22_0d5l3"]
+[ext_resource type="PackedScene" uid="uid://b556i5aj825qb" path="res://ArtAssets/NPCs/NPC7_MeleeKing/NPC8_MeleeKing.tscn" id="23_ffxf0"]
+[ext_resource type="PackedScene" uid="uid://dgt55ga24f8ca" path="res://ArtAssets/NPCs/NPC8_SmoothCool/NPC7_SmoothCool.tscn" id="24_diduf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
 size = Vector3(50, 0.5, 50)
@@ -45,21 +54,21 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
-[node name="NPC" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_hn1mh")]
-transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -6.15854, 0, -1.29774)
+[node name="testNPCa" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_hn1mh")]
+transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -11.3264, 0, 4.20315)
 wireLength = 10.0
 targetOverride = NodePath("../Guy")
 npc_name = "outlet_1"
 
-[node name="TestSound" type="AudioStreamPlayer" parent="NPC"]
+[node name="TestSound" type="AudioStreamPlayer" parent="testNPCa"]
 stream = ExtResource("4_plwjo")
 
-[node name="NPC2" parent="." instance=ExtResource("3_hn1mh")]
-transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -4.2942, -4.76837e-07, 6.31546)
+[node name="testNPCb" parent="." instance=ExtResource("3_hn1mh")]
+transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -10.2777, -4.76837e-07, 7.87609)
 wireLength = 10.0
 npc_name = "outlet_2"
 
-[node name="TestSound" type="AudioStreamPlayer" parent="NPC2"]
+[node name="TestSound" type="AudioStreamPlayer" parent="testNPCb"]
 stream = ExtResource("4_plwjo")
 
 [node name="environment" type="Node3D" parent="."]
@@ -79,7 +88,7 @@ acceleration = 2.5
 shape = SubResource("BoxShape3D_x1ngd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environment/ground"]
-transform = Transform3D(50, 0, 0, 0, 0.5, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(115, 0, 0, 0, 0.5, 0, 0, 0, 410, 0, 0, -144)
 mesh = SubResource("BoxMesh_fcy7i")
 surface_material_override/0 = ExtResource("6_8p3bp")
 
@@ -139,9 +148,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.5, 
 [node name="wall-a9" parent="environment/walls" instance=ExtResource("10_sc3ux")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5, 0, -17.5)
 
-[node name="wall-b7" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, -17.5)
-
 [node name="wall-b8" parent="environment/walls" instance=ExtResource("11_dd7n1")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, 0, -17.5)
 
@@ -169,6 +175,11 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -7.5, 0,
 [node name="container-a" parent="environment" instance=ExtResource("12_wyaka")]
 transform = Transform3D(0.802453, 0, 0.596715, 0, 1, 0, -0.596715, 0, 0.802453, 3.85548, 0, 0)
 
+[node name="Doors" type="Node3D" parent="environment"]
+
+[node name="Door-Gameplay" parent="environment/Doors" instance=ExtResource("13_2ujqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39104, 0, -19)
+
 [node name="TiltTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
@@ -193,6 +204,58 @@ offset_top = -17.0
 offset_right = 37.0
 offset_bottom = 23.0
 rotation = -0.785398
+
+[node name="Flooring" type="Node3D" parent="."]
+
+[node name="NPC1_Mombot" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("17_cche0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.7888, -0.0429401, -1.41948)
+targetOverride = NodePath("../Guy")
+npc_name = "Mombot"
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC1_Mombot"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC2_Cowboy" parent="." instance=ExtResource("18_ovnpg")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -6.1447, -1.90735e-06, -36.5443)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC2_Cowboy"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC3_Fast" parent="." instance=ExtResource("19_slw1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797435, 0.0565948, -44.6844)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC3_Fast"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC4_Futbol" parent="." instance=ExtResource("20_plos6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5143, 0, -42.7114)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC4_Futbol"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC5_Bard" parent="." instance=ExtResource("21_0nqwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5142, 0, -46.8704)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC5_Bard"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC6_Scot" parent="." instance=ExtResource("22_0d5l3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.594, 0, -49.1188)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC6_Scot"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC7_MeleeKing" parent="." instance=ExtResource("23_ffxf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8766, 0, -47.9687)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC7_MeleeKing"]
+stream = ExtResource("4_plwjo")
+
+[node name="NPC8_SmoothCool" parent="." instance=ExtResource("24_diduf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4886, 0, -46.6195)
+
+[node name="TestSound" type="AudioStreamPlayer" parent="NPC8_SmoothCool"]
+stream = ExtResource("4_plwjo")
 
 [connection signal="timeout" from="TiltTimer" to="Guy" method="_on_tilt_timer_timeout"]
 [connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]

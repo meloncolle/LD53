@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=24 format=3 uid="uid://cowfh0t4gtonm"]
 
 [ext_resource type="PackedScene" uid="uid://rj8mqn68bjn2" path="res://ArtAssets/Playerbot/Models/Boxboi.glb" id="1_o7w7v"]
 [ext_resource type="Script" path="res://ArtAssets/Playerbot/Scripts/PlayerAnimationController.gd" id="2_l6wia"]
@@ -79,16 +79,16 @@ graph_offset = Vector2(-73, -48)
 script = ExtResource("2_l6wia")
 
 [node name="Skeleton3D" parent="botRig" index="0"]
-bones/0/position = Vector3(-6.18768e-16, 0.580389, 0.00349013)
-bones/0/rotation = Quaternion(3.999e-10, 0.999986, -0.00529675, 7.54968e-08)
-bones/1/rotation = Quaternion(0.962167, -0.0976291, -0.163149, -0.195155)
-bones/2/rotation = Quaternion(-0.773134, -5.80301e-09, 2.99772e-07, 0.634243)
-bones/3/rotation = Quaternion(0.706968, 0.185402, 0.0423035, 0.6812)
-bones/4/position = Vector3(5.26995e-10, 0.284611, -0.00258713)
-bones/4/rotation = Quaternion(-0.147837, 0.00269041, 0.0663501, 0.98678)
-bones/5/rotation = Quaternion(0.901171, 0.0573792, 0.0582759, -0.425678)
-bones/6/rotation = Quaternion(-0.808058, -1.48417e-10, -3.11621e-07, 0.589103)
-bones/7/rotation = Quaternion(0.578979, -0.0817209, -0.00351692, 0.811229)
+bones/0/position = Vector3(5.34726e-17, 0.541616, 0.00349013)
+bones/0/rotation = Quaternion(-1.41906e-09, 0.999823, 0.0187959, 7.54846e-08)
+bones/1/rotation = Quaternion(0.954118, -0.105686, -0.164317, -0.226911)
+bones/2/rotation = Quaternion(-0.826059, -1.43765e-08, 3.21236e-07, 0.563584)
+bones/3/rotation = Quaternion(0.757754, 0.188992, 0.0494997, 0.622608)
+bones/4/position = Vector3(5.26996e-10, 0.183899, 0.00349014)
+bones/4/rotation = Quaternion(-0.000486265, -6.18478e-15, 3.33576e-15, 1)
+bones/5/rotation = Quaternion(0.872698, 0.0621281, 0.0563955, -0.480997)
+bones/6/rotation = Quaternion(-0.859128, -7.44792e-09, -3.27738e-07, 0.511762)
+bones/7/rotation = Quaternion(0.622097, -0.0837791, -0.00465049, 0.778431)
 
 [node name="box" parent="botRig/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_164ln")

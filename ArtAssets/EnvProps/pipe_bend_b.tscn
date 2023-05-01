@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bguwlm4nq062u"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bergea637jca2" path="res://ArtAssets/EnvProps/Models/pipeBend-b.glb" id="1_o3bgx"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_enp31"]

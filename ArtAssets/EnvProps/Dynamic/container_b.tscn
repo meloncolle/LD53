@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnxa1tufinfph"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="PackedScene" uid="uid://vicbdedu8rt5" path="res://ArtAssets/EnvProps/Models/container-b.glb" id="1_wa7hi"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_jv7b8"]
