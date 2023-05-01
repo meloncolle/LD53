@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://cfv1l2uaa4d0h"]
+[gd_scene load_steps=24 format=3]
 
 [ext_resource type="PackedScene" uid="uid://rj8mqn68bjn2" path="res://ArtAssets/Playerbot/Models/Boxboi.glb" id="1_o7w7v"]
-[ext_resource type="Script" path="res://ArtAssets/Scripts/PlayerAnimationController.gd" id="2_l6wia"]
+[ext_resource type="Script" path="res://ArtAssets/Playerbot/Scripts/PlayerAnimationController.gd" id="2_l6wia"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="3_164ln"]
 [ext_resource type="Material" uid="uid://cckl6vpgdsclb" path="res://ArtAssets/Materials/PlayerFace.tres" id="4_gvyuu"]
-[ext_resource type="AudioStream" uid="uid://ubp2iwynxw86" path="res://ArtAssets/Audio/Skid Test.wav" id="5_u8y2l"]
+[ext_resource type="AudioStream" uid="uid://ubp2iwynxw86" path="res://ArtAssets/Audio/Placeholder/Skid Test.wav" id="5_u8y2l"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sujvr"]
 animation = &"interact"
