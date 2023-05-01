@@ -245,6 +245,7 @@ stream = ExtResource("4_plwjo")
 
 [node name="NPC2_Cowboy" parent="." instance=ExtResource("18_ovnpg")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -6.1447, -1.90735e-06, -36.5443)
+npc_name = "cowboy"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2_Cowboy"]
 stream = ExtResource("4_plwjo")
