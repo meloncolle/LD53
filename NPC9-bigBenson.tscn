@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5ew6ownuw2nm"]
+[gd_scene load_steps=7 format=3 uid="uid://cvwtqf8edfwtc"]
 
-[ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="1_0h01s"]
-[ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_joxfr"]
-[ext_resource type="PackedScene" uid="uid://dgtkxl2c7i27t" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_76iod"]
-[ext_resource type="PackedScene" uid="uid://bipj0qxefp6iy" path="res://ArtAssets/VFX/VFXSystems/InteractionIndicator.tscn" id="4_bwfqs"]
+[ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_rbum8"]
+[ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="2_17hpx"]
+[ext_resource type="PackedScene" uid="uid://dgtkxl2c7i27t" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_ktuxi"]
+[ext_resource type="PackedScene" uid="uid://bipj0qxefp6iy" path="res://ArtAssets/VFX/VFXSystems/InteractionIndicator.tscn" id="4_h1too"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4glv3"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -12,7 +12,7 @@ size = Vector3(1.5, 1.5, 1.5)
 height = 0.5
 
 [node name="NPC" type="Node3D" groups=["interactable"]]
-script = ExtResource("1_joxfr")
+script = ExtResource("1_rbum8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23229, 0)
@@ -27,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.642004, 0.531819, 0.198586
 [node name="OutPlugPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162567, 0.83399, 0.71984)
 
-[node name="Wire" parent="." node_paths=PackedStringArray("startTransform") instance=ExtResource("1_0h01s")]
+[node name="Wire" parent="." node_paths=PackedStringArray("startTransform") instance=ExtResource("2_17hpx")]
 startTransform = NodePath("../OutPlugPoint")
 distanceThreshhold = 0.1
 
@@ -40,10 +40,10 @@ monitorable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0350406, -0.0381508)
 shape = SubResource("CylinderShape3D_mveif")
 
-[node name="NPC" parent="." instance=ExtResource("3_76iod")]
+[node name="NPC" parent="." instance=ExtResource("3_ktuxi")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="InteractionIndicator" parent="." instance=ExtResource("4_bwfqs")]
+[node name="InteractionIndicator" parent="." instance=ExtResource("4_h1too")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 1.45254)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

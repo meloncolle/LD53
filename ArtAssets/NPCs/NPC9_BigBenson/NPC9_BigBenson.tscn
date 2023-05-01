@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://ht6w88uuab11"]
 
 [ext_resource type="PackedScene" uid="uid://bfewxcjldcvsh" path="res://ArtAssets/NPCs/Models/NPC.glb" id="1_a0r05"]
 [ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_5fxqv"]
