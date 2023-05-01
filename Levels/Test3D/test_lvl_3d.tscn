@@ -5,10 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
-
 [ext_resource type="PackedScene" uid="uid://d5rk05vt7ipg" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
 [ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
-[ext_resource type="PackedScene" uid="uid://cyd65wj6pa62g" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
 [ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
 [ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="11_857mt"]
@@ -96,13 +95,13 @@ mesh = SubResource("BoxMesh_fcy7i")
 surface_material_override/0 = ExtResource("7_h2ikg")
 
 [node name="pillar-wires" parent="environment" instance=ExtResource("8_j3cfy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78382, -0.233916, -5.43349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.784, 0, -5.433)
 
 [node name="pole-a" parent="environment" instance=ExtResource("9_n26t1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5302, -0.233915, 2.54547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, 0, 2.545)
 
 [node name="pole-b" parent="environment" instance=ExtResource("10_fxa01")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9926, -0.233915, 2.22428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.993, 0, 2.224)
 
 [node name="walls" type="Node3D" parent="environment"]
 

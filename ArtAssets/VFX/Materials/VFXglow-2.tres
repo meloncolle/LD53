@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dmb0jv28mccoy"]
+
+[ext_resource type="Shader" uid="uid://dr5ek7htrrcyo" path="res://ArtAssets/Shaders/TransparentAdditive.tres" id="1_hf4fa"]
+[ext_resource type="Texture2D" uid="uid://bqvj85mtpj8hr" path="res://ArtAssets/VFX/Textures/VerticalGradient.png" id="2_1fmc5"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hf4fa")
+shader_parameter/Color = Color(1, 0.25098, 0.262745, 1)
+shader_parameter/AlphaMap = ExtResource("2_1fmc5")
