@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cccvsiorwsaq2"]
+[gd_scene load_steps=6 format=3 uid="uid://cccvsiorwsaq2"]
 
-[ext_resource type="Theme" uid="uid://biksopsiahq0c" path="res://UI/menu_theme.tres" id="1_peq1g"]
+[ext_resource type="VideoStream" path="res://UI/Main-Menu-Final.ogv" id="1_dctxy"]
+[ext_resource type="Script" path="res://Scripts/loop_video.gd" id="2_qo4cw"]
+[ext_resource type="Texture2D" uid="uid://bmkqxg0mej6e6" path="res://UI/Main-Menu-frame.png" id="4_feb6v"]
+[ext_resource type="StyleBox" uid="uid://cqpp3se3cj6nw" path="res://UI/button_style.tres" id="4_wuivs"]
+[ext_resource type="StyleBox" uid="uid://cgt0s7m75ocxx" path="res://UI/button_style_hover.tres" id="5_ndrge"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -19,35 +23,39 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -158.0
 offset_top = -52.0
-offset_right = 159.0
-offset_bottom = 55.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_peq1g")
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 2
-offset_top = -86.5
-offset_right = 317.0
-offset_bottom = -60.5
-text = "TITLE"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -44.0
-offset_bottom = 44.0
+offset_right = -158.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Start"
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(-418, -272)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_feb6v")
+centered = false
 
-[node name="ExitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Panel/Sprite2D"]
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("1_dctxy")
+autoplay = true
+script = ExtResource("2_qo4cw")
+
+[node name="StartButton" type="Button" parent="Panel"]
 layout_mode = 2
-text = "Exit"
+offset_left = 1.0
+offset_top = 246.0
+offset_right = 318.0
+offset_bottom = 306.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("4_wuivs")
+theme_override_styles/hover = ExtResource("5_ndrge")
+theme_override_styles/pressed = ExtResource("4_wuivs")
+theme_override_styles/disabled = ExtResource("4_wuivs")
+theme_override_styles/focus = ExtResource("4_wuivs")
+text = "START"
+
+[connection signal="finished" from="Panel/Sprite2D/VideoStreamPlayer" to="Panel/Sprite2D/VideoStreamPlayer" method="_on_finished"]
