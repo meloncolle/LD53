@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://c23tp7605y8xi"]
+[gd_scene load_steps=15 format=3 uid="uid://b2clrdoyrxgl1"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
-[ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_kke3t"]
+[ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Placeholder/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_y45wn"]
 [ext_resource type="PackedScene" uid="uid://b5ew6ownuw2nm" path="res://NPC-base.tscn" id="3_ravg1"]
-[ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Power On Temp.mp3" id="4_hsj0l"]
+[ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_dtnp4"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="6_8p81u"]
 [ext_resource type="PackedScene" uid="uid://d5rk05vt7ipg" path="res://ArtAssets/EnvProps/container_a.tscn" id="7_34y2v"]
-[ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
+[ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="7_h2ikg"]
+[ext_resource type="PackedScene" uid="uid://cyd65wj6pa62g" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="8_j3cfy"]
 [ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="9_n26t1"]
 [ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
 [ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="11_857mt"]
@@ -32,7 +32,7 @@ current = true
 fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
-stream = ExtResource("2_kke3t")
+stream = ExtResource("2_y45wn")
 volume_db = -35.0
 autoplay = true
 
@@ -49,7 +49,7 @@ targetOverride = NodePath("../Guy")
 npc_name = "outlet_1"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC"]
-stream = ExtResource("4_hsj0l")
+stream = ExtResource("4_dtnp4")
 
 [node name="NPC2" parent="." instance=ExtResource("3_ravg1")]
 transform = Transform3D(-0.491025, 0, 0.871145, 0, 1, 0, -0.871145, 0, -0.491025, -4.2942, -4.76837e-07, 6.31546)
@@ -57,7 +57,7 @@ wireLength = 10.0
 npc_name = "outlet_2"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2"]
-stream = ExtResource("4_hsj0l")
+stream = ExtResource("4_dtnp4")
 
 [node name="environment" type="Node3D" parent="."]
 
