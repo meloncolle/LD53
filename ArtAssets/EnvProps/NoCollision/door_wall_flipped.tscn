@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3rqhybpsvhx"]
+
+[ext_resource type="PackedScene" uid="uid://b4tnhuakhsbl5" path="res://ArtAssets/EnvProps/Models/doorWall-flipped.glb" id="1_w52sl"]
+[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="2_n7220"]
+
+[node name="doorWall-flipped" instance=ExtResource("1_w52sl")]
+
+[node name="doorFrame001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_n7220")
+
+[node name="Cube002" parent="doorFrame001" index="0"]
+surface_material_override/0 = ExtResource("2_n7220")
