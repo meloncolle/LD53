@@ -57,5 +57,3 @@ theme_override_styles/pressed = ExtResource("4_wuivs")
 theme_override_styles/disabled = ExtResource("4_wuivs")
 theme_override_styles/focus = ExtResource("4_wuivs")
 text = "START"
-
-[connection signal="finished" from="Panel/Sprite2D/VideoStreamPlayer" to="Panel/Sprite2D/VideoStreamPlayer" method="_on_finished"]
