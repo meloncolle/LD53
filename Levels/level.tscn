@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
-[ext_resource type="AudioStream" uid="uid://b2dd6s6eksy71" path="res://ArtAssets/Audio/Music/loop5Raw.wav" id="2_3el8y"]
+[ext_resource type="AudioStream" uid="uid://dg152d37hp06g" path="res://ArtAssets/Audio/Music/Main Music.wav" id="2_4xrfp"]
 [ext_resource type="AudioStream" uid="uid://bl7odm4iw5y5q" path="res://ArtAssets/Audio/Gameplay/CableStretch.wav" id="3_sp1ab"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_plwjo"]
 [ext_resource type="Script" path="res://Levels/CableStretchSound.gd" id="4_woo8t"]
@@ -52,7 +52,7 @@ current = true
 fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
-stream = ExtResource("2_3el8y")
+stream = ExtResource("2_4xrfp")
 volume_db = -15.0
 autoplay = true
 
