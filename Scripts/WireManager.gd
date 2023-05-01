@@ -1,5 +1,6 @@
 extends Node3D
 
+var lastConnected
 var currentlyConnected
 var currentlyTouching
 
@@ -39,6 +40,7 @@ func SwapCurrentlyConnected(newConnected):
 			currentlyConnected.wire.UpdatePoints()
 		
 		currentlyConnected = newConnected
+		lastConnected = currentlyConnected
 		currentlyConnected.wire.ResetPoints()
 		currentlyConnected.wire.target = self
 		currentlyConnected.wire.UpdatePoints()

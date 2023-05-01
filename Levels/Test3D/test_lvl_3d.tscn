@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c23tp7605y8xi"]
+[gd_scene load_steps=15 format=3 uid="uid://c23tp7605y8xi"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_feurm"]
 [ext_resource type="AudioStream" uid="uid://d2pltfwjavqlj" path="res://ArtAssets/Audio/Akkala Ancient Laboratory (The Legend of Zelda Breath of the Wild OST).mp3" id="2_kke3t"]
@@ -12,19 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="10_fxa01"]
 [ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="11_857mt"]
 [ext_resource type="PackedScene" uid="uid://c5uppeshdukj5" path="res://ArtAssets/EnvProps/wall_b.tscn" id="12_c83no"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ve5t"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_pgdah"]
-sky_material = SubResource("ProceduralSkyMaterial_2ve5t")
-
-[sub_resource type="Environment" id="Environment_bb87a"]
-background_mode = 2
-sky = SubResource("Sky_pgdah")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1ngd"]
 size = Vector3(50, 0.5, 50)
@@ -54,7 +41,6 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bb87a")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("3_ravg1")]
 transform = Transform3D(0.397452, 0, 0.917623, 0, 1, 0, -0.917623, 0, 0.397452, -6.15854, 0, -1.29774)

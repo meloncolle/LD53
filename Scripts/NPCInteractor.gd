@@ -14,7 +14,7 @@ func _ready():
 	wire.maxWireLength = wireLength
 	if targetOverride:
 		wire.target = targetOverride
-		targetOverride.get_node("WireManager").currentlyConnected = self
+		targetOverride.get_node("WireManager").SwapCurrentlyConnected(self)
 
 
 func _on_area_3d_body_entered(body):
