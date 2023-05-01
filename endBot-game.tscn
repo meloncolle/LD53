@@ -1,14 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1kyqt8m26t86"]
+[gd_scene load_steps=10 format=3 uid="uid://d1kyqt8m26t86"]
 
 [ext_resource type="Script" path="res://ArtAssets/EndBot/Scripts/EndSequenceController.gd" id="1_bjh2j"]
 [ext_resource type="PackedScene" uid="uid://xbsesk7sowxg" path="res://ArtAssets/EndBot/endBot[art].tscn" id="1_dtcsq"]
 [ext_resource type="PackedScene" uid="uid://bqxsy6xu8ee74" path="res://ArtAssets/EndBot/box_anim[art].tscn" id="2_k4s7a"]
 [ext_resource type="PackedScene" uid="uid://1jdt0bcomdfh" path="res://ArtAssets/VFX/VFXSystems/EndInteractor.tscn" id="3_lmmbo"]
+[ext_resource type="PackedScene" uid="uid://btli1bbxuby4c" path="res://ArtAssets/EndBot/hotDog[art].tscn" id="4_exrlh"]
+[ext_resource type="Script" path="res://ArtAssets/EndBot/hotDogController.gd" id="5_o1r0y"]
 
 [sub_resource type="Curve" id="Curve_ubb03"]
 bake_resolution = 250
 _data = [Vector2(0, 0), 0.0, 7.23, 0, 0, Vector2(0.215768, 0.963636), 0.0, 0.0, 0, 0, Vector2(0.443983, 0.0545454), -4.38182, 3.14348, 0, 0, Vector2(0.6639, 0.5), 0.0, 0.0, 0, 0, Vector2(0.883817, 0), -3.61976, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 6
+
+[sub_resource type="Curve" id="Curve_4a27h"]
+_data = [Vector2(0, 0), 0.0, 4.58354, 0, 0, Vector2(0.371429, 0.736364), 0.0, 0.0, 0, 0, Vector2(0.736264, 0), -3.88567, 3.74858, 0, 0, Vector2(1, 0), -3.80545, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_a6517"]
 height = 0.5
@@ -25,6 +31,12 @@ bounceHeight = 2.0
 [node name="boxAnim" parent="." instance=ExtResource("2_k4s7a")]
 transform = Transform3D(0.873568, 0, 0.486701, 0, 1, 0, -0.486701, 0, 0.873568, 0.113286, 0, 1.529)
 visible = false
+
+[node name="hotDog" parent="." node_paths=PackedStringArray("botRef") instance=ExtResource("4_exrlh")]
+visible = false
+script = ExtResource("5_o1r0y")
+botRef = NodePath("../endBot")
+hotDogCurve = SubResource("Curve_4a27h")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504293, 4.08869)
