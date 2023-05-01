@@ -44,7 +44,9 @@ func get_input():
 	if wireManager.currentlyConnected:
 		curMaxSpeed = max_speed
 	else:
-		curMaxSpeed = max_speed * 1.2 * clamp(wireManager.curBattery, 0.0, 1.0)
+		var speedMult = inverse_lerp(0.0, 0.2, clamp(wireManager.curBattery, 0.0, 1.0))
+		
+		curMaxSpeed = max_speed * 1.2 * clamp(speedMult, 0.0, 1.0)
 	
 	desiredVelocity = desiredVelocity.move_toward(movement_dir * curMaxSpeed, cur_accel)
 	velocity = desiredVelocity + wireForce

@@ -47,3 +47,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="WireManager" type="Node3D" parent="."]
 script = ExtResource("3_y7bew")
+batteryDrainTime = 7.0
