@@ -60,6 +60,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_wpij5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_viemj"]
 resource_name = "pause_menu"
 length = 0.32
@@ -75,21 +90,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
-}
-
-[sub_resource type="Animation" id="Animation_wpij5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_43y8q"]
