@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://idthges56tt"
-path="res://.godot/imported/bard.wav-16ec6d04827e850380e5d263b95f9210.sample"
+path="res://.godot/imported/Bard.wav-9bb4bb2dbb91da350435851532e83396.sample"
 
 [deps]
 
-source_file="res://DialogAssets/Sound/bard.wav"
-dest_files=["res://.godot/imported/bard.wav-16ec6d04827e850380e5d263b95f9210.sample"]
+source_file="res://DialogAssets/Sound/Bard.wav"
+dest_files=["res://.godot/imported/Bard.wav-9bb4bb2dbb91da350435851532e83396.sample"]
 
 [params]
 

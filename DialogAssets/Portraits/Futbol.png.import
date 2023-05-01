@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dinlwg5vb4m8v"
-path="res://.godot/imported/fastTalking.png-18813a063e766f587a61621f1324ac3d.ctex"
+uid="uid://b78hh4odxicu"
+path="res://.godot/imported/Futbol.png-9ca4f7ee87598fb581c2472b294ace2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/fastTalking.png"
-dest_files=["res://.godot/imported/fastTalking.png-18813a063e766f587a61621f1324ac3d.ctex"]
+source_file="res://DialogAssets/Portraits/Futbol.png"
+dest_files=["res://.godot/imported/Futbol.png-9ca4f7ee87598fb581c2472b294ace2d.ctex"]
 
 [params]
 

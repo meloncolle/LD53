@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ceox2q2kc01"
-path="res://.godot/imported/rhyming.png-b063bf286d80d414a1080be2a378a81d.ctex"
+uid="uid://dcmp24xkmhnhb"
+path="res://.godot/imported/Melee.png-fff3756d96b702afbbc0695070a842ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/rhyming.png"
-dest_files=["res://.godot/imported/rhyming.png-b063bf286d80d414a1080be2a378a81d.ctex"]
+source_file="res://DialogAssets/Portraits/Melee.png"
+dest_files=["res://.godot/imported/Melee.png-fff3756d96b702afbbc0695070a842ed.ctex"]
 
 [params]
 

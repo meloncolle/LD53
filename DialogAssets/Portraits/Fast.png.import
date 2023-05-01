@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcmp24xkmhnhb"
-path="res://.godot/imported/meleeKing.png-48ca19950d71793b6235387e8d99df1d.ctex"
+uid="uid://dinlwg5vb4m8v"
+path="res://.godot/imported/Fast.png-ffda88c9c246f0c16a234fe526724bc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/meleeKing.png"
-dest_files=["res://.godot/imported/meleeKing.png-48ca19950d71793b6235387e8d99df1d.ctex"]
+source_file="res://DialogAssets/Portraits/Fast.png"
+dest_files=["res://.godot/imported/Fast.png-ffda88c9c246f0c16a234fe526724bc2.ctex"]
 
 [params]
 

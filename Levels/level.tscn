@@ -145,16 +145,16 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, -10)
 
 [node name="wall-a4" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -10)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, -10)
 
 [node name="wall-a5" parent="environment/walls" instance=ExtResource("10_sc3ux")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 10)
 
 [node name="wall-a6" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -15)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, -15)
 
 [node name="wall-b4" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, -5)
 
 [node name="wall-b5" parent="environment/walls" instance=ExtResource("11_dd7n1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 0)
@@ -166,7 +166,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0,
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.5, 0, -17.5)
 
 [node name="wall-a8" parent="environment/walls" instance=ExtResource("10_sc3ux")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.5, 0, -17.5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.5, 0, -2.5)
 
 [node name="wall-a9" parent="environment/walls" instance=ExtResource("10_sc3ux")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5, 0, -17.5)
@@ -175,7 +175,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.5,
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, 0, -17.5)
 
 [node name="wall-b9" parent="environment/walls" instance=ExtResource("11_dd7n1")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, 0, -17.5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, 0, -2.5)
+
+[node name="wall-b13" parent="environment/walls" instance=ExtResource("11_dd7n1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.5, 0, -2.5)
 
 [node name="wall-a10" parent="environment/walls" instance=ExtResource("10_sc3ux")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 7.5, 0, 12.5)
@@ -196,7 +199,7 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -2.5, 0,
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -7.5, 0, 12.5)
 
 [node name="container-a" parent="environment" instance=ExtResource("12_wyaka")]
-transform = Transform3D(0.802453, 0, 0.596715, 0, 1, 0, -0.596715, 0, 0.802453, 3.85548, 0, 0)
+transform = Transform3D(0.802453, 0, 0.596715, 0, 1, 0, -0.596715, 0, 0.802453, 10.544, 0, 8.39836)
 
 [node name="Doors" type="Node3D" parent="environment"]
 
@@ -235,37 +238,37 @@ rotation = -0.785398
 [node name="Flooring" type="Node3D" parent="."]
 
 [node name="NPC1_Mombot" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("17_cche0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.7888, -0.0429401, -1.41948)
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 2.39965, -0.0429401, 4.53465)
 wireLength = 10.0
 targetOverride = NodePath("../Guy")
-npc_name = "Mombot"
+npc_name = "mombot"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC1_Mombot"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC2_Cowboy" parent="." instance=ExtResource("18_ovnpg")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -6.1447, -1.90735e-06, -36.5443)
-npc_name = "cowboy"
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -9.42209, -1.90735e-06, -31.449)
+npc_name = "Cowboy"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2_Cowboy"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC3_Fast" parent="." instance=ExtResource("19_slw1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797435, 0.0565948, -44.6844)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.96476, 0.056591, -44.2585)
 npc_name = "Fast"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC3_Fast"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC4_Futbol" parent="." instance=ExtResource("20_plos6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5143, 0, -42.7114)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -15.3847, -1.90735e-06, -61.2763)
 npc_name = "Futbol"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC4_Futbol"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC5_Bard" parent="." instance=ExtResource("21_0nqwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5142, 0, -46.8704)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.57256, 1.90735e-06, -74.0473)
 wireLength = 10.0
 npc_name = "Bard"
 
@@ -273,22 +276,22 @@ npc_name = "Bard"
 stream = ExtResource("4_plwjo")
 
 [node name="NPC6_Scot" parent="." instance=ExtResource("22_0d5l3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.594, 0, -49.1188)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -18.3365, 0, -94.1087)
 npc_name = "Scot"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC6_Scot"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC7_MeleeKing" parent="." instance=ExtResource("23_ffxf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8766, 0, -47.9687)
-npc_name = "MeleeKing"
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.99713, 7.62939e-06, -109.78)
+npc_name = "Melee"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC7_MeleeKing"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC8_SmoothCool" parent="." instance=ExtResource("24_diduf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4532, 0.0296879, -46.6517)
-npc_name = "SmoothCool"
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -22.9397, 0.0296841, -132.497)
+npc_name = "Smooth"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC8_SmoothCool"]
 stream = ExtResource("4_plwjo")
