@@ -21,6 +21,8 @@ var totalLength = 0.0
 
 var lastPos = Vector3.ZERO
 
+signal changedLength(remaining: float)
+
 func _ready():
 	if(startTransform):
 		startPoint = startTransform.global_position
@@ -50,13 +52,17 @@ func UpdatePoints():
 	
 		lineRenderer.points = rendererPoints.duplicate(false)
 		
-		totalLength = 0.0
+		var newLength: float = 0.0
 		for n in rendererPoints.size() - 1:
 			var p1 = rendererPoints[n]
 			var p2 = rendererPoints[n + 1]
 			p1.y = 0.0
 			p2.y = 0.0
-			totalLength += (p2 - p1).length()
+			newLength += (p2 - p1).length()
+		if newLength != totalLength:			
+			changedLength.emit((maxWireLength - totalLength) / maxWireLength)
+
+		totalLength = newLength
 		
 		if target:
 			lastPos = target.global_position

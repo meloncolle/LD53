@@ -11,6 +11,8 @@ var curBattery = 1.0
 @export var batteryDrainTime = 5.0
 var unpluggedTimer = 0.0
 
+signal connection_set(currentlyConnected)
+
 func _process(delta):
 	if currentlyConnected:
 		var lastPoint = currentlyConnected.wire.points[-1] if currentlyConnected.wire.points.size() > 0 else currentlyConnected.wire.startPoint
@@ -25,6 +27,8 @@ func _process(delta):
 	curBattery = 1.0 - (unpluggedTimer / batteryDrainTime)
 
 func Disconnect():
+	connection_set.emit(null)
+	
 	if currentlyConnected:
 		currentlyConnected.wire.target = null
 		currentlyConnected.wire.ResetPoints()
@@ -33,6 +37,8 @@ func Disconnect():
 		unpluggedTimer = 0.0
 
 func SwapCurrentlyConnected(newConnected):
+	connection_set.emit(newConnected)
+	
 	if newConnected != currentlyConnected:
 		if currentlyConnected:
 			currentlyConnected.wire.target = null
