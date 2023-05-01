@@ -11,6 +11,7 @@ format = 1
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5f4uo"]
 
 [node name="ExampleBalloon" type="CanvasLayer" node_paths=PackedStringArray("response_template")]
+process_mode = 1
 layer = 100
 script = ExtResource("1_4u26j")
 resource = ExtResource("2_rlig2")
