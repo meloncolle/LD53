@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1sl5khrij4q8"]
 
 [ext_resource type="Script" path="res://Levels/Test3D/test_guy.gd" id="1_0k6kv"]
-[ext_resource type="Script" path="res://ArtAssets/Playerbot/Scripts/PlayerAnimationController.gd" id="2_3u3rn"]
+[ext_resource type="PackedScene" uid="uid://cvm053ji1qp1v" path="res://ArtAssets/Playerbot/Player[art].tscn" id="3_hyfe0"]
 [ext_resource type="Script" path="res://Scripts/WireManager.gd" id="3_y7bew"]
 [ext_resource type="AudioStream" uid="uid://cu4akvsao3rr7" path="res://ArtAssets/Audio/Robot SFX/TempFootsteps1.wav" id="4_kw2gu"]
 
@@ -43,13 +43,12 @@ mesh = SubResource("SphereMesh_7du5y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_h847y")
 
-[node name="Boxboi" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-script = ExtResource("2_3u3rn")
-
 [node name="WireManager" type="Node3D" parent="."]
 script = ExtResource("3_y7bew")
 batteryDrainTime = 10.0
+
+[node name="Boxboi" parent="." instance=ExtResource("3_hyfe0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kw2gu")
