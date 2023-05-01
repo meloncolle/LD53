@@ -15,17 +15,26 @@ var thickness: float = 24.0
 @onready var cord_head: Sprite2D = $Control/CordHead
 
 func _ready() -> void:
-	player.wireManager.connection_set.connect(self._on_connection_set)
+	#player.wireManager.connection_set.connect(self._on_connection_set.bind("currentlyConnected"))
+	player.wireManager.changed_length.connect(self._on_changed_length)
+	
 
-func _on_connection_set():
-	print("SET CONNECTION!!!")
+func _on_changed_length():
+	update_display(1 - player.wireManager.wireForce)
+	queue_redraw()
+
+func _on_connection_set(currentlyConnected):
+	if currentlyConnected != null:
+		print("Connected to new guy")
+	else:
+		print("disconnected")
+	
 
 func _draw():
-	update_display(wire_remaining)
-	queue_redraw()
+	_on_changed_length()
 	
-func update_display(percent: float) -> void:
-	var lerpval = lerp(min_angle, max_angle, percent)
+func update_display(remaining: float) -> void:
+	var lerpval = lerp(min_angle, max_angle, remaining)
 	# why these numbers i hate math!!!!!!!!!!!
 	cord_head.position = Vector2(0, 25) + Vector2(cos(lerpval), sin(lerpval)) * 170
 	cord_head.rotation = lerpval

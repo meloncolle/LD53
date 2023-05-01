@@ -12,6 +12,7 @@ var curBattery = 1.0
 var unpluggedTimer = 0.0
 
 signal connection_set(currentlyConnected)
+signal changed_length()
 
 func _process(delta):
 	if currentlyConnected:
@@ -20,8 +21,10 @@ func _process(delta):
 		vectorToLast.y = 0.0
 		vectorToLast = vectorToLast.normalized()
 		wireForce = currentlyConnected.wire.totalLength / currentlyConnected.wire.maxWireLength
+		changed_length.emit()
 	else:
 		wireForce = 0.0
+		changed_length.emit()
 		unpluggedTimer += delta
 		
 	curBattery = 1.0 - (unpluggedTimer / batteryDrainTime)
@@ -37,7 +40,6 @@ func Disconnect():
 		unpluggedTimer = 0.0
 
 func SwapCurrentlyConnected(newConnected):
-	connection_set.emit(newConnected)
 	
 	if newConnected != currentlyConnected:
 		if currentlyConnected:
