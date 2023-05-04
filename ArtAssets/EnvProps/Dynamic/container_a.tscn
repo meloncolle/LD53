@@ -13,8 +13,12 @@ size = Vector3(2.5, 2.5, 5)
 surface_material_override/0 = ExtResource("2_822bo")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." index="1" node_paths=PackedStringArray("model")]
-collision_layer = 3
-collision_mask = 3
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 floor_snap_length = 0.5
 script = ExtResource("3_3llcs")
 model = NodePath("../shippingContainer-grape")

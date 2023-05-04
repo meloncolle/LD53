@@ -13,3 +13,9 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	paused = true
+
+
+func _on_tilt_disabler_body_exited(body):
+	paused = false
+	
+

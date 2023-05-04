@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://pc65e455pmj5"
-path="res://.godot/imported/mombot.wav-196c69bac4964717b6b175568c0904e7.sample"
+path="res://.godot/imported/Mombot.wav-a9ee466754ff68929e85497f008cf51e.sample"
 
 [deps]
 
-source_file="res://DialogAssets/Sound/mombot.wav"
-dest_files=["res://.godot/imported/mombot.wav-196c69bac4964717b6b175568c0904e7.sample"]
+source_file="res://DialogAssets/Sound/Mombot.wav"
+dest_files=["res://.godot/imported/Mombot.wav-a9ee466754ff68929e85497f008cf51e.sample"]
 
 [params]
 

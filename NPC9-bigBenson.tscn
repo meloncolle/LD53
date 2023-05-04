@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/NPCInteractor.gd" id="1_rbum8"]
 [ext_resource type="PackedScene" uid="uid://d0xnfkftsjwkl" path="res://Wire.tscn" id="2_17hpx"]
-[ext_resource type="PackedScene" uid="uid://dgtkxl2c7i27t" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_ktuxi"]
+[ext_resource type="PackedScene" path="res://ArtAssets/NPCs/npc1[art].tscn" id="3_ktuxi"]
 [ext_resource type="PackedScene" uid="uid://bipj0qxefp6iy" path="res://ArtAssets/VFX/VFXSystems/InteractionIndicator.tscn" id="4_h1too"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4glv3"]
