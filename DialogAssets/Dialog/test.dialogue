@@ -1,4 +1,4 @@
-~ Mombot
+~ mombot
 
 You: Uhm excuse me, what’s going on?
 mombot: Oh! Wow! Look at you! You must have just woken up! Welcome to consciousness, how does it feel so far?
@@ -14,7 +14,7 @@ mombot: Have fun! Make some new friends!
 
 => END
 
-~ Cowboy
+~ cowboy
 
 Cowboy: Woah there, lil’ feller! Where are you off to?
 You: I gotta go find Big Benson so that he can open up this box!
@@ -25,7 +25,7 @@ You: Ok Bye!
 
 => END
 
-~ Fast
+~ fast
 Fast: [next=0] [speed=8] In a simple alternating current (AC) circuit consisting of a source and a linear time-invariant load both the current and voltage are sinusoidal at the same frequency 
 Fast: [next=0] [speed=8] If the load is purely resistive the two quantities reverse their polarity at the same time At every instant the product of voltage and current 
 Fast: [next=0] [speed=8] is positive or zero the result being that the direction of energy flow does not reverse In this case only active power is transferred If the load is purely reactive
@@ -45,26 +45,26 @@ Fast: [next=0] [speed=8] the fundamental mechanism for controlling the power fac
 Fast: [next=0] [speed=8] reactive power 'consumed' ('generated') by the load Purely capacitive circuits supply reactive power with the current waveform leading the voltage waveform by 90 degrees 
 Fast: [next=0] [speed=8] while purely inductive circuits absorb reactive power with the current waveform lagging the voltage waveform by 90 degrees. The result of this is that capacitive and 
 Fast: [next=0] [speed=8] inductive circuit elements tend to cancel each other out.
-YOU: ...What?
+YOU: ......What?
 Fast: Oh sorry I’m 240 volts. get ready cause you're about to get a lot of power
-Fast: [next=0] [speed=8] In a direct current circuit, the power flowing to the load is proportional to the product of the current through the load and the potential drop across the load. 
-Fast: [next=0] [speed=8] Energy flows in one direction from the source to the load. In AC power, the voltage and current both vary approximately sinusoidally. 
-Fast: [next=0] [speed=8] When there is inductance or capacitance in the circuit, the voltage and current waveforms do not line up perfectly. The power flow has two components – 
-Fast: [next=0] [speed=8] one component flows from source to load and can perform work at the load; the other portion, known as "reactive power", is due to the delay between voltage and current, 
-Fast: [next=0] [speed=8] known as phase angle, and cannot do useful work at the load. It can be thought of as current that is arriving at the wrong time (too late or too early). 
-Fast: [next=0] [speed=8] To distinguish reactive power from active power, it is measured in units of "volt-amperes reactive", or var. These units can simplify to watts but are left as var to 
-Fast: [next=0] [speed=8] denote that they represent no actual work output.Energy stored in capacitive or inductive elements of the network gives rise to reactive power flow. Reactive power 
-Fast: [next=0] [speed=8] flow strongly influences the voltage levels across the network. Voltage levels and reactive power flow must be carefully controlled to allow a power system 
-Fast: [next=0] [speed=8] to be operated within acceptable limits. A technique known as reactive compensation is used to reduce apparent power flow to a load by reducing reactive power 
-Fast: [next=0] [speed=8] supplied from transmission lines and providing it locally. For example, to compensate an inductive load, a shunt capacitor is installed close to the load itself. 
-Fast: [next=0] [speed=8] This allows all reactive power needed by the load to be supplied by the capacitor and not have to be transferred over the transmission lines. This practice saves 
-Fast: [next=0] [speed=8] energy because it reduces the amount of energy that is required to be produced by the utility to do the same amount of work. Additionally, it allows for more 
-Fast: [next=0] [speed=8] efficient transmission line designs using smaller conductors or fewer bundled conductors and optimizing the design of transmission towers.
+Fast: [next=0] [speed=8] In a direct current circuit the power flowing to the load is proportional to the product of the current through the load and the potential drop across the load 
+Fast: [next=0] [speed=8] Energy flows in one direction from the source to the load In AC power the voltage and current both vary approximately sinusoidally 
+Fast: [next=0] [speed=8] When there is inductance or capacitance in the circuit the voltage and current waveforms do not line up perfectly The power flow has two components – 
+Fast: [next=0] [speed=8] one component flows from source to load and can perform work at the load the other portion known as "reactive power" is due to the delay between voltage and current 
+Fast: [next=0] [speed=8] known as phase angle, and cannot do useful work at the load It can be thought of as current that is arriving at the wrong time (too late or too early) 
+Fast: [next=0] [speed=8] To distinguish reactive power from active power it is measured in units of "volt-amperes reactive" or var These units can simplify to watts but are left as var to 
+Fast: [next=0] [speed=8] denote that they represent no actual work output Energy stored in capacitive or inductive elements of the network gives rise to reactive power flow Reactive power 
+Fast: [next=0] [speed=8] flow strongly influences the voltage levels across the network Voltage levels and reactive power flow must be carefully controlled to allow a power system 
+Fast: [next=0] [speed=8] to be operated within acceptable limits A technique known as reactive compensation is used to reduce apparent power flow to a load by reducing reactive power 
+Fast: [next=0] [speed=8] supplied from transmission lines and providing it locally For example to compensate an inductive load a shunt capacitor is installed close to the load itself 
+Fast: [next=0] [speed=8] This allows all reactive power needed by the load to be supplied by the capacitor and not have to be transferred over the transmission lines This practice saves 
+Fast: [next=0] [speed=8] energy because it reduces the amount of energy that is required to be produced by the utility to do the same amount of work Additionally it allows for more 
+Fast: [next=0] [speed=8] efficient transmission line designs using smaller conductors or fewer bundled conductors and optimizing the design of transmission towers
 You: [speed=4] HEYNOPROBLEMTHANKSTHEPOWEROHAMIYELLINGWOWTHISISREALLYCRAZYYOU’REJUSTLIKETHISALLTHETIMEOHWOWTHISREALLYISALOTOKIHAVETOGOFINDTHENEXTSOCKETNOWTHANKSBYE!!!!!!!!!!
 
 => END
 
-~ Futbol
+~ futbol
 Futbol: Olha, ninguém se compara a Cristiano Ronaldo, ele é o melhor que já fez isso, quero dizer, olhe as estatísticas, certo? Quer dizer, Luís Figo é ótimo, claro, mas eu simplesmente não acho-
 You: I’m sorry, I don’t really understand…
 Futbol: Desculpe, eles me conectaram ao google tradutor e replays de jogos de futebol do século 21. Enfim, acho que o Figo não tem esse espírito, sabe?
@@ -73,7 +73,7 @@ Futbol: Sem problemas!
 
 => END
 
-~ Bard
+~ bard
 Bard: Ah, across the noble hill comes riding, the hound of steel, who comes to me, confiding.
 You: Hi! Can you help with this box on my back?
 Bard: Alas, you chromatic creature. With thine eyes you might perceive My lack of arms, wouldn’t you believe! I, unfortunately, lack that feature.
@@ -82,14 +82,14 @@ Bard: Of course! My dear, little moppet! Go on now, find that next socket!
 
 => END
 
-~ Scot
+~ scot
 Scot: Woah! keek at ye, ye wee thing, whit urr ye up tae?
 You: Hello! I need some help opening up this box on my back!
 Scot: Och, that ain't me mah laddie, huv a go auld benson doon in th' boiler room. Ah think he aye haes arms…
 You: Thank you!
 Scot: S e do bheatha!
 
-~ Melee
+~ melee
 Melee: Alright, listen to me right now. Jigglypuff is the worst designed character in Smash by a mile. I mean can you imagine a more boring character. Mechanically dull and gimmicky as all hell. They’re entire moveset is based around giving one hyped up instakill move to players that are too dense to learn the actual mechanics of the game and I mean-
 You: [next=0] Wait hol-
 Melee: -what kind of dogwater swilling hillbillies would play that stupid pink ball? I truly think that the Melee community needs to create tournaments that ban that kind of play from the game. It’s toxic and malicious and erodes the foundations of good skill building and thoughtful play from the game. It really makes you wonder what kind of brain damage they had at the Nintendo headquarters.
@@ -99,7 +99,7 @@ You: Oh, ok! Well good luck with that!
 
 => END
 
-~ Smooth
+~ smooth
 You: ...
 Smooth: ...
 You: Uhm, hello!
@@ -113,7 +113,7 @@ Smooth: Keep it chill, my man, that way you never blow a fuse…heh heh
 
 => END
 
-~ BEN
+~ ben
 
 BEN: WHY TAKE A LOOK AT YOU! YOU’RE A BRAND NEW THING AREN’T YOU!
 YOU: Hello! Yes! Can you help me with this box on my back? I have to open it up so I can figure out what I am supposed to be doing!

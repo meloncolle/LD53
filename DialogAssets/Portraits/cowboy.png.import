@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqyi1pgi236sn"
-path="res://.godot/imported/Cowboy.png-4c3d38b0a7759b40536118ce74e673a8.ctex"
+path="res://.godot/imported/cowboy.png-649cfee547fc9584c12b9de0241e2d6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/Cowboy.png"
-dest_files=["res://.godot/imported/Cowboy.png-4c3d38b0a7759b40536118ce74e673a8.ctex"]
+source_file="res://DialogAssets/Portraits/cowboy.png"
+dest_files=["res://.godot/imported/cowboy.png-649cfee547fc9584c12b9de0241e2d6a.ctex"]
 
 [params]
 
