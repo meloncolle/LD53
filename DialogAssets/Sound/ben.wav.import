@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://07qogrf085ht"
-path="res://.godot/imported/BEN.wav-03839599018c5729459248c1c2a104fc.sample"
+path="res://.godot/imported/ben.wav-c1ca8132cf4b5e4330435fff52ddcb4b.sample"
 
 [deps]
 
-source_file="res://DialogAssets/Sound/BEN.wav"
-dest_files=["res://.godot/imported/BEN.wav-03839599018c5729459248c1c2a104fc.sample"]
+source_file="res://DialogAssets/Sound/ben.wav"
+dest_files=["res://.godot/imported/ben.wav-c1ca8132cf4b5e4330435fff52ddcb4b.sample"]
 
 [params]
 
