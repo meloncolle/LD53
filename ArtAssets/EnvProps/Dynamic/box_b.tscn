@@ -11,8 +11,14 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508884, 0)
 collision_layer = 3
 collision_mask = 3
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("2_g347l")
-model = NodePath("../cube-c")
+model = NodePath("../cube-b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0"]
 shape = SubResource("BoxShape3D_cgrwl")

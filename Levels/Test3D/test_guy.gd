@@ -97,6 +97,7 @@ func _process(delta):
 func _on_tilt_timer_timeout():
 	Disconnect()
 	
+	
 func Disconnect():
 	wireManager.Disconnect()
 	$CableSnap.play()
