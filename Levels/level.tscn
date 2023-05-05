@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Levels/CableSnap.gd" id="5_cjo3x"]
 [ext_resource type="AudioStream" uid="uid://dtqxcjswpi615" path="res://ArtAssets/Audio/Gameplay/CableSnap.wav" id="5_ook1e"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="5_sxioq"]
-[ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
+[ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
 [ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
@@ -39,7 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://b556i5aj825qb" path="res://ArtAssets/NPCs/NPC7_MeleeKing/NPC8_MeleeKing.tscn" id="23_ffxf0"]
 [ext_resource type="PackedScene" uid="uid://dgt55ga24f8ca" path="res://ArtAssets/NPCs/NPC8_SmoothCool/NPC7_SmoothCool.tscn" id="24_diduf"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pipe_bend_b.tscn" id="24_qa4re"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pipe_seg_b_2.tscn" id="25_kouo2"]
+[ext_resource type="PackedScene" uid="uid://bgtokw3f5xny8" path="res://ArtAssets/EnvProps/pipe_seg_b_2.tscn" id="25_kouo2"]
 [ext_resource type="PackedScene" uid="uid://x5whynrdo46f" path="res://ArtAssets/EnvProps/Dynamic/box_a.tscn" id="31_6tdaw"]
 [ext_resource type="PackedScene" uid="uid://bd68aar82qch4" path="res://ArtAssets/EnvProps/Dynamic/container_b.tscn" id="33_0o1n3"]
 [ext_resource type="PackedScene" uid="uid://8jak644j5bw" path="res://ArtAssets/NPCs/NPC9_BigBenson/NPC9Benson.tscn" id="33_t5prw"]
@@ -1525,7 +1525,7 @@ stream = ExtResource("4_plwjo")
 [node name="NPC2_Cowboy" parent="." instance=ExtResource("18_ovnpg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8125, 0.11801, -31.623)
 wireLength = 15.0
-npc_name = "Cowboy"
+npc_name = "cowboy"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC2_Cowboy"]
 stream = ExtResource("4_plwjo")
@@ -1533,7 +1533,7 @@ stream = ExtResource("4_plwjo")
 [node name="NPC3_Fast" parent="." instance=ExtResource("19_slw1d")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.61302, 0.056591, -51.9965)
 wireLength = 25.0
-npc_name = "Fast"
+npc_name = "fast"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC3_Fast"]
 stream = ExtResource("4_plwjo")
@@ -1541,7 +1541,7 @@ stream = ExtResource("4_plwjo")
 [node name="NPC4_Futbol" parent="." instance=ExtResource("20_plos6")]
 transform = Transform3D(0.067162, 0, 0.997742, 0, 1, 0, -0.997742, 0, 0.067162, -30.8858, -1.90735e-06, -69.1072)
 wireLength = 35.0
-npc_name = "Futbol"
+npc_name = "futbol"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC4_Futbol"]
 stream = ExtResource("4_plwjo")
@@ -1549,7 +1549,7 @@ stream = ExtResource("4_plwjo")
 [node name="NPC5_Bard" parent="." instance=ExtResource("21_0nqwp")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.0378, 1.90735e-06, -95.3619)
 wireLength = 50.0
-npc_name = "Bard"
+npc_name = "bard"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC5_Bard"]
 stream = ExtResource("4_plwjo")
@@ -1557,14 +1557,14 @@ stream = ExtResource("4_plwjo")
 [node name="NPC6_Scot" parent="." instance=ExtResource("22_0d5l3")]
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -41.3365, 0, -108.109)
 wireLength = 15.0
-npc_name = "Scot"
+npc_name = "scot"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC6_Scot"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC7_MeleeKing" parent="." instance=ExtResource("23_ffxf0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99713, 7.62939e-06, -124.78)
-npc_name = "Melee"
+npc_name = "melee"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC7_MeleeKing"]
 stream = ExtResource("4_plwjo")
@@ -1572,13 +1572,14 @@ stream = ExtResource("4_plwjo")
 [node name="NPC8_SmoothCool" parent="." instance=ExtResource("24_diduf")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -41.9397, 0.0296841, -135.497)
 wireLength = 35.0
-npc_name = "Smooth"
+npc_name = "smooth"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC8_SmoothCool"]
 stream = ExtResource("4_plwjo")
 
 [node name="NPC9_Benson" parent="." instance=ExtResource("33_t5prw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.5925, 0, -113.431)
+npc_name = "ben"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="NPC9_Benson"]
 stream = ExtResource("4_plwjo")

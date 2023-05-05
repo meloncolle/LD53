@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcmp24xkmhnhb"
-path="res://.godot/imported/Melee.png-fff3756d96b702afbbc0695070a842ed.ctex"
+path="res://.godot/imported/melee.png-01b3c94afeca5202284cf21a7e8f397a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogAssets/Portraits/Melee.png"
-dest_files=["res://.godot/imported/Melee.png-fff3756d96b702afbbc0695070a842ed.ctex"]
+source_file="res://DialogAssets/Portraits/melee.png"
+dest_files=["res://.godot/imported/melee.png-01b3c94afeca5202284cf21a7e8f397a.ctex"]
 
 [params]
 
