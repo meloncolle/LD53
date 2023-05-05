@@ -1,6 +1,7 @@
-[gd_scene load_steps=50 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=51 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
+[ext_resource type="PackedScene" uid="uid://dry4nnhck2usn" path="res://PlayerCamera.tscn" id="1_jhv4d"]
 [ext_resource type="AudioStream" uid="uid://c7f6q2c18a0ar" path="res://ArtAssets/Audio/Music/loop5.wav" id="2_hf4j2"]
 [ext_resource type="AudioStream" uid="uid://bl7odm4iw5y5q" path="res://ArtAssets/Audio/Gameplay/CableStretch.wav" id="3_sp1ab"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_plwjo"]
@@ -11,10 +12,10 @@
 [ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
 [ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
-[ext_resource type="PackedScene" uid="uid://dhw848k1laj01" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
-[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
+[ext_resource type="PackedScene" uid="uid://cpkiq6ate4chl" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
+[ext_resource type="PackedScene" uid="uid://dhf55jbdjyav7" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
+[ext_resource type="PackedScene" uid="uid://cpewank10bmnd" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
+[ext_resource type="PackedScene" uid="uid://c5uppeshdukj5" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
 [ext_resource type="PackedScene" uid="uid://urcbveqibgvt" path="res://ArtAssets/EnvProps/Dynamic/container_a.tscn" id="12_wyaka"]
 [ext_resource type="Script" path="res://UI/meters.gd" id="13_3aqda"]
 [ext_resource type="PackedScene" uid="uid://df6pklbcil0vh" path="res://UI/wire_meter/wire_meter.tscn" id="14_o7yin"]
@@ -38,7 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://b556i5aj825qb" path="res://ArtAssets/NPCs/NPC7_MeleeKing/NPC8_MeleeKing.tscn" id="23_ffxf0"]
 [ext_resource type="PackedScene" uid="uid://dgt55ga24f8ca" path="res://ArtAssets/NPCs/NPC8_SmoothCool/NPC7_SmoothCool.tscn" id="24_diduf"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pipe_bend_b.tscn" id="24_qa4re"]
-[ext_resource type="PackedScene" uid="uid://bgtokw3f5xny8" path="res://ArtAssets/EnvProps/pipe_seg_b_2.tscn" id="25_kouo2"]
+[ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pipe_seg_b_2.tscn" id="25_kouo2"]
 [ext_resource type="PackedScene" uid="uid://dpngm26lfep1k" path="res://ArtAssets/EnvProps/Dynamic/container_c.tscn" id="28_haiv0"]
 [ext_resource type="PackedScene" uid="uid://cpkjasntattxv" path="res://ArtAssets/EnvProps/Dynamic/box_b.tscn" id="29_426yv"]
 [ext_resource type="PackedScene" uid="uid://x5whynrdo46f" path="res://ArtAssets/EnvProps/Dynamic/box_a.tscn" id="31_6tdaw"]
@@ -57,16 +58,16 @@ size = Vector3(3, 1, 2)
 
 [node name="Node3D2" type="Node3D"]
 
+[node name="PlayerCamera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_jhv4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30347, 1, -3.27691)
+target = NodePath("../Guy")
+deadzone = 0.1
+
 [node name="Guy" parent="." instance=ExtResource("1_ejbbu")]
-transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 3.30347, 1, -3.27691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30347, 1, -3.27691)
 floor_snap_length = 0.02
 accel = 0.45
 friction = 0.2
-
-[node name="Camera3D" type="Camera3D" parent="Guy"]
-transform = Transform3D(1, 0, 0, 0, 0.891284, 0.453446, 0, -0.453446, 0.891284, 0, 3.79293, 6.9367)
-current = true
-fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
 stream = ExtResource("2_hf4j2")
