@@ -150,7 +150,7 @@ func show_example_dialogue_balloon(resource: DialogueResource, title: String = "
 func show_dialogue_balloon(character: String) -> void:
 	var ExampleBalloonScene = load("res://DialogAssets/custom_balloon/balloon.tscn")
 	var balloon: Node = ExampleBalloonScene.instantiate()
-	get_tree().current_scene.get_node("Main3D/Node3D2").add_child(balloon)
+	get_tree().current_scene.get_node("Main3D/Node3D").add_child(balloon)
 	balloon.start(character)
 ### Dotnet bridge
 

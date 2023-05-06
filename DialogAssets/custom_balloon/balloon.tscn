@@ -117,6 +117,7 @@ scroll_active = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dialogue"
+skip_action = "ui_accept"
 
 [node name="Responses" type="VBoxContainer" parent="Balloon/Margin/HBox/VBox"]
 layout_mode = 2

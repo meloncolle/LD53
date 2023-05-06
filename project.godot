@@ -18,6 +18,7 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Enums="*res://enums.gd"
 
 [display]
 

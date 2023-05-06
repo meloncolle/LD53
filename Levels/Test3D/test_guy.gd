@@ -8,6 +8,7 @@ extends CharacterBody3D
 
 @onready var playerArt = $Boxboi
 @onready var wireManager = $WireManager
+var playerState: Enums.PlayerState
 
 var wireForce : Vector3
 
@@ -15,10 +16,10 @@ var is_dragging: bool = false
 
 var desiredVelocity = Vector3.ZERO
 
-var alive = true
 var deathTimer = 0.0
 
 func _ready():
+	set_state(Enums.PlayerState.DEFAULT)
 	curMaxSpeed = max_speed
 
 func get_input():
@@ -67,18 +68,17 @@ func _unhandled_input(event):
 		playerArt.rotate_y(event.relative.x * mouse_sensitivity)
 
 func _physics_process(delta):
-	alive = true if wireManager.curBattery > 0.0 else false
-	if(alive):
+	if wireManager.curBattery <= 0.0:
+		set_state(Enums.PlayerState.DYING)
+	if playerState == Enums.PlayerState.DEFAULT:
 		get_input()
 		move_and_slide()
 		if deathTimer != 0.0:
 			deathTimer = 0.0
-	else:
+	elif playerState == Enums.PlayerState.DYING:
 		DeathState(delta)
 	
 func DeathState(delta):
-	if deathTimer == 0.0:
-		playerArt.CallPowerDownAnim()	
 	deathTimer += delta
 	if deathTimer > 2.5:
 		Respawn()
@@ -87,7 +87,7 @@ func Respawn():
 	position = wireManager.lastConnected.global_position + (wireManager.lastConnected.global_transform.basis.z * 2.0) + Vector3.UP
 	wireManager.Disconnect()
 	wireManager.SwapCurrentlyConnected(wireManager.lastConnected)
-	playerArt.Reset()
+	set_state(Enums.PlayerState.DEFAULT)
 
 func _process(delta):
 	if $Music.playing == false:
@@ -102,7 +102,17 @@ func Disconnect():
 	wireManager.Disconnect()
 	$CableSnap.play()
 	
-	
+func set_state(newState: Enums.PlayerState):
+	playerState = newState
+	match playerState:
+		Enums.PlayerState.DEFAULT:
+			playerArt.Reset()
+		Enums.PlayerState.TALKING:
+			playerArt.Stop()
+		Enums.PlayerState.DYING:
+			playerArt.CallPowerDownAnim()	
+			
+
 	
 #func _Footsteps():
 #	if velocity.length() > 0:

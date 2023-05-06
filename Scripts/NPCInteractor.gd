@@ -12,6 +12,8 @@ extends Node3D
 var connected: bool = false
 var connectable : bool = true
 
+var player = null
+
 var notConnectableTimer = 0.0
 @export var notConnectableTime = 5.0
 
@@ -21,7 +23,10 @@ func _ready():
 		wire.target = targetOverride
 		targetOverride.get_node("WireManager").SwapCurrentlyConnected(self)
 	#print_debug(get_tree().get_root().get_child(1).get_node("Main3D/Node3D2/TiltTimer"))
-	get_tree().get_root().get_child(1).get_node("Main3D/Node3D2/TiltTimer").timeout.connect(_on_timer_timeout)
+	#hmmm
+	get_tree().get_root().get_child(2).get_node("Main3D/Node3D/TiltTimer").timeout.connect(_on_timer_timeout)
+
+	DialogueManager.dialogue_ended.connect(_on_dialog_ended)
 
 func _process(delta):
 	if !connectable:
@@ -34,13 +39,19 @@ func _on_area_3d_body_entered(body):
 		return
 	body.get_node("WireManager").StartedTouchingArea(self)
 	if !connected:
-		DialogueManager.show_dialogue_balloon(npc_name)
+		if player == null:
+			player = body
+			#idk this sucks but we need a reference to it
+			
+		var dialog_balloon = showDialog()
+		body.set_state(Enums.PlayerState.TALKING)
 		connected = true
 	$TestSound.play()
 	
+func _on_dialog_ended(resource):
+	if player != null:
+		player.set_state(Enums.PlayerState.DEFAULT)
 	
-
-
 func _on_area_3d_body_exited(body):
 	if body.is_in_group("player"):
 		body.get_node("WireManager").StoppedTouchingArea(self)
@@ -52,3 +63,10 @@ func _on_timer_timeout():
 func ToggleConnectable(_connectable : bool):
 	connectable = _connectable
 	interactionIndicator.ToggleInteractable(_connectable)
+	
+func showDialog():
+	var balloonScene = load("res://DialogAssets/custom_balloon/balloon.tscn")
+	var balloon: Node = balloonScene.instantiate()
+	self.add_child(balloon)
+	balloon.start(npc_name)
+	return balloon
