@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://rj8mqn68bjn2" path="res://ArtAssets/Playerbot/Models/Boxboi.glb" id="1_o7w7v"]
 [ext_resource type="Script" path="res://ArtAssets/Playerbot/Scripts/PlayerAnimationController.gd" id="2_l6wia"]
-[ext_resource type="Material" uid="uid://dxu0343ue2qve" path="res://ArtAssets/Materials/UnlitBase.tres" id="3_164ln"]
 [ext_resource type="Material" uid="uid://cckl6vpgdsclb" path="res://ArtAssets/Materials/PlayerFace.tres" id="4_gvyuu"]
+[ext_resource type="Material" uid="uid://doslu7d2lhw30" path="res://ArtAssets/Materials/PlayerBase.tres" id="4_t7xhu"]
 [ext_resource type="AudioStream" uid="uid://ubp2iwynxw86" path="res://ArtAssets/Audio/Placeholder/Skid Test.wav" id="5_u8y2l"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sujvr"]
@@ -81,25 +81,25 @@ boxModel = NodePath("botRig/Skeleton3D/box")
 faceModel = NodePath("botRig/Skeleton3D/face")
 
 [node name="Skeleton3D" parent="botRig" index="0"]
-bones/0/position = Vector3(-0.0420508, 0.656818, 0.00349012)
-bones/0/rotation = Quaternion(0.0212634, 0.995058, 0.083903, -0.0486554)
-bones/1/rotation = Quaternion(0.997224, 0.0715629, 0.0133731, -0.0156516)
-bones/2/rotation = Quaternion(-0.621254, -8.04995e-09, 2.4074e-07, 0.78361)
-bones/3/rotation = Quaternion(0.445912, 0.163363, 0.0372275, 0.879255)
-bones/4/position = Vector3(-1.52924e-09, 0.183899, 0.00349015)
-bones/4/rotation = Quaternion(-2.14923e-08, 1.58954e-10, 4.69492e-10, 1)
-bones/5/rotation = Quaternion(0.735723, -0.0670334, 0.115036, -0.664067)
-bones/6/rotation = Quaternion(-0.717589, -6.25858e-09, -2.78061e-07, 0.696467)
-bones/7/rotation = Quaternion(0.563111, -0.0497553, -0.0520106, 0.823241)
+bones/0/position = Vector3(0.0353851, 0.628448, 0.00349014)
+bones/0/rotation = Quaternion(-0.0696161, 0.993834, -0.0784465, 0.0359573)
+bones/1/rotation = Quaternion(0.957943, 0.190772, -0.0886917, -0.195151)
+bones/2/rotation = Quaternion(-0.531766, -1.42057e-08, 2.11709e-07, 0.846891)
+bones/3/rotation = Quaternion(0.440281, 0.157738, 0.049354, 0.882516)
+bones/4/position = Vector3(-0.0192759, 0.301925, -0.013786)
+bones/4/rotation = Quaternion(0.0979361, 0.0121407, -0.00565203, 0.995103)
+bones/5/rotation = Quaternion(0.965021, 0.0650916, 0.0457145, 0.249817)
+bones/6/rotation = Quaternion(-0.744441, 1.8054e-09, -2.81807e-07, 0.667688)
+bones/7/rotation = Quaternion(0.754061, -0.106351, 0.00399212, 0.648124)
 
 [node name="box" parent="botRig/Skeleton3D" index="0"]
-surface_material_override/0 = ExtResource("3_164ln")
+surface_material_override/0 = ExtResource("4_t7xhu")
 
 [node name="body" parent="botRig/Skeleton3D" index="1"]
-surface_material_override/0 = ExtResource("3_164ln")
+surface_material_override/0 = ExtResource("4_t7xhu")
 
 [node name="legs" parent="botRig/Skeleton3D" index="2"]
-surface_material_override/0 = ExtResource("3_164ln")
+surface_material_override/0 = ExtResource("4_t7xhu")
 
 [node name="face" parent="botRig/Skeleton3D" index="3"]
 surface_material_override/0 = ExtResource("4_gvyuu")

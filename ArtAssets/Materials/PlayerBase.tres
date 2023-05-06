@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://doslu7d2lhw30"]
+
+[ext_resource type="Material" uid="uid://d22leqftw0ayh" path="res://ArtAssets/Materials/PlayerPass2.tres" id="1_2e30r"]
+[ext_resource type="Shader" uid="uid://dftd1sin4vh66" path="res://ArtAssets/Shaders/FlatNoZTest.tres" id="2_djsqg"]
+
+[resource]
+render_priority = -1
+next_pass = ExtResource("1_2e30r")
+shader = ExtResource("2_djsqg")
+shader_parameter/xRayColor = Color(0.427451, 0.364706, 0.72549, 1)

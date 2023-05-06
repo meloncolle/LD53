@@ -1,0 +1,34 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://dftd1sin4vh66"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_x1l87"]
+parameter_name = "xRayColor"
+default_value_enabled = true
+default_value = Color(0.09918, 0.0464, 0.29, 1)
+
+[resource]
+code = "shader_type spatial;
+render_mode depth_test_disabled, unshaded, shadows_disabled, ambient_light_disabled;
+
+uniform vec4 xRayColor : source_color = vec4(0.099180, 0.046400, 0.290000, 1.000000);
+
+
+
+void fragment() {
+// ColorParameter:2
+	vec4 n_out2p0 = xRayColor;
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-167, 106)
+flags/depth_test_disabled = true
+flags/unshaded = true
+flags/shadows_disabled = true
+flags/ambient_light_disabled = true
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_x1l87")
+nodes/fragment/2/position = Vector2(-160, 180)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)
