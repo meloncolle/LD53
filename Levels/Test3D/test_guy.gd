@@ -108,7 +108,7 @@ func set_state(newState: Enums.PlayerState):
 		Enums.PlayerState.DEFAULT:
 			playerArt.Reset()
 		Enums.PlayerState.TALKING:
-			playerArt.Stop()
+			playerArt.DoLocomotionAnimation(Vector3.ZERO, Vector3.ZERO)
 		Enums.PlayerState.DYING:
 			playerArt.CallPowerDownAnim()	
 			
