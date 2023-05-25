@@ -13,7 +13,7 @@ parameter_name = "AlphaMap"
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_add, cull_disabled;
+render_mode blend_add, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_schlick_ggx;
 
 uniform sampler2D AlphaMap;
 uniform vec4 Color : source_color;
