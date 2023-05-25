@@ -45,8 +45,6 @@ default_value = 1.0
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
-
 uniform vec2 UVOffset = vec2(0.000000, 0.000000);
 uniform sampler2D MainTex : source_color, filter_nearest;
 uniform vec4 Tint2 : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);

@@ -35,8 +35,6 @@ op_type = 0
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
-
 uniform float UVScale = 1;
 uniform vec2 UVoffset = vec2(0.000000, 0.000000);
 uniform sampler2D Maintex : source_color, filter_nearest;

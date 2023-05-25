@@ -73,7 +73,7 @@ states/Stopping/position = Vector2(483, 168)
 transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_6ibrj"), "Locomotion", "Stopping", SubResource("AnimationNodeStateMachineTransition_8ejhr"), "Stopping", "Locomotion", SubResource("AnimationNodeStateMachineTransition_7c1yx"), "Interact", "Locomotion", SubResource("AnimationNodeStateMachineTransition_ttymt"), "Locomotion", "Interact", SubResource("AnimationNodeStateMachineTransition_68ffg"), "Locomotion", "PowerDown", SubResource("AnimationNodeStateMachineTransition_s21y7"), "PowerDown", "Locomotion", SubResource("AnimationNodeStateMachineTransition_2rlxh"), "Stopping", "PowerDown", SubResource("AnimationNodeStateMachineTransition_enyup")]
 graph_offset = Vector2(-112, -34)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_5teiy"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_hxenr"]
 
 [node name="Boxboi" node_paths=PackedStringArray("boxModel", "faceModel") instance=ExtResource("1_o7w7v")]
 script = ExtResource("2_l6wia")
@@ -108,7 +108,7 @@ surface_material_override/0 = ExtResource("4_gvyuu")
 tree_root = SubResource("AnimationNodeStateMachine_af560")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_5teiy")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_hxenr")
 parameters/Locomotion/mvmtBlend/blend_position = 0.998355
 
 [node name="Skid" type="AudioStreamPlayer" parent="." index="3"]
