@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
-@export var cam_sensitivity: float = 0.02
+@export var mouse_controls_cam: bool = false
+
+@export var cam_sensitivity: float = 0.002
 @export var accel: float = 0.8
 @export var friction: float = 0.5
 @export var max_speed: float = 8.0
@@ -53,10 +55,11 @@ func get_input():
 	velocity = desiredVelocity + wireForce
 	
 	# Camera stuff
-	var camDelta: float = Input.get_axis("cam_left", "cam_right")
-	if camDelta != 0.0:
-		rotate_y(camDelta * cam_sensitivity * -1.0)
-		playerArt.rotate_y(camDelta * cam_sensitivity)
+	if !mouse_controls_cam:
+		var camDelta: float = Input.get_axis("cam_left", "cam_right")
+		if camDelta != 0.0:
+			rotate_y(camDelta * cam_sensitivity * -10.0)
+			playerArt.rotate_y(camDelta * cam_sensitivity * 10.0)
 	
 	playerArt.DoLocomotionAnimation(desiredVelocity / max_speed, movement_dir)
 
@@ -68,10 +71,10 @@ func _input(event: InputEvent):
 			is_dragging = false
 
 # Rotate camera around y axis by mouse click + drag
-#func _unhandled_input(event):
-#	if event is InputEventMouseMotion && is_dragging:
-#		rotate_y(-event.relative.x * cam_sensitivity)
-#		playerArt.rotate_y(event.relative.x * cam_sensitivity)
+func _unhandled_input(event):
+	if mouse_controls_cam && event is InputEventMouseMotion && is_dragging:
+		rotate_y(-event.relative.x * cam_sensitivity)
+		playerArt.rotate_y(event.relative.x * cam_sensitivity)
 
 func _physics_process(delta):
 	if wireManager.curBattery <= 0.0:
