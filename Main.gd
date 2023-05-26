@@ -16,7 +16,6 @@ func _ready():
 
 func _input (event: InputEvent):
 	if(gameState != Enums.GameState.ON_START && event.is_action_pressed("ui_cancel")):
-		get_tree().paused = !get_tree().paused
 		
 		match gameState:
 			Enums.GameState.IN_GAME:
@@ -26,24 +25,29 @@ func _input (event: InputEvent):
 				set_state(Enums.GameState.IN_GAME)
 				
 
-
-
 func set_state(newState: Enums.GameState):
 	match newState:
 		Enums.GameState.ON_START:
 			if gameState == Enums.GameState.PAUSED:
 				pauseMenu.close()
+				
+			get_tree().paused = false
 			startMenu.visible = true
 			pauseMenu.visible = false
 			
 		Enums.GameState.IN_GAME:
 			if gameState == Enums.GameState.PAUSED:
 				pauseMenu.close()
+				while await pauseMenu.animation.animation_finished != "pause_menu":
+					pass
+
+			get_tree().paused = false
 			startMenu.visible = false
 			pauseMenu.visible = false
 			
 		Enums.GameState.PAUSED:
 			pauseMenu.open()
+			get_tree().paused = true
 			pauseMenu.visible = true
 			
 	gameState = newState
@@ -58,7 +62,6 @@ func _on_press_start():
 
 func _on_press_resume():
 	set_state(Enums.GameState.IN_GAME)
-	get_tree().paused = false
 
 
 func _on_press_quit():
@@ -66,4 +69,3 @@ func _on_press_quit():
 	if (is_instance_valid(sceneInstance)):
 		sceneInstance.queue_free()
 	sceneInstance = null
-	get_tree().paused = false
