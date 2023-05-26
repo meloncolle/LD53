@@ -4,7 +4,7 @@ var gameScenePath: String = "res://Levels/level.tscn"
 var sceneInstance: Node = null
 
 @onready var startMenu: Control = $CanvasLayer/StartMenu
-@onready var pauseMenu: Control = $CanvasLayer/PauseMenu
+@onready var pauseMenu: CanvasLayer = $CanvasLayer/PauseMenu
 
 func _ready():
 	set_state(Enums.GameState.ON_START)

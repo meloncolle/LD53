@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var animation: AnimationPlayer = $AnimatedSprite2D/AnimationPlayer
 

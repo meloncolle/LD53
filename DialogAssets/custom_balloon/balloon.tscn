@@ -51,7 +51,7 @@ _data = {
 
 [node name="ExampleBalloon" type="CanvasLayer" node_paths=PackedStringArray("response_template")]
 process_mode = 1
-layer = 100
+layer = 99
 script = ExtResource("1_4u26j")
 resource = ExtResource("2_rlig2")
 response_template = NodePath("Balloon/Margin/HBox/VBox/ResponseTemplate")
