@@ -119,13 +119,15 @@ Smooth: Keep it chill, my man, that way you never blow a fuse…heh heh
 
 BEN: WHY TAKE A LOOK AT YOU! YOU’RE A BRAND NEW THING AREN’T YOU!
 YOU: Hello! Yes! Can you help me with this box on my back? I have to open it up so I can figure out what I am supposed to be doing!
-BEN: WHY CERTAINLY LITTLE MAN! 
-YOU: HERE YOU GO, TAKE A LOOK
+BEN: WHY CERTAINLY LITTLE MAN!
+do IncrementVisuals()
+BEN: HERE YOU GO, TAKE A LOOK [next=5.0]
 YOU: …
 YOU: …
 YOU: …That’s it?
 BEN: YEP!
-YOU: Oh…
+do IncrementVisuals()
+YOU: Oh… [next=3.0]
 BEN: WHAT’S THE MATTER?
 YOU: I was just sorta expecting something… Uhm, more exciting? You know? Or cool, or something…
 BEN: I THINK IT’S PRETTY COOL!

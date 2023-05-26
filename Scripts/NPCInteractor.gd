@@ -68,5 +68,7 @@ func showDialog():
 	var balloonScene = load("res://DialogAssets/custom_balloon/balloon.tscn")
 	var balloon: Node = balloonScene.instantiate()
 	self.add_child(balloon)
-	balloon.start(npc_name)
+	# I think... we should have split the dialog files up by character?
+	# Array will be empty if the character is not ben. It works ok but feels wrong to do
+	balloon.start(npc_name, [self.get_node("endBot-game")])
 	return balloon
