@@ -1,10 +1,62 @@
-[gd_scene load_steps=6 format=3 uid="uid://cccvsiorwsaq2"]
+[gd_scene load_steps=11 format=3 uid="uid://cccvsiorwsaq2"]
 
 [ext_resource type="VideoStream" path="res://UI/Main-Menu-Final.ogv" id="1_dctxy"]
 [ext_resource type="Script" path="res://Scripts/loop_video.gd" id="2_qo4cw"]
 [ext_resource type="Texture2D" uid="uid://bmkqxg0mej6e6" path="res://UI/Main-Menu-frame.png" id="4_feb6v"]
 [ext_resource type="StyleBox" uid="uid://cqpp3se3cj6nw" path="res://UI/button_style.tres" id="4_wuivs"]
 [ext_resource type="StyleBox" uid="uid://cgt0s7m75ocxx" path="res://UI/button_style_hover.tres" id="5_ndrge"]
+[ext_resource type="Script" path="res://UI/instruction_button.gd" id="6_cm0wv"]
+[ext_resource type="Texture2D" uid="uid://iyaeh1gjqwej" path="res://UI/tutorial_page.png" id="7_yecic"]
+
+[sub_resource type="Animation" id="Animation_skwkb"]
+resource_name = "InstructionMenu"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InstructionMenu:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1.51572, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.626348, 0.626348)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InstructionMenu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(2.82843, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jn0mf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InstructionMenu:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.626348, 0.626348)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwu7i"]
+_data = {
+"InstructionMenu": SubResource("Animation_skwkb"),
+"RESET": SubResource("Animation_jn0mf")
+}
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -44,9 +96,9 @@ script = ExtResource("2_qo4cw")
 [node name="StartButton" type="Button" parent="Panel"]
 layout_mode = 2
 offset_left = 1.0
-offset_top = 246.0
+offset_top = 192.0
 offset_right = 318.0
-offset_bottom = 306.0
+offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -57,3 +109,32 @@ theme_override_styles/pressed = ExtResource("4_wuivs")
 theme_override_styles/disabled = ExtResource("4_wuivs")
 theme_override_styles/focus = ExtResource("4_wuivs")
 text = "START"
+
+[node name="TutButton" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 266.0
+offset_right = 318.0
+offset_bottom = 326.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("4_wuivs")
+theme_override_styles/hover = ExtResource("5_ndrge")
+theme_override_styles/pressed = ExtResource("4_wuivs")
+theme_override_styles/disabled = ExtResource("4_wuivs")
+theme_override_styles/focus = ExtResource("4_wuivs")
+text = "INSTRUCTIONS"
+script = ExtResource("6_cm0wv")
+
+[node name="InstructionMenu" type="Sprite2D" parent="Panel/TutButton"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(164, -214)
+scale = Vector2(0.626348, 0.626348)
+texture = ExtResource("7_yecic")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/TutButton"]
+libraries = {
+"": SubResource("AnimationLibrary_iwu7i")
+}
