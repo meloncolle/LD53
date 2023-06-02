@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=51 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
 [ext_resource type="AudioStream" uid="uid://c7f6q2c18a0ar" path="res://ArtAssets/Audio/Music/loop5.wav" id="2_hf4j2"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://x5whynrdo46f" path="res://ArtAssets/EnvProps/Dynamic/box_a.tscn" id="31_6tdaw"]
 [ext_resource type="PackedScene" uid="uid://bd68aar82qch4" path="res://ArtAssets/EnvProps/Dynamic/container_b.tscn" id="33_0o1n3"]
 [ext_resource type="PackedScene" uid="uid://8jak644j5bw" path="res://ArtAssets/NPCs/NPC9_BigBenson/NPC9Benson.tscn" id="33_t5prw"]
+[ext_resource type="PackedScene" uid="uid://bdxy1iojpinc" path="res://UI/tilt_warning.tscn" id="34_vwikg"]
 [ext_resource type="PackedScene" uid="uid://df8eplsyh1amj" path="res://ArtAssets/EnvProps/Dynamic/box_c.tscn" id="46_hdrda"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/runnner.tscn" id="47_qpnpm"]
 
@@ -1504,6 +1505,14 @@ offset_top = -17.0
 offset_right = 37.0
 offset_bottom = 23.0
 rotation = -0.785398
+
+[node name="TiltWarning" parent="UI" instance=ExtResource("34_vwikg")]
+visible = false
+offset_left = 982.0
+offset_top = -54.0
+offset_right = 1022.0
+offset_bottom = -14.0
+scale = Vector2(0.5, 0.5)
 
 [node name="NPC1_Mombot" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("17_cche0")]
 transform = Transform3D(0.944903, 0, 0.32735, 0, 1, 0, -0.32735, 0, 0.944903, -5.05291, -0.0429401, -7.19464)
