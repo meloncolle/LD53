@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Levels/CableSnap.gd" id="5_cjo3x"]
 [ext_resource type="AudioStream" uid="uid://dtqxcjswpi615" path="res://ArtAssets/Audio/Gameplay/CableSnap.wav" id="5_ook1e"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="5_sxioq"]
-[ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
+[ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
 [ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
 [ext_resource type="PackedScene" uid="uid://bdrj5bnqwceuu" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
@@ -98,7 +98,7 @@ shadow_enabled = true
 
 [node name="environment" type="Node3D" parent="."]
 
-[node name="ground" type="CharacterBody3D" parent="environment"]
+[node name="ground" type="CharacterBody3D" parent="environment" node_paths=PackedStringArray("tiltWarningTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -88.2647)
 collision_layer = 2
 collision_mask = 2
@@ -108,6 +108,7 @@ platform_floor_layers = 4294901760
 script = ExtResource("5_sxioq")
 direction = Vector3(1, 0, 0)
 acceleration = 2.0
+tiltWarningTimer = NodePath("../../TiltTimer/WarningTimer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="environment/ground"]
 shape = SubResource("BoxShape3D_x1ngd")
@@ -1469,16 +1470,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99678, 1.00962, -13.6751)
 transform = Transform3D(1, 0, 0, 0, 0.999041, 0.0437938, 0, -0.0437938, 0.999041, -10.0782, 0, -3.43398)
 
 [node name="TiltTimer" type="Timer" parent="."]
-wait_time = 11.0
+wait_time = 13.0
 autostart = true
 script = ExtResource("21_at3y0")
+
+[node name="WarningTimer" type="Timer" parent="TiltTimer"]
+wait_time = 2.0
+one_shot = true
 
 [node name="ShipSway" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_yaili")
 volume_db = 10.0
 script = ExtResource("15_06p4f")
 
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("player")]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("player", "ground")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 110.0
@@ -1487,6 +1492,7 @@ offset_right = 110.0
 offset_bottom = 116.0
 script = ExtResource("13_3aqda")
 player = NodePath("../Guy")
+ground = NodePath("../environment/ground")
 
 [node name="WireMeter" parent="UI" instance=ExtResource("14_o7yin")]
 visible = false
@@ -2141,6 +2147,7 @@ transform = Transform3D(-0.103608, 0, 0.994618, 0, 1, 0, -0.994618, 0, -0.103608
 [connection signal="body_exited" from="environment/fourthRoom/tiltDisabler-melee" to="TiltTimer" method="_on_tilt_disabler_body_exited"]
 [connection signal="body_entered" from="environment/fourthRoom/tiltDisabler-smooth" to="TiltTimer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="environment/fourthRoom/tiltDisabler-smooth" to="TiltTimer" method="_on_tilt_disabler_body_exited"]
-[connection signal="timeout" from="TiltTimer" to="Guy" method="_on_tilt_timer_timeout"]
 [connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]
-[connection signal="timeout" from="TiltTimer" to="ShipSway" method="_on_tilt_timer_timeout"]
+[connection signal="timeout" from="TiltTimer" to="UI" method="_on_tilt_warning"]
+[connection signal="timeout" from="TiltTimer/WarningTimer" to="Guy" method="_on_tilt_start"]
+[connection signal="timeout" from="TiltTimer/WarningTimer" to="ShipSway" method="_on_tilt_start"]

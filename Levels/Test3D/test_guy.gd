@@ -102,10 +102,9 @@ func _process(delta):
 	if $Music.playing == false:
 		$Music.play()
 		$ShipAmbience.play()
-
-func _on_tilt_timer_timeout():
-	Disconnect()
 	
+func _on_tilt_start():
+	Disconnect()
 	
 func Disconnect():
 	wireManager.Disconnect()

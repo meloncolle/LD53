@@ -24,7 +24,7 @@ func _ready():
 		targetOverride.get_node("WireManager").SwapCurrentlyConnected(self)
 	#print_debug(get_tree().get_root().get_child(1).get_node("Main3D/Node3D2/TiltTimer"))
 	#hmmm
-	get_tree().get_root().get_child(2).get_node("Main3D/Node3D/TiltTimer").timeout.connect(_on_timer_timeout)
+	get_tree().get_root().get_child(2).get_node("Main3D/Node3D/TiltTimer/WarningTimer").timeout.connect(_on_timer_timeout)
 
 	DialogueManager.dialogue_ended.connect(_on_dialog_ended)
 

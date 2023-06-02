@@ -1,6 +1,7 @@
 extends Control
 
 @export var player: CharacterBody3D
+@export var ground: CharacterBody3D
 
 @onready var battery_meter: Control = $BatteryMeter
 @onready var wire_meter: Control = $WireMeter
@@ -16,6 +17,10 @@ func _ready() -> void:
 	player.wireManager.connect("changed_length", self._on_changed_length)
 	player.wireManager.connect("changed_charge", self._on_changed_charge)
 	player.wireManager.connect("connection_set", self._on_connection_set)
+	
+	ground.connect("tilt_started", self._on_tilt_started)
+	ground.connect("tilt_stopped", self._on_tilt_stopped)
+	
 	_on_connection_set(player.wireManager.currentlyConnected)
 
 func _process(delta: float) -> void:
@@ -39,6 +44,14 @@ func _on_changed_charge(newCharge: float):
 func _on_connection_set(currentlyConnected):
 	set_meter(currentlyConnected == null)
 
+func _on_tilt_warning():
+	print_debug("TILT WARNING SIGNAL GOT")
+
+func _on_tilt_started():
+	print_debug("TILTING STARTED SIGNAL GOT")
+
+func _on_tilt_stopped():
+	print_debug("TILTING STOPPED SIGNAL GOT")
 
 func set_meter(enable_battery: bool):
 	using_battery = enable_battery
