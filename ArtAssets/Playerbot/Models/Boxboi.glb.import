@@ -3630,7 +3630,7 @@ _subresources={
 },
 "run": {
 "save_to_file/enabled": true,
-"save_to_file/keep_custom_tracks": true,
+"save_to_file/keep_custom_tracks": false,
 "save_to_file/path": "",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,

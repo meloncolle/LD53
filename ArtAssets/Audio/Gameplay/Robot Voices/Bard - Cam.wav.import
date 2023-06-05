@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6qflpag26h37"
+path="res://.godot/imported/Bard - Cam.wav-e0635ccbbd190b916832c8a45ff79f98.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Robot Voices/Bard - Cam.wav"
+dest_files=["res://.godot/imported/Bard - Cam.wav-e0635ccbbd190b916832c8a45ff79f98.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

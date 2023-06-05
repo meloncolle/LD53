@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b02fkb0d4desv"
+path="res://.godot/imported/Low Battery Alarm.wav-5f1582d332d77713d6c9fc069e516634.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Low Battery Alarm.wav"
+dest_files=["res://.godot/imported/Low Battery Alarm.wav-5f1582d332d77713d6c9fc069e516634.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

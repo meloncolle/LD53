@@ -49,6 +49,7 @@ func _on_tilt_warning():
 	tilt_warning.visible = true
 	tilt_warning.get_node("AnimationPlayer").play("flash_tilt_warning")
 	print_debug("TILT WARNING SIGNAL GOT")
+	
 
 func _on_tilt_started():
 	tilt_warning.get_node("AnimationPlayer").stop()

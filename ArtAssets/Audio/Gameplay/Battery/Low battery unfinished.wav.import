@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ftlx26eykits"
+path="res://.godot/imported/Low battery unfinished.wav-f8577a7be66058dc9c70d00088099b57.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Battery/Low battery unfinished.wav"
+dest_files=["res://.godot/imported/Low battery unfinished.wav-f8577a7be66058dc9c70d00088099b57.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

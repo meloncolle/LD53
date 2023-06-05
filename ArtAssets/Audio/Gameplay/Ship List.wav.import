@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lxabrvunb4tv"
+path="res://.godot/imported/Ship List.wav-5e58b51da50bdb2382713c7f7b6c3885.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Ship List.wav"
+dest_files=["res://.godot/imported/Ship List.wav-5e58b51da50bdb2382713c7f7b6c3885.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

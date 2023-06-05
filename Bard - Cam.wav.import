@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byfkr4be4v148"
+path="res://.godot/imported/Bard - Cam.wav-8b210ec120feb9535e759287f930ea85.sample"
+
+[deps]
+
+source_file="res://Bard - Cam.wav"
+dest_files=["res://.godot/imported/Bard - Cam.wav-8b210ec120feb9535e759287f930ea85.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

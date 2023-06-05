@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqeceqoa57fct"
+path="res://.godot/imported/Fast - Cam.wav-7c47931ff7d4ee4e780b8c555f8b5d00.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Robot Voices/Fast - Cam.wav"
+dest_files=["res://.godot/imported/Fast - Cam.wav-7c47931ff7d4ee4e780b8c555f8b5d00.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

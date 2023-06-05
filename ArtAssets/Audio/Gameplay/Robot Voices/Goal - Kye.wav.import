@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6homr5kurr35"
+path="res://.godot/imported/Goal - Kye.wav-2249ea7a865c3bdb18b34d3fc9be76bb.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Robot Voices/Goal - Kye.wav"
+dest_files=["res://.godot/imported/Goal - Kye.wav-2249ea7a865c3bdb18b34d3fc9be76bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

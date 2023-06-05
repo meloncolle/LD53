@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyrgfhful86kg"
+path="res://.godot/imported/Ship List Alarm.wav-f3fba740d5287f2c6207de8d49a5c39f.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Ship List Alarm.wav"
+dest_files=["res://.godot/imported/Ship List Alarm.wav-f3fba740d5287f2c6207de8d49a5c39f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=53 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
 [ext_resource type="AudioStream" uid="uid://c7f6q2c18a0ar" path="res://ArtAssets/Audio/Music/loop5.wav" id="2_hf4j2"]
@@ -8,10 +8,12 @@
 [ext_resource type="Script" path="res://Levels/CableSnap.gd" id="5_cjo3x"]
 [ext_resource type="AudioStream" uid="uid://dtqxcjswpi615" path="res://ArtAssets/Audio/Gameplay/CableSnap.wav" id="5_ook1e"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="5_sxioq"]
-[ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
+[ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
 [ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
 [ext_resource type="PackedScene" uid="uid://bdrj5bnqwceuu" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
+[ext_resource type="AudioStream" uid="uid://cyrgfhful86kg" path="res://ArtAssets/Audio/Gameplay/Ship List Alarm.wav" id="8_wk0xn"]
+[ext_resource type="Script" path="res://Levels/ShipList.gd" id="9_qe0xs"]
 [ext_resource type="PackedScene" uid="uid://dhw848k1laj01" path="res://ArtAssets/EnvProps/pole_b.tscn" id="9_uyawj"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_a.tscn" id="10_sc3ux"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/wall_b.tscn" id="11_dd7n1"]
@@ -90,6 +92,11 @@ script = ExtResource("5_cjo3x")
 stream = ExtResource("7_diba5")
 volume_db = -20.0
 autoplay = true
+
+[node name="ShipList" type="AudioStreamPlayer" parent="Guy"]
+stream = ExtResource("8_wk0xn")
+volume_db = -9.0
+script = ExtResource("9_qe0xs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -1471,7 +1478,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99678, 1.00962, -13.6751)
 transform = Transform3D(1, 0, 0, 0, 0.999041, 0.0437938, 0, -0.0437938, 0.999041, -10.0782, 0, -3.43398)
 
 [node name="TiltTimer" type="Timer" parent="."]
-wait_time = 13.0
+wait_time = 9.5
 autostart = true
 script = ExtResource("21_at3y0")
 
@@ -1781,13 +1788,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2621, 0, -95.9431)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6167, 0, -93.2883)
 
 [node name="crate-large10" parent="." instance=ExtResource("21_ufrmc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4889, 0, -89.5709)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.079, 0, -91.6619)
 
 [node name="crate-large11" parent="." instance=ExtResource("21_ufrmc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3709, 0, -87.5359)
 
 [node name="crate-large12" parent="." instance=ExtResource("21_ufrmc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4711, 0, -91.0794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3942, 0, -92.3635)
 
 [node name="container-c2" parent="." instance=ExtResource("28_haiv0")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -25.6894, 0, -95.4238)
@@ -1898,7 +1905,7 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -54.2994, 
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -44.4875, 0, -122.949)
 
 [node name="container-c5" parent="." instance=ExtResource("28_haiv0")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -20.5942, 0, -117.613)
+transform = Transform3D(0.854794, 0, -0.518967, 0, 1, 0, 0.518967, 0, 0.854794, -25.7836, 0, -122.239)
 
 [node name="pillar-b15" parent="." instance=ExtResource("20_6efbb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50.2063, -3.8147e-06, -138.326)
@@ -2038,14 +2045,8 @@ transform = Transform3D(0.393573, 0, 0.919293, 0, 1, 0, -0.919293, 0, 0.393573, 
 [node name="box-b3" parent="." instance=ExtResource("29_426yv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4224, 0, -67.4681)
 
-[node name="box-a2" parent="." instance=ExtResource("31_6tdaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7543, 0, -59.7162)
-
 [node name="box-b4" parent="." instance=ExtResource("29_426yv")]
 transform = Transform3D(0.70132, 0, -0.712847, 0, 1, 0, 0.712847, 0, 0.70132, -12.6689, 0, -66.4354)
-
-[node name="box-b5" parent="." instance=ExtResource("29_426yv")]
-transform = Transform3D(0.617983, 0, 0.786191, 0, 1, 0, -0.786191, 0, 0.617983, -19.1255, 0, -61.0946)
 
 [node name="box-b10" parent="." instance=ExtResource("29_426yv")]
 transform = Transform3D(0.617983, 0, 0.786191, 0, 1, 0, -0.786191, 0, 0.617983, -21.252, 0, -63.0084)
@@ -2123,7 +2124,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.60
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.6005, 0, -56.7277)
 
 [node name="container-c18" parent="." instance=ExtResource("28_haiv0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.6005, 0, -56.7277)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.6764, 0, -56.7277)
 
 [node name="container-c12" parent="." instance=ExtResource("28_haiv0")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -3.21023, 0, -64.6368)
@@ -2156,7 +2157,9 @@ transform = Transform3D(-0.103608, 0, 0.994618, 0, 1, 0, -0.994618, 0, -0.103608
 [connection signal="body_exited" from="environment/fourthRoom/tiltDisabler-melee" to="TiltTimer" method="_on_tilt_disabler_body_exited"]
 [connection signal="body_entered" from="environment/fourthRoom/tiltDisabler-smooth" to="TiltTimer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="environment/fourthRoom/tiltDisabler-smooth" to="TiltTimer" method="_on_tilt_disabler_body_exited"]
+[connection signal="timeout" from="TiltTimer" to="Guy/ShipList" method="_on_tilt_timer_timeout"]
 [connection signal="timeout" from="TiltTimer" to="environment/ground" method="_on_tilt_timer_timeout"]
 [connection signal="timeout" from="TiltTimer" to="UI" method="_on_tilt_warning"]
+[connection signal="timeout" from="TiltTimer/WarningTimer" to="Guy" method="_on_warning_timer_timeout"]
 [connection signal="timeout" from="TiltTimer/WarningTimer" to="Guy" method="_on_tilt_start"]
 [connection signal="timeout" from="TiltTimer/WarningTimer" to="ShipSway" method="_on_tilt_start"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b64fr3qjyxvns"
+path="res://.godot/imported/Melee - Fox.wav-c41aab496052065cb81c25b061c48dc9.sample"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Robot Voices/Melee - Fox.wav"
+dest_files=["res://.godot/imported/Melee - Fox.wav-c41aab496052065cb81c25b061c48dc9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

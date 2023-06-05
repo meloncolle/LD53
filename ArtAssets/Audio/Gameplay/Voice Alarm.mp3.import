@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyg432vabmjo6"
+path="res://.godot/imported/Voice Alarm.mp3-a60a3d8206986ec261c22420c40e40c8.mp3str"
+
+[deps]
+
+source_file="res://ArtAssets/Audio/Gameplay/Voice Alarm.mp3"
+dest_files=["res://.godot/imported/Voice Alarm.mp3-a60a3d8206986ec261c22420c40e40c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
