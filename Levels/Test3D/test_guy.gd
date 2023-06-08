@@ -54,13 +54,6 @@ func get_input():
 	desiredVelocity = desiredVelocity.move_toward(movement_dir * curMaxSpeed, cur_accel)
 	velocity = desiredVelocity + wireForce
 	
-	# Camera stuff
-	if !mouse_controls_cam:
-		var camDelta: float = Input.get_axis("cam_left", "cam_right")
-		if camDelta != 0.0:
-			rotate_y(camDelta * cam_sensitivity * -10.0)
-			playerArt.rotate_y(camDelta * cam_sensitivity * 10.0)
-	
 	playerArt.DoLocomotionAnimation(desiredVelocity / max_speed, movement_dir)
 
 func _input(event: InputEvent):
@@ -75,7 +68,7 @@ func _unhandled_input(event):
 	if mouse_controls_cam && event is InputEventMouseMotion && is_dragging:
 		rotate_y(-event.relative.x * cam_sensitivity)
 		playerArt.rotate_y(event.relative.x * cam_sensitivity)
-
+		
 func _physics_process(delta):
 	if wireManager.curBattery <= 0.0:
 		set_state(Enums.PlayerState.DYING)
@@ -99,6 +92,13 @@ func Respawn():
 	set_state(Enums.PlayerState.DEFAULT)
 
 func _process(delta):
+	# Camera stuff
+	if !mouse_controls_cam:
+		var camDelta: float = Input.get_axis("cam_left", "cam_right")
+		if camDelta != 0.0:
+			rotate_y(camDelta * cam_sensitivity * -10.0)
+			playerArt.rotate_y(camDelta * cam_sensitivity * 10.0)
+	
 	if $Music.playing == false:
 		$Music.play()
 		$ShipAmbience.play()
