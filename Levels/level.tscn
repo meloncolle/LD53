@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=54 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
 [ext_resource type="AudioStream" uid="uid://c7f6q2c18a0ar" path="res://ArtAssets/Audio/Music/loop5.wav" id="2_hf4j2"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Levels/CableSnap.gd" id="5_cjo3x"]
 [ext_resource type="AudioStream" uid="uid://dtqxcjswpi615" path="res://ArtAssets/Audio/Gameplay/CableSnap.wav" id="5_ook1e"]
 [ext_resource type="Script" path="res://Scripts/ExternalForcesManager.gd" id="5_sxioq"]
-[ext_resource type="Material" uid="uid://bppycky8hhi8e" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
+[ext_resource type="Material" uid="uid://bk72owko03uk" path="res://ArtAssets/Materials/Ground.tres" id="6_8p3bp"]
 [ext_resource type="AudioStream" uid="uid://co8ij6eptfovg" path="res://ArtAssets/Audio/Gameplay/ShipAmbience.wav" id="7_diba5"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/pillar_wires.tscn" id="7_t1aa6"]
 [ext_resource type="PackedScene" uid="uid://bdrj5bnqwceuu" path="res://ArtAssets/EnvProps/pole_a.tscn" id="8_mlu5p"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://bd68aar82qch4" path="res://ArtAssets/EnvProps/Dynamic/container_b.tscn" id="33_0o1n3"]
 [ext_resource type="PackedScene" uid="uid://8jak644j5bw" path="res://ArtAssets/NPCs/NPC9_BigBenson/NPC9Benson.tscn" id="33_t5prw"]
 [ext_resource type="PackedScene" uid="uid://bdxy1iojpinc" path="res://UI/tilt_warning.tscn" id="34_vwikg"]
+[ext_resource type="PackedScene" uid="uid://bdhjtlv6rha82" path="res://UI/end_screen.tscn" id="37_je41o"]
 [ext_resource type="PackedScene" uid="uid://df8eplsyh1amj" path="res://ArtAssets/EnvProps/Dynamic/box_c.tscn" id="46_hdrda"]
 [ext_resource type="PackedScene" path="res://ArtAssets/EnvProps/runnner.tscn" id="47_qpnpm"]
 
@@ -1135,7 +1136,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 0,
 transform = Transform3D(0.932317, 0, 0.361641, 0, 1, 0, -0.361641, 0, 0.932317, -4.31419, 1.12479, -5.29075)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="environment/fourthRoom/tiltDisabler-mombot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194063, 0, -0.0246658)
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.194063, 0, -0.0246654)
 shape = SubResource("BoxShape3D_4r6ml")
 
 [node name="tiltDisabler-cowboy" type="Area3D" parent="environment/fourthRoom"]
@@ -1520,6 +1521,13 @@ offset_top = -54.0
 offset_right = 1022.0
 offset_bottom = -14.0
 scale = Vector2(0.5, 0.5)
+
+[node name="EndScreen" parent="UI" instance=ExtResource("37_je41o")]
+visible = false
+offset_left = -110.0
+offset_top = -116.0
+offset_right = -110.0
+offset_bottom = -116.0
 
 [node name="NPC1_Mombot" parent="." node_paths=PackedStringArray("targetOverride") instance=ExtResource("17_cche0")]
 transform = Transform3D(0.944903, 0, 0.32735, 0, 1, 0, -0.32735, 0, 0.944903, -5.05291, -0.0429401, -7.19464)

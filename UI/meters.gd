@@ -6,6 +6,7 @@ extends Control
 @onready var battery_meter: Control = $BatteryMeter
 @onready var wire_meter: Control = $WireMeter
 @onready var tilt_warning: Control = $TiltWarning
+@onready var end_screen: Control = $EndScreen
 
 @export var rumble_threshold: float = 0.25
 @export var max_rumble: float = 8.0
@@ -48,16 +49,13 @@ func _on_connection_set(currentlyConnected):
 func _on_tilt_warning():
 	tilt_warning.visible = true
 	tilt_warning.get_node("AnimationPlayer").play("flash_tilt_warning")
-	print_debug("TILT WARNING SIGNAL GOT")
 	
 
 func _on_tilt_started():
 	tilt_warning.get_node("AnimationPlayer").stop()
-	print_debug("TILTING STARTED SIGNAL GOT")
 
 func _on_tilt_stopped():
 	tilt_warning.visible = false
-	print_debug("TILTING STOPPED SIGNAL GOT")
 
 func set_meter(enable_battery: bool):
 	using_battery = enable_battery
@@ -78,3 +76,8 @@ func rumble(meter, intensity: float):
 		randf_range(intensity, intensity * -1),
 		randf_range(intensity, intensity * -1)
 	)
+
+func show_end_screen():
+	end_screen.visible = true
+	end_screen.get_node("AnimationPlayer").play("show_end_screen")
+	#disable pausing...
