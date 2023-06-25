@@ -124,6 +124,7 @@ YOU: Hello! Yes! Can you help me with this box on my back? I have to open it up 
 BEN: WHY CERTAINLY LITTLE MAN!
 do IncrementVisuals()
 BEN: HERE YOU GO, TAKE A LOOK [next=5.0]
+do start_fade_music()
 YOU: …
 YOU: …
 YOU: …That’s it?

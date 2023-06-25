@@ -121,6 +121,8 @@ func set_state(newState: Enums.PlayerState):
 			playerArt.CallPowerDownAnim()	
 			
 
+func start_fade_music():
+	$Music.fade_out = true
 	
 #func _Footsteps():
 #	if velocity.length() > 0:

@@ -70,7 +70,9 @@ func showDialog():
 	self.add_child(balloon)
 	# I think... we should have split the dialog files up by character?
 	# Array will be empty if the character is not ben. It works ok but feels wrong to do
+	
 	balloon.start(npc_name,
 		[self.get_node("endBot-game"),
-	 	get_tree().get_root().get_child(2).get_node("Main3D/Node3D/UI")])
+	 	get_tree().get_root().get_child(2).get_node("Main3D/Node3D/UI"),
+		player])
 	return balloon

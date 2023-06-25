@@ -1,8 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://dqonebxffu1o6"]
+[gd_scene load_steps=55 format=3 uid="uid://dqonebxffu1o6"]
 
 [ext_resource type="PackedScene" uid="uid://b1sl5khrij4q8" path="res://Levels/Test3D/test_guy.tscn" id="1_ejbbu"]
 [ext_resource type="AudioStream" uid="uid://c7f6q2c18a0ar" path="res://ArtAssets/Audio/Music/loop5.wav" id="2_hf4j2"]
 [ext_resource type="AudioStream" uid="uid://bl7odm4iw5y5q" path="res://ArtAssets/Audio/Gameplay/CableStretch.wav" id="3_sp1ab"]
+[ext_resource type="Script" path="res://Levels/MainMusic.gd" id="3_w0jpo"]
 [ext_resource type="AudioStream" uid="uid://bdqagvxjtr7t7" path="res://ArtAssets/Audio/Placeholder/Power On Temp.mp3" id="4_plwjo"]
 [ext_resource type="Script" path="res://Levels/CableStretchSound.gd" id="4_woo8t"]
 [ext_resource type="Script" path="res://Levels/CableSnap.gd" id="5_cjo3x"]
@@ -74,8 +75,8 @@ fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
 stream = ExtResource("2_hf4j2")
-volume_db = -32.0
 autoplay = true
+script = ExtResource("3_w0jpo")
 
 [node name="CableStretch" type="AudioStreamPlayer" parent="Guy" node_paths=PackedStringArray("player")]
 stream = ExtResource("3_sp1ab")
