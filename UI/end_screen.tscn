@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdhjtlv6rha82"]
+[gd_scene load_steps=11 format=3 uid="uid://bdhjtlv6rha82"]
 
 [ext_resource type="StyleBox" uid="uid://cqpp3se3cj6nw" path="res://UI/button_style.tres" id="1_0ew7y"]
 [ext_resource type="Script" path="res://UI/end_screen.gd" id="1_xo7d0"]
 [ext_resource type="StyleBox" uid="uid://cgt0s7m75ocxx" path="res://UI/button_style_hover.tres" id="2_dt4ws"]
 [ext_resource type="Texture2D" uid="uid://d3pfo3ru6mdyh" path="res://UI/end_screen.png" id="2_v70uc"]
+[ext_resource type="Texture2D" uid="uid://w3dpdkg5sohu" path="res://UI/discord_square.png" id="5_mv1ms"]
 [ext_resource type="Texture2D" uid="uid://duwjmib1qh5iv" path="res://UI/youtube_square.png" id="5_pgw1p"]
 [ext_resource type="Texture2D" uid="uid://bmvbtewsc4wpk" path="res://UI/patreon_square.png" id="6_rl6gr"]
 
@@ -60,10 +61,10 @@ texture = ExtResource("2_v70uc")
 centered = false
 
 [node name="BackButton" type="Button" parent="ColorRect"]
-offset_left = 634.0
-offset_top = 444.0
-offset_right = 920.0
-offset_bottom = 504.0
+offset_left = 686.0
+offset_top = 499.0
+offset_right = 972.0
+offset_bottom = 559.0
 rotation = -0.0596225
 scale = Vector2(0.985942, 0.985942)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -77,33 +78,38 @@ theme_override_styles/disabled = ExtResource("1_0ew7y")
 theme_override_styles/focus = ExtResource("1_0ew7y")
 text = "Return to Title"
 
-[node name="YTButton" type="Button" parent="ColorRect"]
-offset_left = 203.0
-offset_top = 550.208
-offset_right = 371.0
-offset_bottom = 597.208
+[node name="DiscordButton" type="Button" parent="ColorRect"]
+offset_left = 213.0
+offset_top = 549.254
+offset_right = 337.0
+offset_bottom = 585.254
 rotation = -0.0596225
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_0ew7y")
 theme_override_styles/hover = ExtResource("2_dt4ws")
 theme_override_styles/pressed = ExtResource("1_0ew7y")
 theme_override_styles/disabled = ExtResource("1_0ew7y")
 theme_override_styles/focus = ExtResource("1_0ew7y")
-text = "        YouTube"
+text = "        Discord"
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(239.219, 566.331)
+scale = Vector2(0.3005, 0.3005)
+texture = ExtResource("5_mv1ms")
 
 [node name="PatreonButton" type="Button" parent="ColorRect"]
-offset_left = 383.0
-offset_top = 538.208
-offset_right = 546.0
-offset_bottom = 585.208
+offset_left = 348.0
+offset_top = 541.254
+offset_right = 472.0
+offset_bottom = 577.254
 rotation = -0.0596225
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("1_0ew7y")
 theme_override_styles/hover = ExtResource("2_dt4ws")
 theme_override_styles/pressed = ExtResource("1_0ew7y")
@@ -111,15 +117,33 @@ theme_override_styles/disabled = ExtResource("1_0ew7y")
 theme_override_styles/focus = ExtResource("1_0ew7y")
 text = "        Patreon"
 
-[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
-position = Vector2(240, 572)
-scale = Vector2(0.377, 0.377)
-texture = ExtResource("5_pgw1p")
-
-[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
-position = Vector2(421, 561)
-scale = Vector2(0.377, 0.377)
+[node name="Sprite2D3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(374.219, 558.331)
+scale = Vector2(0.3005, 0.3005)
 texture = ExtResource("6_rl6gr")
 
-[connection signal="pressed" from="ColorRect/YTButton" to="." method="open_link" binds= ["https://www.youtube.com/@groundwater-studio"]]
+[node name="YTButton" type="Button" parent="ColorRect"]
+offset_left = 484.0
+offset_top = 532.865
+offset_right = 616.0
+offset_bottom = 568.865
+rotation = -0.0596225
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("1_0ew7y")
+theme_override_styles/hover = ExtResource("2_dt4ws")
+theme_override_styles/pressed = ExtResource("1_0ew7y")
+theme_override_styles/disabled = ExtResource("1_0ew7y")
+theme_override_styles/focus = ExtResource("1_0ew7y")
+text = "        YouTube"
+
+[node name="Sprite2D4" type="Sprite2D" parent="ColorRect"]
+position = Vector2(510.219, 550.331)
+scale = Vector2(0.3005, 0.3005)
+texture = ExtResource("5_pgw1p")
+
+[connection signal="pressed" from="ColorRect/DiscordButton" to="." method="open_link" binds= ["https://discord.gg/4QJJaRPPXF"]]
 [connection signal="pressed" from="ColorRect/PatreonButton" to="." method="open_link" binds= ["https://www.patreon.com/GroundwaterStudio"]]
+[connection signal="pressed" from="ColorRect/YTButton" to="." method="open_link" binds= ["https://www.youtube.com/@groundwater-studio"]]

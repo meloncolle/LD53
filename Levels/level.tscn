@@ -75,7 +75,7 @@ fov = 40.0
 
 [node name="Music" type="AudioStreamPlayer" parent="Guy"]
 stream = ExtResource("2_hf4j2")
-volume_db = -10.0
+volume_db = -25.0
 autoplay = true
 script = ExtResource("3_w0jpo")
 
